@@ -1,0 +1,100 @@
+{
+  "paths": {
+    "/disk/{disk_id}/migrate": {
+      "post": {
+        "tags": [
+          "disk"
+        ],
+        "operationId": "migrate_disk",
+        "summary": "Migrating a disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Disk migration options",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiskMigrateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk migration started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "DiskMigrateParams"
+      }
+    },
+    "/disk/{disk_id}/migrate/local": {
+      "get": {
+        "tags": [
+          "disk"
+        ],
+        "operationId": "local_storage_list_to_migrate_disk",
+        "summary": "Local storage list to migrate disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage and node list is successfully received",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/disk/{disk_id}/migrate/network": {
+      "get": {
+        "tags": [
+          "disk"
+        ],
+        "operationId": "network_storage_list_to_migrate_disk",
+        "summary": "Network storage list to migrate disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage and node list is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/image/{image_id}/change_state": {
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "Change image state",
+        "operationId": "image_change_state",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "VM image ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Change image state params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageChangeStateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host image state changed successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "ImageChangeStateParams"
+      }
+    }
+  }
+}

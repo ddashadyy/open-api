@@ -1,0 +1,383 @@
+{
+  "components": {
+    "schemas": {
+      "HostParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{1}[a-zA-Z0-9-_.]+($)",
+            "maxLength": 49
+          },
+          "cluster": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "node": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "storage": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "account": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "domain": {
+            "type": "string",
+            "maxLength": 255,
+            "format": "domain"
+          },
+          "preset": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "os": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "image": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "linked_clone": {
+            "type": "boolean",
+            "default": false
+          },
+          "expand_part": {
+            "type": "string",
+            "nullable": true
+          },
+          "recipe_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HostRecipeListItem"
+            }
+          },
+          "recipe": {
+            "type": "integer",
+            "nullable": true
+          },
+          "recipe_params": {
+            "$ref": "#/components/schemas/HostRunRecipeParamsParams"
+          },
+          "ignore_recipe_filters": {
+            "type": "boolean",
+            "default": false
+          },
+          "password": {
+            "type": "string",
+            "minLength": 6,
+            "maxLength": 255
+          },
+          "ram_mib": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "hdd_mib": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "disks": {
+            "$ref": "#/components/schemas/HostDisks"
+          },
+          "cpu_number": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "hot_plug": {
+            "type": "boolean"
+          },
+          "live_resize": {
+            "type": "boolean"
+          },
+          "efi_boot": {
+            "type": "boolean"
+          },
+          "gpu_passthrough_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "vgpu_profile_id": {
+            "type": "integer",
+            "nullable": true
+          },
+          "net_bandwidth_mbitps": {
+            "type": "number",
+            "maxLength": 9,
+            "nullable": true
+          },
+          "ip_addr": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "ip_pool": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "ip_network": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "without_allocation": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "ipv6_enabled": {
+            "type": "boolean"
+          },
+          "ipv6_pool": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "ipv6_prefix": {
+            "type": "integer",
+            "minimum": 32,
+            "maximum": 125
+          },
+          "ipv4_pool": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "maxLength": 9
+            }
+          },
+          "ipv4_number": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "comment": {
+            "type": "string"
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cluster_interface": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ipv4_number": {
+                  "type": "number",
+                  "maxLength": 9
+                },
+                "ipv4_pool": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "maxLength": 9
+                  }
+                },
+                "ip_name": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "without_allocation": {
+                  "type": "boolean",
+                  "default": false
+                }
+              },
+              "oneOf": [
+                {
+                  "required": [
+                    "cluster_interface",
+                    "ipv4_number"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "required": [
+                    "cluster_interface",
+                    "ip_name"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "additionalProperties": false
+            }
+          },
+          "custom_interfaces": {
+            "$ref": "#/components/schemas/CustomInterfaces"
+          },
+          "cpu_mode": {
+            "type": "string",
+            "enum": [
+              "default",
+              "host-model",
+              "host-passthrough",
+              "custom"
+            ],
+            "nullable": true
+          },
+          "nesting": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cpu_custom_model": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpu_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000,
+            "nullable": true
+          },
+          "io_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000,
+            "nullable": true
+          },
+          "io_read_mbitps": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "io_write_mbitps": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "io_read_iops": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "io_write_iops": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "net_in_mbitps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999999,
+            "nullable": true
+          },
+          "net_out_mbitps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999999,
+            "nullable": true
+          },
+          "net_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "anti_spoofing": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "anti_spoofing_settings": {
+            "type": "object",
+            "properties": {
+              "vlan": {
+                "type": "boolean"
+              }
+            },
+            "nullable": true
+          },
+          "tcp_connections_in": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "tcp_connections_out": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "process_number": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "firewall_rules": {
+            "$ref": "#/components/schemas/FirewallRules"
+          },
+          "send_email_mode": {
+            "type": "string",
+            "enum": [
+              "default",
+              "saas_only"
+            ]
+          },
+          "vxlan": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "ipv4_number": {
+                  "type": "integer"
+                },
+                "ipnet": {
+                  "type": "integer"
+                },
+                "mac": {
+                  "type": "string",
+                  "format": "mac",
+                  "nullable": true
+                },
+                "model": {
+                  "$ref": "#/components/schemas/HostInterfaceModel"
+                },
+                "queues": {
+                  "$ref": "#/components/schemas/IfaceQueues"
+                }
+              },
+              "required": [
+                "id",
+                "ipv4_number",
+                "ipnet"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "spice_additional_enabled": {
+            "type": "boolean"
+          },
+          "spice_display_number": {
+            "$ref": "#/components/schemas/SpiceDisplayNumber"
+          },
+          "snapshot_limit": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "snapshot_ram": {
+            "type": "boolean"
+          },
+          "snapshots_allowed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

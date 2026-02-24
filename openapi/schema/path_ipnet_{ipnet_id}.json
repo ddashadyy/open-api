@@ -1,0 +1,72 @@
+{
+  "paths": {
+    "/ipnet/{ipnet_id}": {
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "description": "Edit IP network settings",
+        "operationId": "edit_ipnet",
+        "parameters": [
+          {
+            "name": "ipnet_id",
+            "in": "path",
+            "description": "IP network ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Network settings",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditNetworkParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Network settings edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "EditNetworkParams"
+      },
+      "delete": {
+        "tags": [
+          "network"
+        ],
+        "description": "Deleting a IP network",
+        "operationId": "delete_ipnet",
+        "parameters": [
+          {
+            "name": "ipnet_id",
+            "in": "path",
+            "description": "IP network ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP network deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

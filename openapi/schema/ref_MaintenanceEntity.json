@@ -1,0 +1,39 @@
+{
+  "components": {
+    "schemas": {
+      "MaintenanceEntity": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "integer"
+          },
+          "entity_name": {
+            "type": "string",
+            "enum": [
+              "host",
+              "disk",
+              "backup",
+              "image"
+            ]
+          },
+          "source_id": {
+            "type": "integer"
+          },
+          "destination_id": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "evacuated",
+              "done",
+              "failed",
+              "in_process"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

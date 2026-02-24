@@ -1,0 +1,44 @@
+{
+  "components": {
+    "schemas": {
+      "StorageParamsAdditional": {
+        "type": "object",
+        "properties": {
+          "ip_addr": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "ssh_port": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "login": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 255,
+            "nullable": true
+          },
+          "nas_storage_path": {
+            "type": "string",
+            "nullable": true
+          },
+          "ceph_monitors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string",
+                  "format": "ipv4"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

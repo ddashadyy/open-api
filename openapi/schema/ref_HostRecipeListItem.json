@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "HostRecipeListItem": {
+        "type": "object",
+        "properties": {
+          "recipe": {
+            "type": "number"
+          },
+          "recipe_params": {
+            "$ref": "#/components/schemas/HostRunRecipeParamsParams"
+          }
+        }
+      }
+    }
+  }
+}

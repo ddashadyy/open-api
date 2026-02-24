@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "HostInterfaceNetworkType": {
+        "type": "string",
+        "enum": [
+          "main",
+          "secondary",
+          "vxlan"
+        ]
+      }
+    }
+  }
+}

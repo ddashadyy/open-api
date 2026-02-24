@@ -1,0 +1,102 @@
+{
+  "components": {
+    "schemas": {
+      "DiskBackup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              }
+            }
+          },
+          "disk": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "actual_size_mib": {
+            "type": "integer"
+          },
+          "estimated_size_mib": {
+            "type": "integer"
+          },
+          "rbac":{
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "integer"
+              },
+              "host": {
+                "type": "integer"
+              },
+              "owner": {
+                "type": "integer"
+              }
+            }
+          },
+          "cluster": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "datacenter_type": {
+                "type": "string",
+                "enum": [
+                  "common",
+                  "hetzner",
+                  "ip_fabric"
+                ]
+              },
+              "image_storage_path": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "host": {
+            "type": "integer",
+            "nullable": true
+          },
+          "schedule": {
+            "type": "integer",
+            "nullable": true
+          },
+          "date_create": {
+            "type": "string"
+          },
+          "available_until": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "backup_location": {
+            "$ref": "#/components/schemas/LocationInBackup"
+          }
+        }
+      }
+    }
+  }
+}

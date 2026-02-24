@@ -1,0 +1,78 @@
+{
+  "components": {
+    "schemas": {
+      "RecipeUpdateParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "shell",
+              "power_shell"
+            ]
+          },
+          "script_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "script": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "from_repository": {
+            "type": "boolean"
+          },
+          "for_all": {
+            "type": "boolean"
+          },
+          "user_visible": {
+            "type": "boolean"
+          },
+          "account": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "email_content": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lang": {
+                  "$ref": "#/components/schemas/LangEnum"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "params": {
+            "$ref": "#/components/schemas/RecipeParamsParams"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

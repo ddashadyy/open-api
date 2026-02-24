@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/internal_edit": {
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "description": "Cluster internal edit",
+        "operationId": "cluster_internal_edit",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Cluster internal edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterInternalEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cluster edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ClusterInternalEditParams"
+      }
+    }
+  }
+}

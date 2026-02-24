@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "EnableSendingParams": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

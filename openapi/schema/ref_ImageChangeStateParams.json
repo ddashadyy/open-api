@@ -1,0 +1,16 @@
+{
+  "components": {
+    "schemas": {
+      "ImageChangeStateParams": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "maxLength": 255
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

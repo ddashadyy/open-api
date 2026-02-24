@@ -1,0 +1,32 @@
+{
+  "paths": {
+    "/os/iso/save": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "summary": "Save repository ISO images to database",
+        "description": "Save repository ISO images to database",
+        "operationId": "os_iso_save",
+        "requestBody": {
+          "description": "ISO images save params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OsIsoSaveParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ISO images saved successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "OsIsoSaveParams"
+      }
+    }
+  }
+}

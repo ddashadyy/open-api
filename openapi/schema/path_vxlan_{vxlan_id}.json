@@ -1,0 +1,118 @@
+{
+  "paths": {
+    "/vxlan/{vxlan_id}": {
+      "get": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "get_vxlan",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "Vxlan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The VxLAN description has been received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vxlan"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "edit_vxlan",
+        "summary": "Edit vxlan",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "Vxlan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Vxlan params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VxlanEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Vxlan edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "VxlanEditParams"
+      },
+      "delete": {
+        "tags": [
+          "vxlan"
+        ],
+        "summary": "Deleting a vxlan",
+        "description": "Deleting a vxlan",
+        "operationId": "delete_vxlan",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "The ID of vxlan to remove",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Force deletion even if IP addresses are allocated",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Vxlan deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

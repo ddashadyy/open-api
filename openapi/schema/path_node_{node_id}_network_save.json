@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/node/{node_id}/network/save": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Apply node network settings",
+        "operationId": "network_save",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node network settings saving params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node network settings saved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

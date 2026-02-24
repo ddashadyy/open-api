@@ -1,0 +1,114 @@
+{
+  "components": {
+    "schemas": {
+      "PlatformBackupSchedulesList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "schedule_type": {
+                  "type": "string",
+                  "enum": [
+                    "daily",
+                    "weekly",
+                    "monthly",
+                    "cron"
+                  ]
+                },
+                "cron_expression": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "next_run": {
+                  "type": "string"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "state": {
+                  "$ref": "#/components/schemas/PlatformScheduleState"
+                },
+                "storage_type": {
+                  "type": "string",
+                  "enum": [
+                    "local",
+                    "ssh",
+                    "ftp"
+                  ]
+                },
+                "connection_params": {
+                  "type": "object"
+                },
+                "backup_list": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "downloadable": {
+                        "type": "boolean"
+                      },
+                      "location": {
+                        "type": "string",
+                        "enum": [
+                          "local",
+                          "ssh",
+                          "ftp"
+                        ]
+                      },
+                      "date": {
+                       "type": "string"
+                      },
+                      "size": {
+                        "type": "integer"
+                      },
+                      "state": {
+                        "$ref": "#/components/schemas/PlatformBackupState"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "PlatformBackupState" : {
+        "type": "string",
+        "enum": [
+          "active",
+          "crashed",
+          "creating",
+          "moving"
+        ]
+      },
+      "PlatformScheduleState" : {
+        "type": "string",
+        "enum": [
+          "active",
+          "crashed"
+        ]
+      }
+    }
+  }
+}

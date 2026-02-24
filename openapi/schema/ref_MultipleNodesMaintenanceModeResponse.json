@@ -1,0 +1,25 @@
+{
+  "components": {
+    "schemas": {
+      "MultipleNodesMaintenanceModeResponse": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node_id": {
+                  "type": "integer"
+                },
+                "evacuation_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

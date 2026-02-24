@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "/node/{node_id}/storage/{storage_id}/check": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Check storage on node",
+        "operationId": "check_node_storage",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage checked successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

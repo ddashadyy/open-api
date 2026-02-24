@@ -1,0 +1,62 @@
+{
+  "paths": {
+    "/host/{host_id}/validate_hot_plug_resources": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "validate_hot_plug_resources",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cpu_number",
+            "in": "query",
+            "description": "CPU number, is this value suitable for hot plug",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ram_mib",
+            "in": "query",
+            "description": "RAM in mebibyte, is this value suitable for hot plug",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host validate hot plug resources is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "valid": {
+                      "type": "boolean"
+                    },
+                    "what": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

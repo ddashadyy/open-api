@@ -1,0 +1,13 @@
+{
+  "components": {
+    "schemas": {
+      "HostBalancerMode": {
+        "type": "string",
+        "enum": [
+          "off",
+          "cluster"
+        ]
+      }
+    }
+  }
+}

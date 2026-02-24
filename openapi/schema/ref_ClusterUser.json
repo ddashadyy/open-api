@@ -1,0 +1,64 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "virtualization_type": {
+            "type": "string",
+            "enum": [
+              "dummy",
+              "kvm",
+              "lxd",
+              "vmmgr5",
+              "vmmgr5_dummy"
+            ]
+          },
+          "datacenter_type": {
+            "type": "string",
+            "enum": [
+              "common",
+              "hetzner",
+              "ip_fabric"
+            ]
+          },
+          "vxlan_mode": {
+            "type": "string",
+            "enum": [
+            "disabled",
+            "full_mesh",
+            "route_reflector"
+            ]
+          },
+          "vxlan_settings": {
+            "type": "string",
+            "nullable": true
+          },
+          "vxlans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

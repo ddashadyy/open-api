@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/node/{node_id}/ha/state": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Set ha state",
+        "operationId": "ha_state",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Ha state params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeHaStateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node HA state is successfully saved",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "NodeHaStateParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/gpu/node/info": {
+      "get": {
+        "tags": [
+          "cluster",
+          "pci"
+        ],
+        "operationId": "get_cluster_gpu_node_info",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get GPU usage information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GpuNodeInfoList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

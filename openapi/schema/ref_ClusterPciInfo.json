@@ -1,0 +1,33 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterPciInfo": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "object",
+            "properties": {
+              "with_gpupt": {
+                "type": "integer"
+              },
+              "with_vgpu": {
+                "type": "integer"
+              },
+              "with_gpu_total": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "with_gpupt",
+              "with_vgpu",
+              "with_gpu_total"
+            ]
+          }
+        },
+        "required": [
+          "host"
+        ]
+      }
+    }
+  }
+}

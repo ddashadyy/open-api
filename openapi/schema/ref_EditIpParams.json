@@ -1,0 +1,37 @@
+{
+  "components": {
+    "schemas": {
+      "EditIpParams": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "object",
+            "properties": {
+              "domain": {
+                "type": "string",
+                "maxLength": 255,
+                "format": "domain"
+              },
+              "gateway": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "ip_addr": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "netmask": {
+                "type": "string",
+                "maxLength": 255
+              }
+            }
+          }
+        },
+        "required": [
+          "values"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

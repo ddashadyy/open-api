@@ -1,0 +1,80 @@
+{
+  "paths": {
+    "/cluster": {
+      "get": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Cluster List",
+        "operationId": "get_cluster_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "view",
+            "in": "query",
+            "description": "Cluster view",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "short",
+                "tiny"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cluster list successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Cluster creation",
+        "operationId": "create_cluster",
+        "requestBody": {
+          "description": "Parameters of the created cluster",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The cluster has been successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ClusterParams"
+      }
+    }
+  }
+}

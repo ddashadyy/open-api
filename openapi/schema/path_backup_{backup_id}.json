@@ -1,0 +1,114 @@
+{
+  "paths": {
+    "/backup/{backup_id}": {
+      "get": {
+        "tags": [
+          "backup",
+          "disk"
+        ],
+        "summary": "Get info about disk backup",
+        "operationId": "get_backup",
+         "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "Disk backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Info about disk backup received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Backup"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup change params",
+        "operationId": "edit_backup",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "Disk backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM backup changed params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackupChangeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk backup params changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "BackupChangeParams"
+      },
+      "delete": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup delete",
+        "operationId": "delete_backup",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "VM backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM backup deleted successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

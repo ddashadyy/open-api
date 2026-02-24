@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/task": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "operationId": "get_task_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

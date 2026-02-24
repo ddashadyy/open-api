@@ -1,0 +1,30 @@
+{
+  "components": {
+    "schemas": {
+      "DestinationNodesForMigrate": {
+        "type": "object",
+        "description": "Lists of node IDs for potential migration.",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "ID of the virtual machine that will undergo migration."
+          },
+          "primary": {
+            "type": "array",
+            "description": "The primary list, nodes that comply with both \"should\" and \"must\" rules",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "secondary": {
+            "type": "array",
+            "description": "The secondary list, nodes that comply with \"must\" rules but do not comply with \"should\" rules",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "components": {
+    "schemas": {
+      "StorageNodeList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "allocated_mib": {
+                  "type": "integer"
+                },
+                "available_mib": {
+                  "type": "integer"
+                },
+                "cluster": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "hdd_overselling": {
+                  "type": "number"
+                },
+                "host_count": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "size_mib": {
+                  "type": "integer"
+                },
+                "state": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

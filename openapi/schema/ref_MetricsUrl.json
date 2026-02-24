@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "MetricsUrl": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 255
+          }
+        }
+      }
+    }
+  }
+}

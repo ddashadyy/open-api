@@ -1,0 +1,152 @@
+{
+  "components": {
+    "schemas": {
+      "HostResourceParams": {
+        "type": "object",
+        "properties": {
+          "cpu_number": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "ram_mib": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "hot_plug": {
+            "type": "boolean"
+          },
+          "net_bandwidth_mbitps": {
+            "type": "number",
+            "maxLength": 9,
+            "nullable": true
+          },
+          "efi_boot": {
+            "type": "boolean"
+          },
+          "enforce_32bit_smbios": {
+            "type": "boolean"
+          },
+          "cpu_mode": {
+            "type": "string",
+            "enum": [
+              "default",
+              "host-model",
+              "host-passthrough",
+              "custom"
+            ],
+            "nullable": true
+          },
+          "nesting": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "cpu_custom_model": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpu_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000,
+            "nullable": true
+          },
+          "io_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000,
+            "nullable": true
+          },
+          "io_read_mbitps": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "io_write_mbitps": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "io_read_iops": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "io_write_iops": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "net_in_mbitps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999999,
+            "nullable": true
+          },
+          "net_out_mbitps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999999,
+            "nullable": true
+          },
+          "net_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "anti_spoofing": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "anti_spoofing_settings": {
+            "type": "object",
+            "properties":{
+              "vlan": {
+                "type": "boolean"
+              }
+            },
+            "nullable": true
+          },
+          "tcp_connections_in": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "tcp_connections_out": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": true
+          },
+          "process_number": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "firewall_rules": {
+            "$ref": "#/components/schemas/FirewallRules"
+          },
+          "defer": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "enum": [
+                  "host_stop"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "gpu_passthrough_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "vgpu_profile_id": {
+            "type": "integer",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

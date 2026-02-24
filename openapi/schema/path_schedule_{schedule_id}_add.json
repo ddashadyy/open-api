@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/schedule/{schedule_id}/add": {
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "operationId": "add_schedule_objects",
+        "summary": "Add objects to schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "Schedule ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduleEditObjectParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Schedule hosts updated successfully"
+          }
+        }
+      }
+    }
+  }
+}

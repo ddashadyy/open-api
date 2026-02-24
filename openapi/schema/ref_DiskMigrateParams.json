@@ -1,0 +1,37 @@
+{
+  "components": {
+    "schemas": {
+      "DiskMigrateParams": {
+        "type": "object",
+        "properties": {
+          "storage": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "node": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "plain": {
+            "type": "boolean"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "storage"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "node"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

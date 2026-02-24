@@ -1,0 +1,55 @@
+{
+  "paths": {
+    "/platform/backup/schedule": {
+      "get": {
+        "tags": [
+          "platform_backup"
+        ],
+        "summary": "Platform backup schedules list",
+        "operationId": "get_platform_backup_schedule_list",
+        "responses": {
+          "200": {
+            "description": "Platform backup schedules list have gotten successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlatformBackupSchedulesList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "platform_backup"
+        ],
+        "summary": "Platform backup schedule create",
+        "operationId": "create_platform_backup_schedule",
+        "requestBody": {
+          "description": "Platform backup schedule params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlatformBackupScheduleCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Platform backup schedule created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

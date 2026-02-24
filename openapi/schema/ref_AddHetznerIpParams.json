@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "AddHetznerIpParams": {
+        "type": "object",
+        "properties": {
+          "hetzner_ip": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "ipnet"
+            }
+          }
+        }
+      }
+    }
+  }
+}

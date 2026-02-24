@@ -1,0 +1,62 @@
+{
+  "paths": {
+    "/account": {
+      "get": {
+        "deprecated": true,
+        "description": "Get user list. Deprecated. Please use vmr/v1/user instead",
+        "tags": [
+          "user"
+        ],
+        "operationId": "get_account_lists",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "operationId": "create_account",
+        "summary": "Create an account",
+        "requestBody": {
+          "description": "Created account parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Account created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "AccountParams"
+      }
+    }
+  }
+}

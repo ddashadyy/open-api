@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/ssh_key/{ssh_key_id}": {
+      "delete": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Removing ssh key",
+        "description": "Removing ssh key",
+        "operationId": "delete_ssh_key",
+        "parameters": [
+          {
+            "name": "ssh_key_id",
+            "in": "path",
+            "description": "The ID of the ssh key to be removed",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SSH key deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

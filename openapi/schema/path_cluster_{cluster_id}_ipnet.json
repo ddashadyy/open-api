@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/dc_network": {
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "description": "Connecting / disconnecting ip networks to cluster",
+        "operationId": "cluster_edit_dc_networks",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Ip networks ids",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterDcNetworksParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ip networks connected successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "ClusterDcNetworksParams"
+      }
+    }
+  }
+}

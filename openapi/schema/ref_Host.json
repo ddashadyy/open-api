@@ -1,0 +1,432 @@
+{
+  "components": {
+    "schemas": {
+      "Host": {
+        "type": "object",
+        "properties": {
+          "expand_part": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ip4": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string"
+                },
+                "interface": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "ip6": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string"
+                },
+                "interface": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "host_interface": {
+                  "type": "string"
+                },
+                "mac": {
+                  "type": "string"
+                },
+                "node_interface": {
+                  "type": "integer"
+                },
+                "dhcp": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "node": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "ip_addr": {
+                "type": "string"
+              },
+              "live_migration_allowed": {
+                "type": "boolean"
+              },
+              "maintenance_mode": {
+                "type": "boolean"
+              },
+              "hot_plug_memory": {
+                "type": "boolean"
+              }
+            }
+          },
+          "cluster": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            }
+          },
+          "state": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
+          },
+          "comment": {
+            "type": "string"
+          },
+          "disk": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "disk_mib": {
+                "type": "integer"
+              },
+              "disk_mib_new": {
+                "type": "integer"
+              }
+            }
+          },
+          "disk_count": {
+            "type": "integer"
+          },
+          "cpu_number": {
+            "type": "integer"
+          },
+          "cpu_number_new": {
+            "type": "integer"
+          },
+          "efi_boot": {
+            "type": "boolean"
+          },
+          "enforce_32bit_smbios": {
+            "type": "boolean"
+          },
+          "ram_mib": {
+            "type": "integer"
+          },
+          "ram_mib_new": {
+            "type": "integer"
+          },
+          "total_disks_size_mib": {
+            "type": "integer"
+          },
+          "hot_plug": {
+            "type": "boolean"
+          },
+          "live_resize": {
+            "type": "boolean"
+          },
+          "hot_plug_cell_counter" : {
+            "type": "integer"
+          },
+          "net_bandwidth_mbitps": {
+            "type": "integer"
+          },
+          "net_bandwidth_mbitps_changed": {
+            "type": "boolean"
+          },
+          "ip_automation": {
+            "type": "string"
+          },
+          "ip_summary": {
+            "type": "string"
+          },
+          "net_is_synced": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "os_name": {
+            "type": "string"
+          },
+          "os_group": {
+            "type": "string"
+          },
+          "uptime": {
+            "type": "integer"
+          },
+          "rescue_mode": {
+            "type": "boolean"
+          },
+          "iso_mounted": {
+            "type": "boolean"
+          },
+          "iso_reboot": {
+            "type": "boolean"
+          },
+          "iso_status": {
+            "$ref": "#/components/schemas/IsoStatus"
+          },
+          "cpu_mode": {
+            "type": "string"
+          },
+          "nesting": {
+            "type": "boolean"
+          },
+          "cpu_custom_model": {
+            "type": "string"
+          },
+          "cpu_weight": {
+            "type": "integer"
+          },
+          "io_weight": {
+            "type": "integer"
+          },
+          "io_read_mbitps": {
+            "type": "integer"
+          },
+          "io_write_mbitps": {
+            "type": "integer"
+          },
+          "io_read_iops": {
+            "type": "integer"
+          },
+          "io_write_iops": {
+            "type": "integer"
+          },
+          "net_in_mbitps": {
+            "type": "integer"
+          },
+          "net_out_mbitps": {
+            "type": "integer"
+          },
+          "net_weight": {
+            "type": "integer"
+          },
+          "anti_spoofing": {
+            "type": "boolean"
+          },
+          "anti_spoofing_settings": {
+            "type": "object",
+            "properties": {
+              "vlan": {
+                "type": "boolean"
+              }
+            },
+            "nullable": true
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "tcp_connections_in": {
+            "type": "integer"
+          },
+          "tcp_connections_out": {
+            "type": "integer"
+          },
+          "process_number": {
+            "type": "integer"
+          },
+          "vxlan": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "tag": {
+                "type": "integer"
+              }
+            }
+          },
+          "firewall_rules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string"
+                },
+                "direction": {
+                  "type": "string"
+                },
+                "protocols": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "portstart": {
+                  "type": "integer"
+                },
+                "portend": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "has_noname_iface": {
+            "type": "boolean"
+          },
+          "is_protected": {
+            "type": "boolean"
+          },
+          "extended_protection": {
+            "type": "boolean"
+          },
+          "vm5_restrictions": {
+            "type": "object",
+            "properties": {
+              "net_iface_count": {
+                "type": "boolean"
+              },
+              "nat_or_extra": {
+                "type": "boolean"
+              },
+              "ipv6": {
+                "type": "boolean"
+              },
+              "unsupported_storage": {
+                "type": "boolean"
+              },
+              "iso": {
+                "type": "boolean"
+              },
+              "snapshot": {
+                "type": "boolean"
+              }
+            }
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "spice_additional_enabled": {
+            "type": "boolean"
+          },
+          "spice_display_number": {
+            "$ref": "#/components/schemas/SpiceDisplayNumber"
+          },
+          "snapshot_count": {
+            "type": "integer"
+          },
+          "snapshot_limit": {
+            "type": "integer"
+          },
+          "snapshot_ram": {
+            "type": "boolean"
+          },
+          "snapshot_curr": {
+            "type": "integer"
+          },
+          "snapshots_allowed": {
+            "type": "boolean"
+          },
+          "balancer_mode": {
+            "$ref": "#/components/schemas/HostBalancerMode"
+          },
+          "linked_clone_image": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "nullable": false
+          },
+          "mon_install_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "create_date": {
+            "type": "string",
+            "nullable": true
+          },
+          "rbac": {
+            "type": "object",
+            "properties": {
+              "owner": {
+                "type": "integer"
+              },
+              "host": {
+                "type": "integer"
+              },
+              "cluster": {
+                "type": "integer"
+              }
+            }
+          },
+          "gpu_passthrough_count": {
+            "type": "integer"
+          },
+          "vgpu_profile": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "pci_device_id": {
+                "type": "integer",
+                "nullable": true
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "pci_device_id"
+            ]
+          }
+        },
+        "required": [
+          "gpu_passthrough_count",
+          "vgpu_profile"
+        ]
+      }
+    }
+  }
+}

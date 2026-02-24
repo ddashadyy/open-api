@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "GpuHostInfoList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GpuHostInfo"
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

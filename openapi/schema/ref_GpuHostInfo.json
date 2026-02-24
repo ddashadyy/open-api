@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "GpuHostInfo": {
+        "type": "object",
+        "properties": {
+          "host": {
+            "$ref": "#/components/schemas/IdName"
+          },
+          "gpu_passthrough_count": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

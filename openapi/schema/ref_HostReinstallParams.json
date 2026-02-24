@@ -1,0 +1,56 @@
+{
+  "components": {
+    "schemas": {
+      "HostReinstallParams": {
+        "type": "object",
+        "properties": {
+          "os": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "image": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "recipe_list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HostRecipeListItem"
+            }
+          },
+          "recipe": {
+            "type": "number",
+            "nullable": true
+          },
+          "recipe_params": {
+            "$ref": "#/components/schemas/HostRunRecipeParamsParams"
+          },
+          "ignore_recipe_filters": {
+            "type": "boolean",
+            "default": false
+          },
+          "send_email_mode": {
+            "type": "string",
+            "enum": [
+              "default",
+              "saas_only"
+            ]
+          },
+          "password": {
+            "type": "string",
+            "minLength": 6,
+            "maxLength": 255
+          },
+          "disk": {
+            "type": "integer",
+            "nullable": true
+          },
+          "efi_boot": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "paths": {
+    "/host/{host_id}/migrate/target": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_migration_list",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cluster",
+            "in": "query",
+            "description": "The cluster ID for inter-cluster migration.",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ignore_filters",
+            "in": "query",
+            "description": "ignore filters flag",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of nodes for possible migration with a priority.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DestinationNodesForMigrate"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

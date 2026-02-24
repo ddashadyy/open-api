@@ -1,0 +1,51 @@
+{
+  "components": {
+    "schemas": {
+      "HostIface": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "bridge": {
+            "type": "string",
+            "nullable": true
+          },
+          "bridge_id": {
+            "type": "integer"
+          },
+          "dhcp": {
+            "type": "boolean"
+          },
+          "ip": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "is_main_network": {
+            "type": "boolean"
+          },
+          "mac": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "network_type": {
+            "$ref": "#/components/schemas/HostInterfaceNetworkType"
+          },
+          "vxlan": {
+            "type": "integer"
+          },
+          "queues": {
+            "$ref": "#/components/schemas/IfaceQueues"
+          }
+        }
+      }
+    }
+  }
+}

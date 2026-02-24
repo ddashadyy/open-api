@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/host/{host_id}/clone": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "host_clone",
+        "summary": "Cloning a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host clone started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

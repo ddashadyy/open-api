@@ -1,0 +1,70 @@
+{
+  "components": {
+    "schemas": {
+      "HostIfacesParams": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "internal_name": {
+                  "type": "string"
+                },
+                "net_is_synced": {
+                  "type": "boolean",
+                  "default": false
+                },
+                "ifaces": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "mac": {
+                        "type": "string",
+                        "format": "mac"
+                      },
+                      "ip": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ip_family": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "$ref": "#/components/schemas/AnyIp"
+                            }
+                          }
+                        },
+                        "nullable": true
+                      }
+                    }
+                  }
+                },
+                "date": {
+                  "type": "string",
+                  "format": "datetime"
+                }
+              }
+            },
+            "required": [
+              "internal_name",
+              "ifaces",
+              "date"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "list"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

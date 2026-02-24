@@ -1,0 +1,128 @@
+{
+  "components": {
+    "schemas": {
+      "MasterInfo": {
+        "type": "object",
+        "properties": {
+          "parent_host_id": {
+            "type": "integer"
+          },
+          "uptime": {
+            "type": "integer"
+          },
+          "ip4": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "bridge_id": {
+                  "type":"integer"
+                },
+                "bridge": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "node": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "ip_addr": {
+                "type": "string"
+              }
+            }
+          },
+          "storage": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "cluster": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "virtualization_type": {
+                "type": "string"
+              }
+            }
+          },
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "size_mib": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "target_dev": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "cpu_number": {
+            "type": "integer"
+          },
+          "ram_mib": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string"
+          },
+          "hot_plug_cell_counter": {
+            "type": "integer"
+          },
+          "domain": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

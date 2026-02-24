@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/storage/{storage_id}/storage_params": {
+      "get": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Storage",
+        "operationId": "get_storage_params",
+        "parameters": [
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage parameters is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                    "$ref": "#/components/schemas/StorageParamsAdditional"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/storage/{storage_id}": {
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Attach storage to cluster",
+        "operationId": "attach_storage",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Storage parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageAttachParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Storage attached successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTaskStoragesTasks"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "StorageAttachParams"
+      },
+      "delete": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Detach storage from cluster",
+        "operationId": "detach_storage",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage detached successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

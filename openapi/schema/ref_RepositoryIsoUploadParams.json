@@ -1,0 +1,35 @@
+{
+  "components": {
+    "schemas": {
+      "RepositoryIsoUploadParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "iso_file_name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "os_type": {
+            "$ref": "#/components/schemas/IsoOsType"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "iso_file_name"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "SetTimeoutParams": {
+        "type": "object",
+        "properties": {
+          "timeout_seconds": {
+            "type": "number",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "timeout_seconds"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "components": {
+    "schemas": {
+      "ImageByIdProps": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "integer"
+          },
+          "available_until": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "cleared": {
+            "type": "boolean"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "cpu_mode": {
+            "type": "string"
+          },
+          "cpu_number": {
+            "type": "integer"
+          },
+          "date_create": {
+            "type": "string",
+            "format": "datetime"
+          },
+          "efi_boot": {
+            "type": "boolean"
+          },
+          "expand_part": {
+            "type": "string"
+          },
+          "file_size_mib": {
+            "type": "integer"
+          },
+          "for_all": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "image_name": {
+            "type": "string"
+          },
+          "ip_automation": {
+            "type": "string"
+          },
+          "is_local": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "network_device": {
+            "type": "string"
+          },
+          "os": {
+            "type": "integer"
+          },
+          "parent_host": {
+            "type": "integer"
+          },
+          "ram_mib": {
+            "type": "integer"
+          },
+          "size_mib": {
+            "type": "integer"
+          },
+          "spice_additional_enabled": {
+            "type": "boolean"
+          },
+          "spice_display_number": {
+            "$ref": "#/components/schemas/SpiceDisplayNumber"
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "state": {
+            "type": "string"
+          },
+          "virtualization_type": {
+            "type": "string"
+          },
+          "password_from_sysprep": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

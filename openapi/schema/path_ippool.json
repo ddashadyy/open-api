@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/ippool": {
+      "get": {
+        "tags": [
+          "network"
+        ],
+        "summary": "List of pools of ip addresses",
+        "operationId": "get_ippool_list",
+        "parameters": [
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Pools sorting option",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of pools of ip addresses received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IppoolList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

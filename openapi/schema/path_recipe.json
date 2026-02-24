@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/recipe": {
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Recipe list",
+        "operationId": "get_recipe_list",
+        "responses": {
+          "200": {
+            "description": "Recipe list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipeList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "operationId": "create_recipe",
+        "summary": "Create recipe",
+        "requestBody": {
+          "description": "Recipe params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecipeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Recipe added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "RecipeParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "components": {
+    "schemas": {
+      "InternalSchedulesList": {
+        "type": "object",
+        "properties": {
+          "shedule_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "handler": {
+                  "type": "string"
+                },
+                "service": {
+                  "type": "string"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "instance_id": {
+                  "type": "number"
+                },
+                "url_query_params": {
+                  "type": "object"
+                },
+                "post_params": {
+                  "type": "object"
+                },
+                "cron_expression": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

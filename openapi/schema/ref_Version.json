@@ -1,0 +1,68 @@
+{
+  "components": {
+    "schemas": {
+      "Version": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "panel": {
+            "description": "product name",
+            "type": "string"
+          },
+          "compile_time": {
+            "description": "code compilation date",
+            "type": "string"
+          },
+          "compile_branch": {
+            "description": "code compilation branch",
+            "type": "string"
+          },
+          "version": {
+            "description": "product version",
+            "type": "string"
+          },
+          "stage": {
+            "description": "product life cycle stage",
+            "type": "string",
+            "enum": ["regular", "stable"]
+          },
+          "instance_id": {
+            "description": "product instance id",
+            "type": "integer"
+          },
+          "release_date": {
+            "description": "product release date",
+            "type": "integer"
+          },
+          "update_date": {
+            "description": "product update date",
+            "type": "integer"
+          },
+          "closed_contour": {
+            "description": "installation in a closed information contour",
+            "type": "boolean"
+          },
+          "fstec": {
+            "description": "FSTEC version of platform",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "panel",
+          "compile_time",
+          "compile_branch",
+          "version",
+          "stage",
+          "instance_id",
+          "release_date",
+          "update_date",
+          "closed_contour"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
+

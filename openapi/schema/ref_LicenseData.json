@@ -1,0 +1,183 @@
+{
+  "components": {
+    "schemas": {
+      "LicenseData": {
+        "type": "object",
+        "properties": {
+          "cpu_core_limit": {
+            "type": "integer"
+          },
+          "cpu_core_limit_exceeded": {
+            "type": "boolean"
+          },
+          "cpu_core_limit_reached": {
+            "type": "boolean"
+          },
+          "container_lxd_limit": {
+            "type": "integer"
+          },
+          "container_lxd_limit_exceeded": {
+            "type": "boolean"
+          },
+          "container_lxd_limit_reached": {
+            "type": "boolean"
+          },
+          "host_limit": {
+            "type": "integer"
+          },
+          "host_limit_exceeded": {
+            "type": "boolean"
+          },
+          "host_limit_reached": {
+            "type": "boolean"
+          },
+          "license": {
+            "type": "object",
+            "properties": {
+              "cpu_core_limit": {
+                "type": "integer"
+              },
+              "container_lxd_limit": {
+                "type": "integer"
+              },
+              "host_limit": {
+                "type": "integer"
+              },
+              "node_limit": {
+                "type": "integer"
+              },
+              "time_to_end": {
+                "type": "integer"
+              },
+              "license_ttl": {
+                "type": "integer"
+              },
+              "signature_ttl": {
+                "type": "integer"
+              },
+              "valid": {
+                "type": "boolean"
+              },
+              "metric_id": {
+                "type": "string"
+              },
+              "update_period": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "license_id": {
+                "type": "string"
+              },
+              "region": {
+                "type": "string",
+                "enum": [
+                  "ru",
+                  "eu"
+                ]
+              },
+              "dist_type": {
+                "type": "integer"
+              },
+              "vm_kvm_limit": {
+                "type": "integer"
+              }
+            }
+          },
+          "limits": {
+            "type": "object",
+            "properties": {
+              "used": {
+                "type": "object",
+                "properties": {
+                  "cpu_core": {
+                    "type": "integer"
+                  },
+                  "container_lxd": {
+                    "type": "integer"
+                  },
+                  "host": {
+                    "type": "integer"
+                  },
+                  "host_count": {
+                    "type": "integer"
+                  },
+                  "node": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          },
+          "packets": {
+            "type": "object",
+            "properties": {
+              "limits": {
+                "type": "object",
+                "properties": {
+                  "cpu_core": {
+                    "type": "integer"
+                  },
+                  "container_lxd": {
+                    "type": "integer"
+                  },
+                  "host": {
+                    "type": "integer"
+                  },
+                  "host_count": {
+                    "type": "integer"
+                  },
+                  "node": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "activate_date": {
+                "type": "integer"
+              },
+              "expire_date": {
+                "type": "integer"
+              },
+              "key": {
+                "type": "string"
+              }
+            }
+          },
+          "ssh": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "config": {
+                "type": "string"
+              }
+            }
+          },
+          "node_limit": {
+            "type": "integer"
+          },
+          "node_limit_exceeded": {
+            "type": "boolean"
+          },
+          "node_limit_reached": {
+            "type": "boolean"
+          },
+          "last_notify": {
+            "type": "integer"
+          },
+          "vm_kvm_limit": {
+            "type": "integer"
+          },
+          "vm_kvm_limit_exceeded": {
+            "type": "boolean"
+          },
+          "vm_kvm_limit_reached": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

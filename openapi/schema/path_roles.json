@@ -1,0 +1,33 @@
+{
+  "paths": {
+    "/roles": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get available roles.",
+        "operationId": "get_roles",
+        "responses": {
+          "200": {
+            "description": "Available roles.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "roles": {
+                      "type": "array",
+                      "items":{
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

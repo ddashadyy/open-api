@@ -1,0 +1,68 @@
+{
+  "paths": {
+    "/host/{host_id}/reinstall": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "reinstall_host",
+        "summary": "Reinstalling the virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host reinstall params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostReinstallParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host reinstall started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    },
+                    "recipe_task_list": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    },
+                    "recipe_task": {
+                      "type": "integer"
+                    },
+                    "spice_task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostReinstallParams"
+      }
+    }
+  }
+}

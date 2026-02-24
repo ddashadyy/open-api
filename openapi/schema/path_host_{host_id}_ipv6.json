@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/host/{host_id}/ipv6": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_ipv6",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IPv6 info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostIpv6"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

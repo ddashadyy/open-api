@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "HostIfaceChangeParams": {
+        "type": "object",
+        "properties": {
+          "bridge_id": {
+            "type": "integer"
+          },
+          "model": {
+            "$ref": "#/components/schemas/HostInterfaceModel",
+            "nullable": false
+          },
+          "queues": {
+            "$ref": "#/components/schemas/IfaceQueues"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

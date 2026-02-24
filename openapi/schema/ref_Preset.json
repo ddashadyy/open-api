@@ -1,0 +1,153 @@
+{
+  "components": {
+    "schemas": {
+      "Preset": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "virtualization_type": {
+            "type": "string",
+            "enum": [
+              "kvm",
+              "lxd"
+            ],
+            "default": "kvm"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          },
+          "ram_mib": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "hdd_mib": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "disks": {
+            "$ref": "#/components/schemas/HostDisks"
+          },
+          "cpu_number": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "cpu_mode": {
+            "type": "string",
+            "enum": [
+              "default",
+              "host-model",
+              "host-passthrough",
+              "custom"
+            ]
+          },
+          "nesting": {
+            "type": "boolean"
+          },
+          "cpu_custom_model": {
+            "type": "string"
+          },
+          "cpu_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+          },
+          "io_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "io_read_mbitps": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "io_write_mbitps": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "io_read_iops": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "io_write_iops": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "net_in_mbitps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999999
+          },
+          "net_out_mbitps": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 999999
+          },
+          "net_weight": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10
+          },
+          "anti_spoofing": {
+            "type": "boolean"
+          },
+          "anti_spoofing_settings": {
+            "type": "object",
+            "properties": {
+              "vlan": {
+                "type": "boolean"
+              }
+            },
+            "nullable": true
+          },
+          "tcp_connections_in": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "tcp_connections_out": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "process_number": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "spice_additional_enabled": {
+            "type": "boolean"
+          },
+          "spice_display_number": {
+            "$ref": "#/components/schemas/SpiceDisplayNumber"
+          },
+          "snapshot_limit": {
+            "type": "integer"
+          },
+          "snapshot_ram": {
+            "type": "boolean"
+          },
+          "snapshots_allowed": {
+            "type": "boolean"
+          },
+          "hot_plug": {
+            "type": "boolean"
+          },
+          "live_resize": {
+            "type": "boolean"
+          },
+          "iface_queues": {
+            "$ref": "#/components/schemas/IfaceQueues"
+          }
+        }
+      }
+    }
+  }
+}

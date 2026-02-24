@@ -1,0 +1,48 @@
+{
+  "components": {
+    "schemas": {
+      "Backup": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          },
+          "for_all": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "crashed",
+              "creating",
+              "deleting",
+              "in_use",
+              "migrating",
+              "copying"
+            ]
+          },
+          "expand_part": {
+            "type": "string",
+            "nullable": true
+          },
+          "backup_location": {
+            "$ref": "#/components/schemas/LocationInBackup"
+          }
+        }
+      }
+    }
+  }
+}

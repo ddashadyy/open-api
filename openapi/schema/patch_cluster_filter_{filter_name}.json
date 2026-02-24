@@ -1,0 +1,47 @@
+{
+  "paths": {
+    "/cluster/filter/{filter_name}": {
+      "get": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Get filter for cluster",
+        "operationId": "get_cluster_filter",
+         "parameters": [
+          {
+            "name": "filter_name",
+            "in": "path",
+            "description": "filter name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filter values",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "size": {
+                        "type": "integer"
+                    },
+                    "list": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

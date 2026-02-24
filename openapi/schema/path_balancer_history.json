@@ -1,0 +1,43 @@
+{
+  "paths": {
+    "/balancer_history": {
+      "get": {
+        "tags": [
+          "balancer"
+        ],
+        "operationId": "get_balancer_history",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filtering criteria or balancer history retrieval"
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Balancer history sorting options"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Balancer history is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalancerHistoryResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

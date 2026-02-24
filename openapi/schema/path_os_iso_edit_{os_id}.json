@@ -1,0 +1,80 @@
+{
+  "paths": {
+    "/os/iso/{os_id}": {
+      "post": {
+        "tags": [
+          "os"
+        ],
+        "summary": "ISO editing",
+        "description": "ISO editing",
+        "operationId": "edit_os_iso",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "ID of ISO record",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ISO edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OsIsoEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ISO edit started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "OsIsoEditParams"
+      },
+      "delete": {
+        "tags": [
+          "os"
+        ],
+        "summary": "Removing the ISO",
+        "description": "Removing the ISO",
+        "operationId": "delete_iso",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "ID of ISO record",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ISO successfully removed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/ippool/{ippool_id}": {
+      "delete": {
+        "tags": [
+          "network"
+        ],
+        "summary": "Deleting a pool of ip addresses",
+        "description": "Deleting a pool of ip addresses",
+        "operationId": "delete_ippool",
+        "parameters": [
+          {
+            "name": "ippool_id",
+            "in": "path",
+            "description": "ID of the deleted pool of ip addresses",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP address pool deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

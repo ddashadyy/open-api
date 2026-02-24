@@ -1,0 +1,57 @@
+{
+  "paths": {
+    "/node/{node_id}/storage/{storage_id}/hdd_overselling": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Update storage HDD overselling on node",
+        "operationId": "update_storage2node_hdd_overselling",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "HDD overselling parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HddOversellingParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Storage HDD overselling is successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HddOverselling"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HddOversellingParams"
+      }
+    }
+  }
+}

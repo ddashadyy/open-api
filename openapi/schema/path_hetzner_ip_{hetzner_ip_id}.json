@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/hetzner_ip/{hetzner_ip_id}": {
+      "delete": {
+        "tags": [
+          "network"
+        ],
+        "summary": "Deleting an IP address",
+        "description": "Removing an IP address in Hetzner",
+        "operationId": "delete_hetzner_ip",
+        "parameters": [
+          {
+            "name": "hetzner_ip_id",
+            "in": "path",
+            "description": "IP address to be deleted",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP address removal completed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

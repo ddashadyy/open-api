@@ -1,0 +1,43 @@
+{
+  "paths": {
+    "/setting": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_setting_list",
+        "responses": {
+          "200": {
+            "description": "Settings list is successfully received",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Create VM setting",
+        "operationId": "create_setting",
+        "requestBody": {
+          "description": "Setting params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SettingParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM setting created successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SettingParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "IppoolRangeParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "format": "iprange"
+          }
+        },
+        "required": ["name"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

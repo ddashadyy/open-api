@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "License": {
+        "type": "object",
+        "properties": {
+          "signature": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "signature",
+          "content"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

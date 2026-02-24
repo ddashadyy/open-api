@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "ImageMoveParams": {
+        "required": [
+          "source",
+          "destination"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "destination": {
+            "type": "integer",
+            "maxLength": 9
+          }
+        }
+      }
+    }
+  }
+}

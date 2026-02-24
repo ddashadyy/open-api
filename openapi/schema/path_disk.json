@@ -1,0 +1,68 @@
+{
+  "paths": {
+    "/disk": {
+      "get": {
+        "tags": [
+          "disk"
+        ],
+        "summary": "Get disk list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get_disk_list",
+        "responses": {
+          "200": {
+            "description": "Disk list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiskList"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "DiskList"
+      },
+      "post": {
+        "tags": [
+          "disk"
+        ],
+        "summary": "Create a disk",
+        "operationId": "create_disk",
+        "requestBody": {
+          "description": "Create disk parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiskParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "DiskParams"
+      }
+    }
+  }
+}

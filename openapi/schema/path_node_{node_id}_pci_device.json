@@ -1,0 +1,84 @@
+{
+  "paths": {
+    "/node/{node_id}/pci/device": {
+      "post": {
+        "tags": [
+          "node",
+          "pci"
+        ],
+        "summary": "Update information about PCI devices",
+        "operationId": "edit_pci_devices",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node PCI devices modify parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PciDeviceParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node PCI devices modified successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "PciDeviceParams"
+      },
+      "get": {
+        "tags": [
+          "node",
+          "pci"
+        ],
+        "summary": "Get a list of PCI devices",
+        "operationId": "get_pci_device_list",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of PCI devices successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                "$ref": "#/components/schemas/PciDeviceList"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "PciDeviceList"
+      }
+    }
+  }
+}

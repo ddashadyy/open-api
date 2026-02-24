@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/ip/{ip_id}/ptr": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Editing VM domain",
+        "operationId": "edit_ip_ptr",
+        "parameters": [
+          {
+            "name": "ip_id",
+            "in": "path",
+            "description": "ID ВМ",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing VM domain",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditIpPtrParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "IP domain edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "EditIpPtrParams"
+      }
+    }
+  }
+}

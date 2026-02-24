@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/node/{node_id}/pci/device/update": {
+      "post": {
+        "tags": [
+          "node",
+          "pci"
+        ],
+        "summary": "Start task for updating information about PCI devices",
+        "operationId": "update_pci_device",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task started successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/image/{image_id}/node/{node_id}/disable": {
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "Disable image on node",
+        "operationId": "image_node_disable",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "VM image ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host image successfully disabled on the node",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "components": {
+    "schemas": {
+      "SshAddress": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "ssh_address":{
+            "type": "string",
+            "format": "ipv4"
+          },
+          "ssh_key":{
+            "type": "string"
+          },
+          "ssh_port":{
+            "type": "integer"
+          },
+          "ssh_user":
+          {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

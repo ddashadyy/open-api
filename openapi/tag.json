@@ -1,0 +1,136 @@
+{
+  "tags": [
+    {
+      "name": "backup",
+      "description": "Host backup object"
+    },
+    {
+      "name": "backup_location",
+      "description": "Backup location object"
+    },
+    {
+      "name": "cluster",
+      "description": "Cluster"
+    },
+    {
+      "name": "disk",
+      "description": "Disk of Virtual Machine"
+    },
+    {
+      "name": "form",
+      "description": "Helper handler for building forms"
+    },
+    {
+      "name": "host",
+      "description": "Virtual machine"
+    },
+    {
+      "name": "image",
+      "description": "Host image object"
+    },
+    {
+      "name": "internal",
+      "description": "Internal calls"
+    },
+    {
+      "name": "import",
+      "description": "Ability to import objects"
+    },
+    {
+      "name": "network",
+      "description": "Network configuration of VMmanager"
+    },
+    {
+      "name": "node",
+      "description": "Hardware where virtual machines are created"
+    },
+    {
+      "name": "node_script",
+      "description": "Script to setup nodes"
+    },
+    {
+      "name": "license",
+      "description": "License object"
+    },
+    {
+      "name": "os",
+      "description": "Operation System"
+    },
+    {
+      "name": "platform_backup",
+      "description": "Platform backup entity"
+    },
+    {
+      "name": "preset",
+      "description": "Predefined configuration of virtual machine"
+    },
+    {
+      "name": "recipe",
+      "description": "Script to setup virtual machine"
+    },
+    {
+      "name": "repository",
+      "description": "Repository of OS or Scripts"
+    },
+    {
+      "name": "schedule",
+      "description": "Schedule object"
+    },
+    {
+      "name": "settings",
+      "description": "Settings that VMmanager supports"
+    },
+    {
+      "name": "storage",
+      "description": "Object to keep virtual machine"
+    },
+    {
+      "name": "task",
+      "description": "Background task that does create, update or delete operations over VM, Nodes etc."
+    },
+    {
+      "name": "user",
+      "description": "User of VMmanager"
+    },
+    {
+      "name": "vmmanager",
+      "description": "General information and operations with VMmanager"
+    },
+    {
+      "name": "vxlan",
+      "description": "VxLANs and operations with them"
+    },
+    {
+      "name": "snapshot",
+      "description": "Snapshots and operations with them"
+    },
+    {
+      "name": "tag",
+      "description": "Tags and operations with them"
+    },
+    {
+      "name": "maintenance",
+      "description": "Operations with node maintenance mode"
+    },
+    {
+      "name": "monitor",
+      "description": "Monitor target"
+    },
+    {
+      "name": "balancer",
+      "description": "Instance of balancer"
+    },
+    {
+      "name": "master",
+      "description": "Operations with master"
+    },
+    {
+      "name": "pci",
+      "description": "Operations with pci devices"
+    },
+    {
+      "name": "timesync",
+      "description": "Timesync operations"
+    }
+  ]
+}

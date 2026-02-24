@@ -1,0 +1,30 @@
+{
+  "components": {
+    "schemas": {
+      "OsSaveParams": {
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "os": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "repository_type": {
+            "type": "string",
+            "enum": ["os", "lxd"]
+          }
+        },
+        "required": [
+          "repository_id",
+          "os"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

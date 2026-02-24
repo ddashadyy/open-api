@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "AccountList": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Account"
+            }
+          }
+        }
+      }
+    }
+  }
+}

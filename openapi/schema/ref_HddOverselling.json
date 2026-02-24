@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "HddOverselling": {
+        "type": "object",
+        "properties": {
+          "hdd_overselling": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

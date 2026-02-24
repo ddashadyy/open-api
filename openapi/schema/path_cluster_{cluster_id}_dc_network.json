@@ -1,0 +1,46 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/dc_network": {
+      "get": {
+        "tags": [
+          "cluster"
+        ],
+        "operationId": "get_dc_networks_of_cluster",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of networks with internal traffic received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "last_notify": {
+                      "$ref": "#/components/schemas/LastNotify"
+                    },
+                    "list": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

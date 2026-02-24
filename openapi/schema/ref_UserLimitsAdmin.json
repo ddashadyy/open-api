@@ -1,0 +1,47 @@
+{
+  "components": {
+    "schemas": {
+      "UserLimitsAdmin": {
+        "type": "object",
+        "properties": {
+          "host_count": {
+            "type": "integer"
+          },
+          "image_count": {
+            "type": "integer"
+          },
+          "image_count_total": {
+            "type": "integer"
+          },
+          "cpu_number": {
+            "type": "integer"
+          },
+          "cpu_number_total": {
+            "type": "integer"
+          },
+          "ram_mib": {
+            "type": "integer"
+          },
+          "ram_mib_total": {
+            "type": "integer"
+          },
+          "hdd_mib": {
+            "type": "integer"
+          },
+          "hdd_mib_total": {
+            "type": "integer"
+          },
+          "ipv4_number": {
+            "type": "integer"
+          },
+          "ipv4_number_total": {
+            "type": "integer"
+          },
+          "vxlan_count_total": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "HostRestoreParams": {
+        "required": [
+          "backup"
+        ],
+        "type": "object",
+        "properties": {
+          "backup": {
+            "type": "number",
+            "maxLength": 9
+          }
+        }
+      }
+    }
+  }
+}

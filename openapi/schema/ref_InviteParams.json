@@ -1,0 +1,36 @@
+{
+  "components": {
+    "schemas": {
+      "InviteParams": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 255
+          },
+          "role": {
+            "type": "string"
+          },
+          "rbac_list": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "group_list": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "email",
+          "role"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

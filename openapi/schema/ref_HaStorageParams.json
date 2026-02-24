@@ -1,0 +1,16 @@
+{
+  "components": {
+    "schemas": {
+      "HaStorageParams": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/HaStorageParamsCeph"
+          },
+          {
+            "$ref": "#/components/schemas/HaStorageParamsSAN"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "paths": {
+    "/preset": {
+      "get": {
+        "tags": [
+          "preset"
+        ],
+        "operationId": "get_preset_list",
+        "responses": {
+          "200": {
+            "description": "Preset list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresetList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "preset"
+        ],
+        "operationId": "create_preset",
+        "summary": "Create preset",
+        "requestBody": {
+          "description": "Preset params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresetParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Preset added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "PresetParams"
+      }
+    }
+  }
+}

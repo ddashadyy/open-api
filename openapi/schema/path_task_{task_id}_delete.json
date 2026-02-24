@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/task/{task_id}/delete": {
+      "delete": {
+        "tags": [
+          "task"
+        ],
+        "operationId": "delete_task",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "description": "Task id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task deleted successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

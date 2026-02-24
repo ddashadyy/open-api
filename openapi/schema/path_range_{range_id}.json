@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/range/{range_id}": {
+      "delete": {
+        "tags": [
+          "network"
+        ],
+        "description": "Deleting a IP range",
+        "operationId": "delete_iprange",
+        "parameters": [
+          {
+            "name": "range_id",
+            "in": "path",
+            "description": "IP range ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP range deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

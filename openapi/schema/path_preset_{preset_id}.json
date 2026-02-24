@@ -1,0 +1,94 @@
+{
+  "paths": {
+    "/preset/{preset_id}": {
+      "get": {
+        "tags": [
+          "preset"
+        ],
+        "operationId": "get_preset",
+        "parameters": [
+          {
+            "name": "preset_id",
+            "in": "path",
+            "description": "Preset ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Preset info is successfully received",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "preset"
+        ],
+        "description": "Preset edit",
+        "operationId": "edit_preset",
+        "parameters": [
+          {
+            "name": "preset_id",
+            "in": "path",
+            "description": "Preset ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Preset edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresetEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Preset edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "PresetEditParams"
+      },
+      "delete": {
+        "tags": [
+          "preset"
+        ],
+        "operationId": "delete_preset",
+        "parameters": [
+          {
+            "name": "preset_id",
+            "in": "path",
+            "description": "Preset ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Preset deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

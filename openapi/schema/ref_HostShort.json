@@ -1,0 +1,54 @@
+{
+  "components": {
+    "schemas": {
+      "HostShort": {
+        "type": "object",
+        "properties": {
+          "cluster": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "virtualization_type": {
+                "type": "string"
+              },
+              "vxlan_mode": {
+                "type": "string"
+              }
+            }
+          },
+          "ha_restore_on_fail": {
+            "type": "boolean"
+          },
+          "has_noname_iface": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "iso_mounted": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "node": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            }
+          },
+          "rescue_mode": {
+            "type": "boolean"
+          },
+          "state": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

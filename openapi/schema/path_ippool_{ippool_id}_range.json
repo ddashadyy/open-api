@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/ippool/{ippool_id}/range": {
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "description": "Connecting the range to IP pool",
+        "operationId": "connect_ippool_range",
+        "parameters": [
+          {
+            "name": "ippool_id",
+            "in": "path",
+            "description": "IP pool ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Range connection parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IppoolRangeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Range connected successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "IppoolRangeParams"
+      }
+    }
+  }
+}

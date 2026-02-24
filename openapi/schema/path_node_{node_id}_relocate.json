@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/node/{node_id}/relocate": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Relocate VM from node",
+        "operationId": "relocate",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Relocate params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node relocate is successfully started",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "RelocateParams"
+      }
+    }
+  }
+}

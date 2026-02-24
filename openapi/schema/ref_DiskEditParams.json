@@ -1,0 +1,45 @@
+{
+  "components": {
+    "schemas": {
+      "DiskEditParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "account": {
+            "type": "number"
+          },
+          "size_mib": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "live_resize": {
+            "type": "boolean"
+          },
+          "expand_part": {
+            "type": "string",
+            "nullable": true
+          },
+          "pool": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "defer": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string",
+                "enum": [
+                  "host_stop"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

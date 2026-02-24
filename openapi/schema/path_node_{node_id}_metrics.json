@@ -1,0 +1,38 @@
+{
+  "paths": {
+    "/node/{node_id}/metrics": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "metrics",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Cluster node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "Metric target param",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MetricsTargetParam"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node metrics are successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

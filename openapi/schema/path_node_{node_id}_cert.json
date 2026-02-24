@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/node/{node_id}/cert": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Updating libvirt certificates on a host",
+        "description": "Updating libvirt certificates on a host",
+        "operationId": "update_certificates",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID for renewing certificates",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Libvirt cert update started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

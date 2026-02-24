@@ -1,0 +1,44 @@
+{
+  "components": {
+    "schemas": {
+      "LocationInList": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": ["active", "unavailable"]
+          },
+          "quota_mib": {
+            "type": "integer",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ssh"
+            ]
+          },
+          "connection_params": {
+            "type": "object"
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdName"
+            }
+          }
+        }
+      }
+    }
+  }
+}

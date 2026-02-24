@@ -1,0 +1,36 @@
+{
+    "paths": {
+      "/master/restart": {
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "master_restart",
+          "summary": "Restart master",
+          "requestBody": {
+            "description": "Parameters for restart master",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmptySchema"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Restarting master successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SuccessTaskSchema"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

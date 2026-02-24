@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/host/{host_id}/iso/finish": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Disconnect ISO from VM with reinstallation",
+        "operationId": "iso_finish",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

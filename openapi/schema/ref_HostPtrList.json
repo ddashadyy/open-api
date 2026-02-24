@@ -1,0 +1,72 @@
+{
+  "components": {
+    "schemas": {
+      "HostPtrList": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "family": {
+                  "type": "integer",
+                  "enum": [
+                    2,
+                    10
+                  ]
+                },
+                "gateway": {
+                  "$ref": "#/components/schemas/Gateway"
+                },
+                "ip": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "domain": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "fail",
+                          "ok",
+                          "in_progress"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "ip_count": {
+                  "type": "integer"
+                },
+                "network": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "format": "ipv4"
+                    },
+                    {
+                      "type": "string",
+                      "format": "ipv6"
+                    }
+                  ]
+                },
+                "prefix": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/snapshot/{snapshot_id}/apply": {
+      "post": {
+        "tags": [
+          "snapshot"
+        ],
+        "summary": "Applies a VM snapshot (revert disk to saved state)",
+        "operationId": "apply_host_snapshot",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "description": "Snapshot ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM snapshots task registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

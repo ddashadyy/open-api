@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "DiskRestoreFromImage": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(\/[\\w]+)+(\\.[\\w\\d]+)*"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

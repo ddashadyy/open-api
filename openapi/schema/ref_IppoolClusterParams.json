@@ -1,0 +1,31 @@
+{
+  "components": {
+    "schemas": {
+      "IppoolClusterParams": {
+        "type": "object",
+        "properties": {
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "maxLength": 9
+                },
+                "interface": {
+                  "type": "integer",
+                  "maxLength": 2
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "clusters"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

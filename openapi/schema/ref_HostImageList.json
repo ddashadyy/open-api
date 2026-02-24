@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "HostImageList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HostImage"
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

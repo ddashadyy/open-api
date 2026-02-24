@@ -1,0 +1,84 @@
+{
+  "paths": {
+    "/storage/{storage_id}/node/{node_id}/change_state": {
+      "post": {
+        "tags": [
+          "storage"
+        ],
+        "operationId": "change_storage_node_state",
+        "summary": "Change storage on node state",
+        "parameters": [
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New storage on node state",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageNodeChangeStateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Storage state changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "StorageNodeChangeStateParams"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "StorageNodeChangeStateParams": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "creating",
+              "active",
+              "unavailable",
+              "crashed"
+            ]
+          }
+        },
+        "required": [
+          "state"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

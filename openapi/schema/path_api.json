@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/api": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "operationId": "get_api",
+        "responses": {
+          "200": {
+            "description": "API is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

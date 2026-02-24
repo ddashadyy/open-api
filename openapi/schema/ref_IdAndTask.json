@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "IdAndTask": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "task": {
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

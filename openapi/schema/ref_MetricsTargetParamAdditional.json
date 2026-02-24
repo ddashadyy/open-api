@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "MetricsTargetParamAdditional":{
+        "type": "string",
+        "enum": [
+          "internal_net_rx",
+          "internal_net_tx",
+          "external_net_rx",
+          "external_net_tx",
+          "net_tx_summary",
+          "net_rx_summary",
+          "internal_net_rx_summary",
+          "internal_net_tx_summary",
+          "external_net_rx_summary",
+          "external_net_tx_summary",
+          "df.root.used"
+        ]
+      }
+    }
+  }
+}

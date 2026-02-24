@@ -1,0 +1,43 @@
+{
+  "paths": {
+    "/settings/send_vm_messages": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_settings_send_vm_messages",
+        "responses": {
+          "200": {
+            "description": "Sending messages status is successfully received",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Enable or disable sending messages about VM",
+        "operationId": "edit_settings_send_vm_messages",
+        "requestBody": {
+          "description": "Enable sending params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnableSendingParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Setting sending messages edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "EnableSendingParams"
+      }
+    }
+  }
+}

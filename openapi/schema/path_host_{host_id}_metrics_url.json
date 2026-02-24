@@ -1,0 +1,47 @@
+{
+  "paths": {
+    "/host/{host_id}/metrics/url": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_metrics_url",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "Metric target param",
+            "required": true,
+            "schema": {
+              "allOf":[
+                {"$ref": "#/components/schemas/MetricsTargetParam"},
+                {"$ref": "#/components/schemas/MetricsTargetParamAdditional"}
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Url host metrics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsUrl"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

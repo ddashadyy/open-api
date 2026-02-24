@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/os": {
+      "get": {
+        "tags": [
+          "os"
+        ],
+        "summary": "OS list",
+        "operationId": "get_os_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OS list received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OsList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

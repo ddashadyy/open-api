@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/platform/backup/{backup_id}/info": {
+      "get": {
+        "tags": [
+          "platform_backup"
+        ],
+        "summary": "Platform backup info",
+        "operationId": "get_platform_backup",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "Platform backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Platform backup info retrieved successfully"
+          }
+        }
+      }
+    }
+  }
+}

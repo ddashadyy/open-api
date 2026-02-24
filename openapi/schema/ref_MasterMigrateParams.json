@@ -1,0 +1,55 @@
+{
+    "components": {
+      "schemas": {
+        "MasterMigrateParams": {
+          "type": "object",
+          "properties": {
+            "node": {
+              "type": "number",
+              "maxLength": 9
+            },
+            "disks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "dst_storage": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            },
+            "interfaces": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "dst_bridge": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "id",
+                  "dst_bridge"
+                ]
+              }
+            }
+          },
+          "required": [
+            "node"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+  

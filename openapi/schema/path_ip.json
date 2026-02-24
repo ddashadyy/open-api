@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/ip": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_ip_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of IP addresses",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

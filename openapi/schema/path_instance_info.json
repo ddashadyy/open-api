@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/instance_info": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "operationId": "get_instance_info",
+        "responses": {
+          "200": {
+            "description": "Instance info is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

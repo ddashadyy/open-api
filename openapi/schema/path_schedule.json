@@ -1,0 +1,61 @@
+{
+  "paths": {
+    "/schedule": {
+      "get": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Schedule list",
+        "operationId": "get_schedule_list",
+        "responses": {
+          "200": {
+            "description": "Schedule list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Create schedule",
+        "operationId": "create_schedule",
+        "requestBody": {
+          "description": "Schedule params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduleParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Schedule created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ScheduleParams"
+      }
+    }
+  }
+}

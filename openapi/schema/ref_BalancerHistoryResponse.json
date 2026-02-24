@@ -1,0 +1,87 @@
+{
+  "components": {
+    "schemas": {
+      "BalancerHistoryResponse": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer",
+                  "description": "The ID of the entry"
+                },
+                "cluster": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "The cluster ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "The cluster name"
+                    }
+                  }
+                },
+                "rbac": {
+                  "type": "object",
+                  "properties": {
+                    "cluster": {
+                      "type": "integer",
+                      "description": "The cluster ID"
+                    }
+                  }
+                },
+                "host": {
+                  "type": "string",
+                  "description": "The host name"
+                },
+                "src_node": {
+                  "type": "string",
+                  "description": "The source node name"
+                },
+                "dest_node": {
+                  "type": "string",
+                  "description": "The destination node name"
+                },
+                "start": {
+                  "type": "integer",
+                  "description": "The start time in Unix timestamp format"
+                },
+                "finish": {
+                  "type": "integer",
+                  "description": "The finish time in Unix timestamp format"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "search failed",
+                    "in progress",
+                    "task failed",
+                    "completed"
+                  ],
+                  "description": "The balancer status"
+                },
+                "reason": {
+                  "type": "string",
+                  "description": "More verbose message of the status",
+                  "nullable": true
+                }
+              }
+            }
+          },
+          "size": {
+            "type": "integer",
+            "description": "The number of items in the list"
+          }
+        }
+      }
+    }
+  }
+}

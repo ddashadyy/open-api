@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/task/{task_id}/start": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "operationId": "get_task_start",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "description": "Task id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Name of task",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Start the task.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "last_notify": {
+                      "$ref": "#/components/schemas/LastNotify"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

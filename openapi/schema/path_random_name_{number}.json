@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/random_name/{number}": {
+      "get": {
+        "tags": [
+          "form"
+        ],
+        "operationId": "generate_random_name",
+        "parameters": [
+          {
+            "name": "number",
+            "in": "path",
+            "description": "Amount random names",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Random names are successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

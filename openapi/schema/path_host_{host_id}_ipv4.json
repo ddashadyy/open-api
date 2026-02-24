@@ -1,0 +1,49 @@
+{
+  "paths": {
+    "/host/{host_id}/ipv4": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_ipv4",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IPv4 info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "last_notify": {
+                      "$ref": "#/components/schemas/LastNotify"
+                    },
+                    "list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/HostIpv4"
+                      }
+                    },
+                    "size": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

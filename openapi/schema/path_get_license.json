@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/get_license": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "summary": "Obtaining license data",
+        "operationId": "get_license",
+        "responses": {
+          "200": {
+            "description": "License info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicenseData"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

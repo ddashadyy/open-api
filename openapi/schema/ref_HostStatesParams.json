@@ -1,0 +1,65 @@
+{
+  "components": {
+    "schemas": {
+      "HostStatesParams": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "internal_name": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "state": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "guest_agent": {
+                  "type": "boolean"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "datetime",
+                  "maxLength": 255
+                },
+                "autostart_enabled": {
+                  "type": "boolean"
+                },
+                "uptime": {
+                  "type": "number",
+                  "maxLength": 10
+                }
+              },
+              "anyOf": [
+                {
+                  "required": [
+                    "internal_name",
+                    "state",
+                    "date"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "required": [
+                    "internal_name",
+                    "guest_agent",
+                    "date"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "list"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

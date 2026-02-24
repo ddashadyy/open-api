@@ -1,0 +1,15 @@
+{
+  "components": {
+    "schemas": {
+      "HostInterfaceModel": {
+        "type": "string",
+        "enum": [
+          "virtio",
+          "rtl8139",
+          "e1000",
+          "e1000e"
+        ]
+      }
+    }
+  }
+}

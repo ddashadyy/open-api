@@ -1,0 +1,50 @@
+{
+  "components": {
+    "schemas": {
+      "OsIsoEditParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "os_type": {
+            "$ref": "#/components/schemas/IsoOsType"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "os_type"
+            ]
+          },
+          {
+            "type": "object",
+            "required": [
+              "clusters"
+            ]
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

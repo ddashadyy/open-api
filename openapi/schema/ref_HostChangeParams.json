@@ -1,0 +1,96 @@
+{
+  "components": {
+    "schemas": {
+      "HostChangeParams": {
+        "type": "object",
+        "properties": {
+          "values": {
+            "type": "object",
+            "properties": {
+              "password": {
+                "type": "string",
+                "minLength": 6,
+                "maxLength": 255
+              },
+              "vnc_password": {
+                "type": "string",
+                "minLength": 6,
+                "maxLength": 255
+              },
+              "state": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "state_updated_date": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "guest_agent": {
+                "type": "boolean"
+              },
+              "vnc_port": {
+                "type": "integer"
+              },
+              "property": {
+                "type": "object"
+              },
+              "start_date": {
+                "type": "number",
+                "maxLength": 10
+              }
+            }
+          },
+          "comment": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]{1}[a-zA-Z0-9-_.]+($)",
+            "maxLength": 49
+          },
+          "ha_restore_on_fail": {
+            "type": "boolean"
+          },
+          "ha_restore_priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 999
+          },
+          "expand_part": {
+            "type": "string",
+            "nullable": true
+          },
+          "is_protected": {
+            "type": "boolean"
+          },
+          "extended_protection": {
+            "type": "boolean"
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "spice_additional_enabled": {
+            "type": "boolean"
+          },
+          "spice_display_number": {
+            "$ref": "#/components/schemas/SpiceDisplayNumber"
+          },
+          "snapshot_limit": {
+            "type": "integer",
+            "minimum": -1
+          },
+          "snapshot_ram": {
+            "type": "boolean"
+          },
+          "snapshots_allowed": {
+            "type": "boolean"
+          },
+          "balancer_mode": {
+            "$ref": "#/components/schemas/HostBalancerMode"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

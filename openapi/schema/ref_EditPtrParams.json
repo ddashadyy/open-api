@@ -1,0 +1,16 @@
+{
+  "components": {
+    "schemas": {
+      "EditPtrParams": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "format": "domain"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "components": {
+    "schemas": {
+      "AccountParams": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "maxLength": 255
+          },
+          "full_name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "email_confirm": {
+            "type": "boolean",
+            "default": true
+          },
+          "phone_number": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "role": {
+            "type": "string"
+          },
+          "lang": {
+            "type": "string",
+            "enum": [
+              "ru",
+              "en",
+              "es"
+            ],
+            "default": "en"
+          },
+          "rbac_list": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "group_list": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "email",
+          "password",
+          "role"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

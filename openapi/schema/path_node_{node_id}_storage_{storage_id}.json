@@ -1,0 +1,85 @@
+{
+  "paths": {
+    "/node/{node_id}/storage/{storage_id}": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Attach storage to node",
+        "operationId": "attach_storage_to_node",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage attached successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTaskStoragesTasks"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "StorageAttachParams"
+      },
+      "delete": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Detach storage from node",
+        "operationId": "detach_storage_from_node",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage detached successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

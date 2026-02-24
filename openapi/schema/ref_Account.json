@@ -1,0 +1,47 @@
+{
+  "components": {
+    "schemas": {
+      "Account": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "auth_source": {
+            "type": "string"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "cpu_count": {
+            "type": "integer"
+          },
+          "ram_mib": {
+            "type": "integer"
+          },
+          "hdd_mib": {
+            "type": "integer"
+          },
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "host_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

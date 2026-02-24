@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/ssh_key_drop": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "ssh_key_drop",
+        "summary": "Drop redundant SSH keys from VMs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

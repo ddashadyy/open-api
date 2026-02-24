@@ -1,0 +1,37 @@
+{
+    "paths": {
+      "/master/ptr": {
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "summary": "Editing master domain",
+          "operationId": "edit_master_ptr",
+          "requestBody": {
+            "description": "Parameters for editing master domain",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditIpPtrParams"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Master domain edited successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SuccessTaskSchema"
+                  }
+                }
+              }
+            }
+          },
+          "x-codegen-request-body-name": "EditIpPtrParams"
+        }
+      }
+    }
+  }

@@ -1,0 +1,36 @@
+{
+    "paths": {
+      "/master/ip_edit": {
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "master_ip_edit",
+          "summary": "Changing master IP-address",
+          "requestBody": {
+            "description": "Parameters for changing master IP-address",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MasterIpEditParams"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Changing master parameters successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SuccessTaskSchema"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}

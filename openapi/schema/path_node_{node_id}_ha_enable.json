@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/node/{node_id}/ha/enable": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Enable HA on node",
+        "operationId": "ha_enable",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "HA params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Enable HA on node started successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

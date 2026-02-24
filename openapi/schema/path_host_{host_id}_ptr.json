@@ -1,0 +1,83 @@
+{
+  "paths": {
+    "/host/{host_id}/ptr": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "add_host_ptr",
+        "summary": "Adding a PTR-record to a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters of added PTR record",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPtrParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host PTR added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "AddPtrParams"
+      },
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_ptr_list",
+        "summary": "Getting list of PTR-records of a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully got host PTR-records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostPtrList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

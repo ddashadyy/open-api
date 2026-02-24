@@ -1,0 +1,109 @@
+{
+  "paths": {
+    "/script_variable/{variable_id}": {
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Script variable",
+        "operationId": "get_script_variable",
+        "parameters": [
+          {
+            "name": "variable_id",
+            "in": "path",
+            "description": "Variable ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Script variables list successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScriptVariableParams"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "operationId": "edit_script_variable",
+        "summary": "Edit script variable",
+        "parameters": [
+          {
+            "name": "variable_id",
+            "in": "path",
+            "description": "Variable ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Script_variable params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScriptVariableParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Script_variable added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ScriptVariableParams"
+      },
+      "delete": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Deleting a script variable",
+        "description": "Deleting a script variable",
+        "operationId": "delete_script_variable",
+        "parameters": [
+          {
+            "name": "variable_id",
+            "in": "path",
+            "description": "The script variable ID to remove",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Script variable deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

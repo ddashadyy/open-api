@@ -1,0 +1,83 @@
+{
+  "paths": {
+    "/node/{node_id}/hetzner_ip": {
+      "get": {
+        "tags": [
+          "network"
+        ],
+        "summary": "List of host IP addresses along with subnets and VMs",
+        "operationId": "ip_list",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of host Ip addresses was successfully obtained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HetznerNodeIpList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "summary": "Adding IP addresses to a node",
+        "operationId": "add_ip",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters of added IP addresses",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddHetznerIpParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ip addresses have been successfully added to the node",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "AddHetznerIpParams"
+      }
+    }
+  }
+}

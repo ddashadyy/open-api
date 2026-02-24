@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/platform/move": {
+      "post": {
+        "tags": [
+          "master"
+        ],
+        "operationId": "platform_move",
+        "summary": "move check",
+        "requestBody": {
+          "description": "Start platform move",
+          "content": {
+            "application/json": {
+              "schema": {
+                  "$ref": "#/components/schemas/PlatformMoveParams"
+                }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The platform has started moving",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessTaskSchema"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "IpWithState": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ip_addr": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

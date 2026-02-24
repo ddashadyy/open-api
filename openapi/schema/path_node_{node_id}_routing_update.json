@@ -1,0 +1,52 @@
+{
+  "paths": {
+    "/node/{node_id}/routing/update": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "node",
+        "operationId": "node_update_routing",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Any params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Node routing is successfully started updating",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task_created": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

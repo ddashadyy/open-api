@@ -1,0 +1,45 @@
+{
+  "components": {
+    "schemas": {
+      "NodeScriptEditParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255
+          },
+          "script": {
+            "type": "string"
+          },
+          "script_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "shell",
+              "ansible"
+            ]
+          },
+          "priority": {
+            "type": "integer",
+            "maxLength": 6
+          },
+          "autorun": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "maxLength": 9
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

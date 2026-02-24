@@ -1,0 +1,38 @@
+{
+  "components": {
+    "schemas": {
+      "DiskParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "size_mib": {
+            "type": "integer"
+          },
+          "node": {
+            "type": "integer"
+          },
+          "account": {
+            "type": "integer",
+            "nullable": true
+          },
+          "storage": {
+            "type": "integer",
+            "nullable": true
+          },
+          "expand_part": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "required": [
+          "name",
+          "size_mib",
+          "node"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "components": {
+    "schemas": {
+      "AnyProperties": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}

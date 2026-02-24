@@ -1,0 +1,76 @@
+{
+  "components": {
+    "schemas": {
+      "HostIpv6": {
+        "type": "object",
+        "properties": {
+          "gateway": {
+            "type": "string",
+            "format": "ipv6",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer"
+          },
+          "ip_addr": {
+            "type": "string"
+          },
+          "ipv6_enabled": {
+            "type": "boolean"
+          },
+          "ipv6_ptr_enabled": {
+            "type": "boolean"
+          },
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type":"object",
+              "properties": {
+                "gateway": {
+                  "type": "string",
+                  "format": "ipv6"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "ip_addr": {
+                  "type": "string",
+                  "format": "ipv6"
+                },
+                "network": {
+                  "type": "integer"
+                },
+                "network_prefix": {
+                  "type": "integer",
+                  "minimum": 48,
+                  "maximum": 112
+                },
+                "remote_id": {
+                  "type": "integer"
+                },
+                "subnet": {
+                  "type": "string"
+                }
+              }                  
+            }
+          },
+          "network": {
+            "type": "integer"
+          },
+          "network_prefix": {
+            "type": "integer"
+          },
+          "remote_id": {
+            "type": "integer"
+          },
+          "subnet": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

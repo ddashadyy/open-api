@@ -1,0 +1,24 @@
+{
+  "components": {
+    "schemas": {
+      "AddPtrParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "format": "ipv6"
+          },
+          "domain": {
+            "type": "string",
+            "format": "domain"
+          }
+        },
+        "required": [
+          "name",
+          "domain"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "paths": {
+    "/user_limits/role/{id}": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_role_limits",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User limits for type are successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserLimitsAdmin"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "edit_role_limits",
+        "summary": "Changing user restrictions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Edit user limits params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserLimitsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User limits for type edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "EditUserLimitsParams"
+      },
+      "delete": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "delete_role_limits",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Role",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User limits for type deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

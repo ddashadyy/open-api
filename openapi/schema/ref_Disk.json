@@ -1,0 +1,152 @@
+{
+  "components": {
+    "schemas": {
+      "Disk": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "bus": {
+            "type": "string",
+            "enum": [
+              "virtio",
+              "scsi",
+              "ide"
+            ],
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "expand_part": {
+            "type": "string",
+            "nullable": true
+          },
+          "target_dev": {
+            "type": "string"
+          },
+          "size_mib": {
+            "type": "integer"
+          },
+          "size_mib_new": {
+            "type": "integer",
+            "nullable": true
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "email": {
+                "type": "string",
+                "format": "email",
+                "maxLength": 255
+              }
+            }
+          },
+          "storage": {
+            "type": "object",
+            "nullable": false,
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "reserved_storage2node": {
+            "type": "integer",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "host": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "boot_order": {
+                "type": "integer"
+              },
+              "is_main": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "bus": {
+                "type": "string",
+                "enum": [
+                  "virtio",
+                  "scsi",
+                  "ide"
+                ],
+                "nullable": true
+              },
+              "snapshot_count": {
+                "type": "integer"
+              }
+            }
+          },
+          "node": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "rbac":{
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "integer"
+              },
+              "owner": {
+                "type": "integer"
+              }
+            }
+          },
+          "cluster": {
+            "type": "object",
+            "nullable": false,
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "ceph",
+                  "file",
+                  "lvm",
+                  "zfs",
+                  "network_lvm"
+                ]
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "SpiceEnabledParams": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "display_number": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          }
+        },
+        "required": [
+          "enabled"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

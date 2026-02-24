@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "DnsServers": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "ipv4"
+            },
+            {
+              "type": "string",
+              "format": "ipv6"
+            }
+          ]
+        },
+        "nullable": true
+      }
+    }
+  }
+}

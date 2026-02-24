@@ -1,0 +1,54 @@
+{
+  "paths": {
+    "/settings/max_user_iso_size": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_settings_max_user_iso_size",
+        "responses": {
+          "200": {
+            "description": "Max user ISO size is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Set the max ISO size that is allowed for non-admin user to mount to VM",
+        "operationId": "edit_settings_max_user_iso_size",
+        "requestBody": {
+          "description": "Set max user ISO size value",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MaxUserIsoSizeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Setting max user ISO size successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "MaxUserIsoSize"
+      }
+    }
+  }
+}

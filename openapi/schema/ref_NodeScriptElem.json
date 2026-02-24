@@ -1,0 +1,69 @@
+{
+  "components": {
+    "schemas": {
+      "NodeScriptElem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "script": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "shell",
+              "ansible"
+            ]
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
+          },
+          "autorun": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "updated_at": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "account": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+    "paths": {
+      "/timesync": {
+        "post": {
+          "tags": [
+            "timesync"
+          ],
+          "summary": "Setup the synchronization of time",
+          "operationId": "setup_timesync",
+          "requestBody": {
+            "description": "Parameters for setup timesync",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeSyncParams"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Time synchronization settings have been successfully applied",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Id"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "timesync"
+          ],
+          "summary": "Synchronization of time configuration",
+          "operationId": "timesync_config",
+          "responses": {
+            "200": {
+              "description": "Time synchronization settings",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TimeSyncSettings"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}

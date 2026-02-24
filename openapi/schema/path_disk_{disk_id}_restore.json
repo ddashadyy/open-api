@@ -1,0 +1,49 @@
+{
+  "paths": {
+    "/disk/{disk_id}/restore": {
+      "post": {
+        "tags": [
+          "disk",
+	  "backup"
+        ],
+        "operationId": "restore_disk",
+        "summary": "Recovering a virtual disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host restore params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostRestoreParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host restore started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "DiskRestoreParams"
+      }
+    }
+  }
+}

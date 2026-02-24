@@ -1,0 +1,16 @@
+{
+  "components": {
+    "schemas": {
+      "ImageRelocateParams": {
+        "type": "object",
+        "properties": {
+          "destination": {
+            "type": "integer",
+            "maxLength": 9,
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}

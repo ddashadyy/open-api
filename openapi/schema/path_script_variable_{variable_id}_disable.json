@@ -1,0 +1,30 @@
+{
+  "paths": {
+    "/script_variable/{variable_id}/disable": {
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Disable script variable",
+        "operationId": "script_variable_disablee",
+        "parameters": [
+          {
+            "name": "variable_id",
+            "in": "path",
+            "description": "Variable ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Script variable successfully disabled",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

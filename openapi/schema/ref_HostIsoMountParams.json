@@ -1,0 +1,57 @@
+{
+  "components": {
+    "schemas": {
+      "HostIsoMountParams": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 255
+          },
+          "image": {
+            "type": "integer"
+          },
+          "reboot": {
+            "type": "boolean",
+            "default": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "os_type": {
+            "$ref": "#/components/schemas/IsoOsType"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "repository_id": {
+            "type": "integer"
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "url"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "image"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

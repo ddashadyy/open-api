@@ -1,0 +1,12 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceType": {
+        "type": "string",
+        "enum": [
+          "gpu"
+        ]
+      }
+    }
+  }
+}

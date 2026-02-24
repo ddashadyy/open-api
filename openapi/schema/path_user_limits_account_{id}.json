@@ -1,0 +1,106 @@
+{
+  "paths": {
+    "/user_limits/account/{id}": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_account_limits",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id or email of user",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User limits for type are successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserLimitsAdmin"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "edit_account_limits",
+        "summary": "Setting account restrictions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id or email of user",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Edit user limits params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditUserLimitsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User limits for type edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "EditUserLimitsParams"
+      },
+      "delete": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "delete_account_limits",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id or email of user",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User limits for type deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

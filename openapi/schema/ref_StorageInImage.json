@@ -1,0 +1,32 @@
+{
+  "components": {
+    "schemas": {
+      "StorageInImage": {
+        "title": "StorageInImageList",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ceph",
+              "file",
+              "lvm",
+              "zfs",
+              "network_lvm",
+              "nas"
+            ]
+          },
+          "storage_params": {
+            "$ref": "#/components/schemas/StorageParamsAdditional"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "components": {
+    "schemas": {
+      "DatacenterCreateParams": {
+        "type": "object",
+        "properties": {
+          "gateway": {
+            "type": "string",
+            "format": "ipv4",
+            "default": "10.0.0.1"
+          },
+          "mac": {
+            "type": "string",
+            "format": "mac",
+            "default": "02:00:00:00:00:01"
+          },
+          "bgp_community": {
+            "type": "string",
+            "maxLength": 255,
+            "nullable": true
+          },
+          "bgp_as": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "bgp_sessions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string",
+                  "format": "ipv4"
+                },
+                "bgp_as": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "comment": {
+                  "type": "string",
+                  "maxLength": 255,
+                  "nullable": true
+                }
+              },
+              "required": [
+                "ip",
+                "bgp_as"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "bgp_community_v6": {
+            "type": "string",
+            "maxLength": 255,
+            "nullable": true
+          },
+          "bgp_as_v6": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "bgp_sessions_v6": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string",
+                  "format": "ipv6"
+                },
+                "bgp_as": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "comment": {
+                  "type": "string",
+                  "maxLength": 255,
+                  "nullable": true
+                }
+              },
+              "required": [
+                "ip",
+                "bgp_as"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "bgp_as",
+              "bgp_sessions"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "bgp_as_v6",
+              "bgp_sessions_v6"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

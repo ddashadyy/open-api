@@ -1,0 +1,43 @@
+{
+  "components": {
+    "schemas": {
+      "LocationEdit": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string"
+          },
+          "quota_mib": {
+            "type": "integer",
+            "nullable": true
+          },
+          "connection_params": {
+            "type": "object"
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "schedules": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "skip_connection_check": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

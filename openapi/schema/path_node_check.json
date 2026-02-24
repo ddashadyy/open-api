@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/node_check": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "node_check",
+        "responses": {
+          "200": {
+            "description": "Check node info ended successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

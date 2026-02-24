@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/platform/backup/schedule/{schedule_id}/run": {
+      "post": {
+        "tags": [
+          "platform_backup"
+        ],
+        "summary": "Platform backup schedule run",
+        "operationId": "run_platform_backup_schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "Platform backup schedule ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Platform backup schedule started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

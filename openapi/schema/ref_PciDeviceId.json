@@ -1,0 +1,31 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceId": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "pci_id": {
+            "type": "string"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "pci_id"
+            ],
+            "type": "object"
+          }
+        ]
+      }
+    }
+  }
+}

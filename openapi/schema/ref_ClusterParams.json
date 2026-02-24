@@ -1,0 +1,173 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterParams": {
+        "type": "object",
+        "properties": {
+          "virtualization_type": {
+            "type": "string",
+            "enum": [
+              "dummy",
+              "kvm",
+              "lxd"
+            ]
+          },
+          "datacenter_type": {
+            "type": "string",
+            "enum": [
+              "common",
+              "hetzner",
+              "ip_fabric"
+            ],
+            "default": "common"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255,
+            "default": "cl1"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "iso_enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "manage_disk_enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "time_zone": {
+            "type": "string",
+            "default": "UTC",
+            "maxLength": 255
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "interface": {
+                  "type": "integer",
+                  "maxLength": 2
+                },
+                "ippool": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "maxLength": 9
+                  }
+                }
+              },
+              "required": [
+                "interface",
+                "ippool"
+              ]
+            }
+          },
+          "os": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "maxLength": 9
+            }
+          },
+          "backup_locations": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "os_storage_path": {
+            "type": "string",
+            "maxLength": 255,
+            "default": "/share"
+          },
+          "image_storage_path": {
+            "type": "string",
+            "maxLength": 255,
+            "default": "/images"
+          },
+          "overselling": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 5,
+            "default": 1
+          },
+          "cpu_overselling": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 100,
+            "default": -1
+          },
+          "host_distribution_policy": {
+            "type": "string",
+            "enum": [
+              "spread",
+              "tight"
+            ],
+            "default": "spread"
+          },
+          "host_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "domain_template": {
+            "type": "string"
+          },
+          "datacenter_params": {
+            "$ref": "#/components/schemas/DatacenterCreateParams"
+          },
+          "domain_change_allowed": {
+            "type": "boolean",
+            "default": false
+          },
+          "proxy_enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "host_per_node_limit": {
+            "type": "integer",
+            "minimum": -1,
+            "default": -1
+          },
+          "dns_servers": {
+            "$ref": "#/components/schemas/DnsServers"
+          },
+          "node_network": {
+            "$ref": "#/components/schemas/ClusterNodeNetwork"
+          },
+          "vxlan_mode": {
+            "type": "string",
+            "enum": [
+              "disabled",
+              "full_mesh",
+              "route_reflector"
+            ],
+            "default": "disabled"
+          },
+          "vxlan_settings": {
+            "$ref": "#/components/schemas/VxlanSettingsParams"
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "balancer_mode": {
+            "$ref": "#/components/schemas/ClusterBalancerMode"
+          },
+          "balancer_config": {
+            "$ref": "#/components/schemas/BalancerConfig"
+          }
+        },
+        "required": [
+          "name",
+          "virtualization_type",
+          "os_storage_path",
+          "image_storage_path"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "/vmupdate": {
+      "post": {
+        "tags": [
+          "vmmanager"
+        ],
+        "summary": "Start VM panel update",
+        "operationId": "update_vm",
+        "responses": {
+          "200": {
+            "description": "VM update started successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "LocationList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationInList"
+            }
+          }
+        }
+      }
+    }
+  }
+}

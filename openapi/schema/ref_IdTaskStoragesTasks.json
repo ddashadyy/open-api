@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "IdTaskStoragesTasks": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "task": {
+            "type": "integer"
+          },
+          "storages_tasks": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceParams": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "vendor_name": {
+                  "type": "string"
+                },
+                "product_name": {
+                  "type": "string"
+                },
+                "pci_id": {
+                  "type": "string"
+                },
+                "type": {
+                  "$ref": "#/components/schemas/PciDeviceType"
+                },
+                "acquired": {
+                  "type": "boolean"
+                },
+                "iommu_group": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "domain": {
+                  "type": "integer"
+                },
+                "bus": {
+                  "type": "integer"
+                },
+                "slot": {
+                  "type": "integer"
+                },
+                "function": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "pci_id"
+              ]
+            }
+          }
+        },
+        "required": [
+          "list"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

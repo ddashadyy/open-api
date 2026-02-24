@@ -1,0 +1,52 @@
+{
+  "paths": {
+    "/host/{host_id}/balancer": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "VM change balancer mode",
+        "operationId": "edit_host_balancer",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "ID of the VM being edited balancer mode",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New balancer mode",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "balancer_mode": {
+                    "$ref": "#/components/schemas/HostBalancerMode"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM successfully edited balancer mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTasks"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

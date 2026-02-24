@@ -1,0 +1,60 @@
+{
+  "paths": {
+    "/ssh_key": {
+      "get": {
+        "tags": [
+          "cluster"
+        ],
+        "operationId": "get_ssh_key_list",
+        "responses": {
+          "200": {
+            "description": "SSH key list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SshKeysList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "operationId": "create_ssh_key",
+        "summary": "Adding ssh key",
+        "requestBody": {
+          "description": "Options for adding ssh key",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SshKeyCreateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "SSH key added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "SshKeyCreateParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "components": {
+    "schemas": {
+      "ImportHistoryList": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "account":{
+                  "type":"object",
+                  "properties":{
+                    "email": {
+                    "type": "string"
+                    },
+                    "id":{
+                    "type": "integer"
+                    },
+                    "ip":{
+                    "type":"string"
+                    }
+                  }
+                },
+                "date_create": {
+                  "type": "string"
+                },
+                "date_end": {
+                  "type": "string"
+                },
+                "date_start": {
+                  "type": "string"
+                },
+                "destination":{
+                  "type": "object",
+                  "nullable": true,
+                  "properties":{
+                    "cluster":{
+                      "type": "object",
+                      "properties":{
+                        "id": {
+                          "type": "integer"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "is_expired":{
+                  "type": "boolean"
+                },
+                "platform_backup":{
+                  "type":"object",
+                  "properties":{
+                    "id":{
+                      "type": "integer"
+                    },
+                    "name":{
+                      "type": "string"
+                    },
+                    "date_create":{
+                      "type": "string"
+                    },
+                    "schedule_id":{
+                      "type": "integer"
+                    }
+                  }
+                },
+                "result":{
+                  "type": "object",
+                  "properties":{
+                    "error":{
+                      "type": "object",
+                      "properties": {
+                        "code":{
+                          "type": "integer"
+                        },
+                        "msg":{
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "source":{
+                  "type":"object",
+                  "properties":{
+                    "type":{
+                      "type":"string",
+                      "enum": [
+                          "ipmgr5_migrate",
+                          "vmmgr5",
+                          "vmmgr5_dummy"
+                        ]
+                    },
+                    "url":{
+                      "type":"string"
+                    }
+                  }
+                },
+                "state": {
+                  "type": "string",
+                  "enum": [
+                    "created",
+                    "running",
+                    "collecting_vm5_info",
+                    "backup_creating",
+                    "importing_to_vm6",
+                    "complete",
+                    "failed"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

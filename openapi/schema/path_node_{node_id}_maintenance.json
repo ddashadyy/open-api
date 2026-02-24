@@ -1,0 +1,110 @@
+{
+  "paths": {
+    "/node/{node_id}/maintenance": {
+      "get": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Get Maintenance info",
+        "operationId": "node_maintenance_info",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved information about evacuation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeMaintenanceInfo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Enter maintenance mode for node",
+        "description": "Enter in maintenance mode on specific node",
+        "operationId": "node_maintenance_init",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID node",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for entering maintenance mode",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeMaintenanceModeInitParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node maintenance initialized successfully. Returned evacuation Id for corresponding node",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeMaintenanceInfo"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeMaintenanceModeInitParams"
+      },
+      "delete": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Delete Maintenance",
+        "description": "Delete initialized maintenance mode for node",
+        "operationId": "delete_maintenance",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deinitialized maintenance mode",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

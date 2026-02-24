@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/node/{node_id}/storage/{storage_id}/connect_params": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Get node to storage connection params",
+        "operationId": "get_node_storage_connect_params",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node to storage connection params are successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

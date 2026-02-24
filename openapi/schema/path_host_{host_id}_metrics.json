@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/host/{host_id}/metrics": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_metrics",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "Metric target param",
+            "required": true,
+            "schema": {
+              "allOf":[
+                {"$ref": "#/components/schemas/MetricsTargetParam"},
+                {"$ref": "#/components/schemas/MetricsTargetParamAdditional"}
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host metrics are successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

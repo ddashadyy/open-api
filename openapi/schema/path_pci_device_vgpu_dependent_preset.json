@@ -1,0 +1,38 @@
+{
+  "paths": {
+    "/pci/device/vgpu/dependent_preset": {
+      "get": {
+        "tags": [
+          "pci"
+        ],
+        "summary": "Get presets with vgpu profiles that are only available on this device",
+        "operationId": "get_pci_device_vgpu_dependent_preset",
+        "parameters": [
+          {
+            "name": "devices",
+            "in": "query",
+            "description": "PCI devices ID list",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\d+(,\\d+)*"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Information about dependent presets successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PresetVgpuProfileList"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "PciDeviceVgpuDependentPreset"
+      }
+    }
+  }
+}

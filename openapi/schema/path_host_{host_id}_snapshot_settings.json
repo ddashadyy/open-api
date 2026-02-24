@@ -1,0 +1,58 @@
+{
+  "paths": {
+    "/host/{host_id}/snapshot_settings": {
+      "post": {
+        "tags": [
+          "snapshot"
+        ],
+        "summary": "VM change snapshot settings",
+        "operationId": "edit_host_snapshot settings",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "ID of the VM being changed snapshot settings",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New settings",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "snapshot_limit": {
+                    "type": "integer"
+                  },
+                  "snapshot_ram": {
+                    "type": "boolean"
+                  },
+                  "snapshots_allowed": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM successfully change snapshot settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTasks"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

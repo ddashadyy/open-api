@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "NodeForMigrateList": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeForMigrate"
+            }
+          }
+        }
+      }
+    }
+  }
+}

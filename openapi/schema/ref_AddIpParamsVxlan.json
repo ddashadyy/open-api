@@ -1,0 +1,26 @@
+{
+  "components": {
+    "schemas": {
+      "AddIpParamsVxlan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ipv4_number": {
+            "type": "integer"
+          },
+          "ipnet": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "ipv4_number",
+          "ipnet"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

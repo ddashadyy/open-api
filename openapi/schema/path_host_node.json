@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/host_node": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Host list with node information",
+        "operationId": "get_host_node_list",
+        "responses": {
+          "200": {
+            "description": "Host list received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostNodeList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

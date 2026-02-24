@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "/update_license": {
+      "post": {
+        "tags": [
+          "vmmanager"
+        ],
+        "summary": "Update license",
+        "operationId": "update_license",
+        "responses": {
+          "200": {
+            "description": "License updated successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

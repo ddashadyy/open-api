@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/ssh_address": {
+      "get": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "get_ssh_address",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id node or host",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ip",
+            "in": "query",
+            "description": "Ip node",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/AnyIp"
+            }
+          },
+          {
+            "name": "id_type",
+            "in": "query",
+            "description": "Type of criteria for searching",
+            "required": true,
+            "schema": {
+              "enum": [
+               "node",
+               "host"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SshAddress"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

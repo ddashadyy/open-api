@@ -1,0 +1,53 @@
+{
+  "paths": {
+    "/node/{node_id}/ip": {
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "summary": "Change node IP",
+        "operationId": "change_node_ip",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New node IP",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeChangeIpParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node IP changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeChangeIpParams"
+      }
+    }
+  }
+}

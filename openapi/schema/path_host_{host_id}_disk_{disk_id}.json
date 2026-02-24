@@ -1,0 +1,95 @@
+{
+  "paths": {
+    "/host/{host_id}/disk/{disk_id}": {
+      "post": {
+        "tags": [
+          "host", "disk"
+        ],
+        "summary": "Link disk to host",
+        "operationId": "link_host_disk",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Link disk params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkDiskParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk successfully linked to host",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "host", "disk"
+        ],
+        "summary": "Unlink disk from host",
+        "operationId": "unlink_host_disk",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Disk successfully unlinked from host",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

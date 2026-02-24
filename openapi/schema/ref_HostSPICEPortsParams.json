@@ -1,0 +1,39 @@
+{
+  "components": {
+    "schemas": {
+      "HostSPICEPortsParams": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "domain": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "port": {
+                  "type": "integer"
+                },
+                "pass": {
+                  "type": "string",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "domain",
+                "port"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "list"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

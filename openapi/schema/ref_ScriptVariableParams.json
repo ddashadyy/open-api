@@ -1,0 +1,52 @@
+{
+  "components": {
+    "schemas": {
+      "ScriptVariableParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "value": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "comment": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "hidden": {
+            "type": "boolean"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "builtin": {
+            "type": "boolean"
+          },
+          "account": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "global",
+              "local"
+            ],
+            "default": "local"
+          }
+        },
+        "required": [
+          "name",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

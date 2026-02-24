@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/backup": {
+      "get": {
+        "tags": [
+          "backup"
+        ],
+        "operationId": "backup_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM backup list have gotten successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiskBackupList"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "BackupList"
+      }
+    }
+  }
+}

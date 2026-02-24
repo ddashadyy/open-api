@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/script_variable": {
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Script variables list",
+        "operationId": "get_script_variable_list",
+        "responses": {
+          "200": {
+            "description": "Script variables list successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScriptVariableList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "operationId": "create_script_variable",
+        "summary": "Create script variable",
+        "requestBody": {
+          "description": "Script_variable params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScriptVariableParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Script_variable added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ScriptVariableParams"
+      }
+    }
+  }
+}

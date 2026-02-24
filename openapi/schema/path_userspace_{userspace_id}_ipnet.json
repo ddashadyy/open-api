@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/userspace/{userspace_id}/ipnet": {
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "description": "Create IP network",
+        "operationId": "create_ipnet",
+        "parameters": [
+          {
+            "name": "userspace_id",
+            "in": "path",
+            "description": "Userspace ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Network settings",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkCreateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Network created successfully",
+            "content": {
+              "application/json": {
+                "schema":{
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NetworkCreateParams"
+      }
+    }
+  }
+}

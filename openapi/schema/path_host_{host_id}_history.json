@@ -1,0 +1,97 @@
+{
+  "paths": {
+    "/host/{host_id}/history": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_history",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host history is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "date_create": {
+                            "type": "string"
+                          },
+                          "state": {
+                            "type": "string"
+                          },
+                          "params": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "user": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "create_host_history",
+        "summary": "Creating a Virtual Machine Log Entry",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host history item name",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostHistoryItemName"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host history item created successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "HostHistoryItemName"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "paths": {
+    "/backup_location/{backup_location_id}": {
+      "post": {
+        "tags": [
+          "backup_location"
+        ],
+        "summary": "Backup location edit",
+        "operationId": "edit_backup_location",
+        "parameters": [
+          {
+            "name": "backup_location_id",
+            "in": "path",
+            "description": "Backup location ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Backup location params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationEdit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Backup location edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "LocationEdit"
+      },
+      "delete": {
+        "tags": [
+          "backup_location"
+        ],
+        "summary": "Backup location delete",
+        "description": "Backup location delete",
+        "operationId": "delete_backup_location",
+        "parameters": [
+          {
+            "name": "backup_location_id",
+            "in": "path",
+            "description": "Backup location ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Backup location deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

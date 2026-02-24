@@ -1,0 +1,110 @@
+{
+  "paths": {
+    "/host/{host_id}/iface/{iface_id}": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Edit VM network interface properties",
+        "operationId": "edit_host_iface",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iface_id",
+            "in": "path",
+            "description": "Host interface ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing VM network interface",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostIfaceChangeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM network interface successfully edited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostIfaceChangeParams"
+      },
+      "delete": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Delete network interface from host",
+        "operationId": "delete_host_iface",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iface_id",
+            "in": "path",
+            "description": "Host interface ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "keep_ip_busy",
+            "in": "query",
+            "description": "Release interface's ip-addresses or keep busy",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Interface successfully deleted from host",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/host/{host_id}/resume": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Resume a virtual machine",
+        "operationId": "host_resume",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host was resumed successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

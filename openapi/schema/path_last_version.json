@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/last_version": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "operationId": "get_last_version",
+        "responses": {
+          "200": {
+            "description": "Last version is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

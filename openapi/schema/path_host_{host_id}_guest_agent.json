@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/host/{host_id}/guest_agent": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "host_guest_agent_repair",
+        "summary": "Repair guest agent on VM",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "VM ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Qemu-guest-agent on VM successfully repaired",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

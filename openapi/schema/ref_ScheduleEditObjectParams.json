@@ -1,0 +1,48 @@
+{
+  "components": {
+    "schemas": {
+      "ScheduleEditObjectParams": {
+        "type": "object",
+        "properties": {
+          "backup_locations": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "presets": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

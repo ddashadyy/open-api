@@ -1,0 +1,30 @@
+{
+  "components": {
+    "schemas": {
+      "SshKeyCreateParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "ssh_key": {
+            "type": "string",
+            "format": "sshkey"
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          }
+        },
+        "required": [
+          "name",
+          "ssh_key"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

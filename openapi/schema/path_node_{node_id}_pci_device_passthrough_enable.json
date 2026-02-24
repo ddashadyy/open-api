@@ -1,0 +1,43 @@
+{
+  "paths": {
+    "/node/{node_id}/pci/device/passthrough/enable": {
+      "post": {
+        "tags": [
+          "node",
+          "pci"
+        ],
+        "summary": "Enable passthrough for PCI devices",
+        "operationId": "enable_pci_device_passthrough",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List of PCI devices",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PciDeviceIdList"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Passthrough successfully enabled for PCI devices",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "PciDevicePassthroughEnable"
+      }
+    }
+  }
+}

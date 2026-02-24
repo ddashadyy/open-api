@@ -1,0 +1,13 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterBalancerMode": {
+        "type": "string",
+        "enum": [
+          "off",
+          "full"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/host/vnc_ports": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Update VNC ports of VM",
+        "operationId": "set_vnc_ports",
+        "requestBody": {
+          "description": "New VNC ports of VM",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostVNCPortsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM VNC ports changed",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "HostVNCPortsParams"
+      }
+    }
+  }
+}

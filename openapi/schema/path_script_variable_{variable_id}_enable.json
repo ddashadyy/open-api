@@ -1,0 +1,30 @@
+{
+  "paths": {
+    "/script_variable/{variable_id}/enable": {
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Enable script variable",
+        "operationId": "script_variable_enable",
+        "parameters": [
+          {
+            "name": "variable_id",
+            "in": "path",
+            "description": "Variable ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Script variable successfully enabled",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

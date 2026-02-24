@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/host/{host_id}/lxd/console": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "lxd_console",
+        "summary": "Run lxd console backend",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lxd console backend started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "socket": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

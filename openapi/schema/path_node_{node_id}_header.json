@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/node/{node_id}/header": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "header",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Cluster node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node header is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "components": {
+    "schemas": {
+      "StorageParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ceph",
+              "file",
+              "nas",
+              "lvm",
+              "zfs",
+              "network_lvm"
+            ]
+          },
+          "storage_params": {
+            "$ref": "#/components/schemas/StorageParamsAdditional"
+          },
+          "ignore_checks": {
+            "type": "boolean"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "storage_params"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

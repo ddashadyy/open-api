@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/host/spice_ports": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Update SPICE ports of VM",
+        "operationId": "set_spice_ports",
+        "requestBody": {
+          "description": "New SPICE ports of VM",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostSPICEPortsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM SPICE ports changed",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "HostSPICEPortsParams"
+      }
+    }
+  }
+}

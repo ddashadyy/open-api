@@ -1,0 +1,29 @@
+{
+  "components": {
+    "schemas": {
+      "VgpuProfileInfo": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "integer"
+          },
+          "total": {
+            "type": "integer"
+          },
+          "used": {
+            "type": "integer"
+          },
+          "physical_devices": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "available",
+          "total",
+          "used",
+          "physical_devices"
+        ]
+      }
+    }
+  }
+}

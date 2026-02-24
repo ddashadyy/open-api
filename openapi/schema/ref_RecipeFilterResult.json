@@ -1,0 +1,37 @@
+{
+  "components": {
+    "schemas": {
+      "RecipeFilterResult": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "host": {
+              "type": "integer"
+            },
+            "reason": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "os_tag",
+                  "hdd_mib",
+                  "ram_mib",
+                  "cluster",
+                  "preset",
+                  "cpu_number"
+                ]
+              }
+            },
+            "recipe": {
+              "type": "integer"
+            },
+            "suitable": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

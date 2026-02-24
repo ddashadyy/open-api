@@ -1,0 +1,141 @@
+{
+  "components": {
+    "schemas": {
+      "NodeParams": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 255,
+            "default": "node1"
+          },
+          "cluster": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "ip": {
+            "type": "string",
+            "format": "ipv4"
+          },
+          "ipv6": {
+            "type": "string",
+            "format": "ipv6",
+            "nullable": true
+          },
+          "ssh_port": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "ssh_user": {
+            "type": "string"
+          },
+          "host_max": {
+            "type": "number",
+            "maxLength": 9,
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 255,
+            "default": "securenodepassword",
+            "nullable": true
+          },
+          "host_storage": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "maxLength": 9
+                }
+              }
+            }
+          },
+          "image_storage_path": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string"
+          },
+          "overselling": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 5
+          },
+          "vcpu_limit": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "lvm_vg_rename": {
+            "type": "boolean"
+          },
+          "hetzner_ip": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "ipnet"
+            }
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node_interface": {
+                  "type": "string"
+                },
+                "cluster_interface": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "host_limit": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "host_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "network_autosetup_disabled": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "name",
+              "cluster",
+              "ip",
+              "ssh_port",
+              "password"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

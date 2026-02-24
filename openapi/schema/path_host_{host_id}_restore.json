@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/restore": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "restore_host",
+        "summary": "Recovering a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host restore params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostRestoreParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host restore started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostRestoreParams"
+      }
+    }
+  }
+}

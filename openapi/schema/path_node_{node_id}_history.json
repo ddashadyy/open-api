@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/node/{node_id}/history": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "history",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID узла кластера",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node history is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

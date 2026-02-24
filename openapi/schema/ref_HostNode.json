@@ -1,0 +1,34 @@
+{
+  "components": {
+    "schemas": {
+      "HostNode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "internal_name": {
+            "type": "string"
+          },
+          "node": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "ip_addr": {
+                "type": "string"
+              }
+            }
+          },
+          "virtualization_type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

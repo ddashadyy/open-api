@@ -1,0 +1,56 @@
+{
+  "components": {
+    "schemas": {
+      "ImportHistoryParams": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string",
+            "nullable": true
+          },
+          "task_id": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "created",
+              "collecting_vm5_info",
+              "backup_creating",
+              "importing_to_vm6",
+              "complete",
+              "failed"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "ipmgr5_migrate",
+              "vmmgr5",
+              "vmmgr5_dummy"
+            ]
+          },
+          "url": {
+            "type": "string"
+          },
+          "destination":{
+            "type": "object",
+            "properties":{
+              "cluster":{
+                "type": "object",
+                "properties":{
+                  "id": {
+                    "type": "integer"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

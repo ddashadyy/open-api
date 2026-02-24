@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/reinvite": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "User reinvite",
+        "operationId": "reinvite_account",
+        "requestBody": {
+          "description": "User reinvite params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReinviteParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User reinvited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "ReinviteParams"
+      }
+    }
+  }
+}

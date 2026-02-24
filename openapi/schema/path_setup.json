@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/setup": {
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Setup VM panel",
+        "operationId": "setup",
+        "requestBody": {
+          "description": "Setup params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Setup is successful",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SetupParams"
+      }
+    }
+  }
+}

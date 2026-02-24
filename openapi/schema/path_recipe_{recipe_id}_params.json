@@ -1,0 +1,38 @@
+{
+  "paths": {
+    "/recipe/{recipe_id}/params": {
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "operationId": "get_recipe_params",
+        "parameters": [
+          {
+            "name": "recipe_id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recipe params is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

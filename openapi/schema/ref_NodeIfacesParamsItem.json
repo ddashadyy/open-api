@@ -1,0 +1,69 @@
+{
+  "components": {
+    "schemas": {
+      "NodeIfacesParamsItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "bond",
+              "bridge",
+              "eth"
+            ]
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "enabled",
+              "disabled",
+              "unknown"
+            ]
+          },
+          "vlan": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "",
+              "active-backup",
+              "broadcast",
+              "802.3ad",
+              "balance-tlb",
+              "balance-alb",
+              "balance-rr",
+              "balance-xor"
+            ]
+          },
+          "slaves": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            },
+            "nullable": true
+          },
+          "ip_params": {
+            "$ref": "#/components/schemas/IfaceIpParams"
+          },
+          "mtu": {
+            "$ref": "#/components/schemas/MtuSetting"
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "state",
+          "slaves",
+          "ip_params"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "paths": {
+    "/tag": {
+      "get": {
+        "tags": [
+          "tag"
+        ],
+        "operationId": "get_tag_list",
+        "responses": {
+          "200": {
+            "description": "Tag list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TagList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tag"
+        ],
+        "operationId": "create_tag",
+        "summary": "Adding new tag",
+        "requestBody": {
+          "description": "Options for adding a tag",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TagCreateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "New tag added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "TagCreateParams"
+      }
+    }
+  }
+}

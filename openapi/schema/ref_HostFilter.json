@@ -1,0 +1,27 @@
+{
+  "components": {
+    "schemas": {
+      "HostFilter": {
+        "type": "object",
+        "properties": {
+          "entity": {
+            "type": "string",
+            "maxLength": 32,
+            "enum": [
+              "os_tag",
+              "cluster",
+              "preset",
+              "cpu_number",
+              "ram_mib",
+              "hdd_gib",
+              "complex"
+            ]
+          },
+          "expression": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

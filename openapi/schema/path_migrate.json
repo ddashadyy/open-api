@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "/migrate": {
+      "get": {
+        "tags": [
+          "form"
+        ],
+        "operationId": "get_migrate_group_form",
+        "parameters": [
+          {
+            "name": "hosts",
+            "in": "query",
+            "description": "Hosts ID list",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\d+(,\\d+)*"
+            }
+          },
+          {
+            "name": "ignore_filters",
+            "in": "query",
+            "description": "Ignore host filters",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Group migrate form is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeForMigrateList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

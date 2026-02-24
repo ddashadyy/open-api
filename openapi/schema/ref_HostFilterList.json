@@ -1,0 +1,13 @@
+{
+  "components": {
+    "schemas": {
+      "HostFilterList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HostFilter"
+        },
+        "nullable": true
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/backup/{backup_id}/move": {
+      "post": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup move",
+        "operationId": "move_backup",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "VM backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM backup move params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageMoveParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM backup moved successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageMoveParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "Deleted": {
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Id"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "paths": {
+    "/node/{node_id}/check_access": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "get_node_access",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID узла",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "last_notify": {
+                      "$ref": "#/components/schemas/LastNotify"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

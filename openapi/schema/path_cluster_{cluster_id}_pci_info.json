@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/pci/info": {
+      "get": {
+        "tags": [
+          "cluster",
+          "pci"
+        ],
+        "operationId": "get_cluster_pci_info",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get information about pci device usage on cluster",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterPciInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

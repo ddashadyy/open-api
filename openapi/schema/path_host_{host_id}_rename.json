@@ -1,0 +1,52 @@
+{
+  "paths": {
+    "/host/{host_id}/rename": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "VM change name",
+        "operationId": "edit_host_name",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "ID of the VM being renamed",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New name",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM successfully renamed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTasks"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

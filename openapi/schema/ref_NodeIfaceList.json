@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "NodeIfaceList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeIface"
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

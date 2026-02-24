@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/settings/ssh_key": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_settings_ssh_key",
+        "responses": {
+          "200": {
+            "description": "SSH key is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

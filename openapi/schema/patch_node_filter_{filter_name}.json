@@ -1,0 +1,47 @@
+{
+  "paths": {
+    "/node/filter/{filter_name}": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Get filter for node",
+        "operationId": "get_node_filter",
+         "parameters": [
+          {
+            "name": "filter_name",
+            "in": "path",
+            "description": "filter name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "filter values",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "size": {
+                        "type": "integer"
+                    },
+                    "list": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "components": {
+      "schemas": {
+        "MasterIpEditParams": {
+          "type": "object",
+          "properties": {
+            "ip_name": {
+              "type": "string",
+              "format": "ipv4"
+            },
+            "ip_as_domain": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "ip_name"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }

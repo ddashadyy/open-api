@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "IppoolParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": "test_name"
+          },
+          "range": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "iprange",
+              "default": "1.1.1.1-1.1.1.10"
+            }
+          }
+        }
+      }
+    }
+  }
+}

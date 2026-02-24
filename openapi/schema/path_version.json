@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/version": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "operationId": "get_version",
+        "summary" : "Get product information",
+        "responses": {
+          "200": {
+            "description": "Release version is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Version"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

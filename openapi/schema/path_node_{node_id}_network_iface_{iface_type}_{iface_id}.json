@@ -1,0 +1,125 @@
+{
+  "paths": {
+    "/node/{node_id}/network/iface/{iface_type}/{iface_id}": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Edit the network interface on the node",
+        "operationId": "iface_edit",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iface_type",
+            "in": "path",
+            "description": "Requested iface type",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "bond",
+                "bridge",
+                "eth"
+              ]
+            }
+          },
+          {
+            "name": "iface_id",
+            "in": "path",
+            "description": "Requested iface ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node interface edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeIfaceEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node interface changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeIfaceEditParams"
+      },
+      "delete": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Delete the network interface on the node",
+        "operationId": "iface_delete",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iface_type",
+            "in": "path",
+            "description": "Requested iface type",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "bond",
+                "bridge"
+              ]
+            }
+          },
+          {
+            "name": "iface_id",
+            "in": "path",
+            "description": "Requested iface ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The interface successfully deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

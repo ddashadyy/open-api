@@ -1,0 +1,44 @@
+{
+    "paths": {
+      "/master/disk/migrate": {
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "master_disk_migrate",
+          "summary": "Master disk migration",
+          "requestBody": {
+            "description": "Parameters for master disk migration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "storage" : {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "storage"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Master disk migration started successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/IdAndTask"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

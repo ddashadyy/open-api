@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/vxlan/{vxlan_id}/ip": {
+      "get": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "get_vxlan_ip_list",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "Vxlan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of ips on vxlan successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                "$ref": "#/components/schemas/VxlanIpList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

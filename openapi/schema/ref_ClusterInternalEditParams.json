@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterInternalEditParams": {
+        "type": "object",
+        "properties": {
+          "qemu_version": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "balancer_mode": {
+            "$ref": "#/components/schemas/ClusterBalancerMode"
+          },
+          "balancer_config": {
+            "$ref": "#/components/schemas/BalancerConfig"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "components": {
+    "schemas": {
+      "NodeHaStateParams": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "master",
+              "slave",
+              "beginning",
+              "preparing_to_update",
+              "suspended_for_update",
+              "network_unstable",
+              "storage_unstable",
+              "partitioning",
+              "network_failed",
+              "storage_failed",
+              "failed"
+            ]
+          }
+        },
+        "required": [
+          "state"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

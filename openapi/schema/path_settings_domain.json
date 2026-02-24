@@ -1,0 +1,43 @@
+{
+  "paths": {
+    "/settings/domain": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_settings_domain",
+        "responses": {
+          "200": {
+            "description": "Domain is successfully received",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "description": "Domain VM setting",
+        "operationId": "edit_settings_domain",
+        "requestBody": {
+          "description": "Setting domain params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SettingDomainParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Domain created successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SettingDomainParams"
+      }
+    }
+  }
+}

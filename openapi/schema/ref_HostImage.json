@@ -1,0 +1,61 @@
+{
+  "components": {
+    "schemas": {
+      "HostImage": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "account": {
+            "type": "string"
+          },
+          "for_all": {
+            "type": "boolean"
+          },
+          "is_local": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "cleared": {
+            "type": "boolean"
+          },
+          "linked_clones": {
+            "type": "integer"
+          },
+          "rbac":{
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "integer"
+              }
+            }
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeInImage"
+            }
+          },
+          "storage": {
+            "$ref": "#/components/schemas/StorageInImage"
+          },
+          "password_from_sysprep": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

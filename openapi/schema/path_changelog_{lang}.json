@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/changelog/{lang}": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "operationId": "get_changelog_lang",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "description": "User language",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Changelog is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "components": {
+    "schemas": {
+      "Cluster": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ClusterAdmin"
+          },
+          {
+            "$ref": "#/components/schemas/ClusterUser"
+          }
+        ]
+      }
+    }
+  }
+}

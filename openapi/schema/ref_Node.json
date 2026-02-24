@@ -1,0 +1,156 @@
+{
+  "components": {
+    "schemas": {
+      "Node": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "cluster": {
+            "$ref": "#/components/schemas/ClusterInNodeList"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "vnc_addr": {
+            "type": "string"
+          },
+          "ssh_user": {
+            "type": "string"
+          },
+          "ipv6": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "maintenance_mode": {
+            "type": "boolean"
+          },
+          "maintenance": {
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "planned",
+                  "evacuation",
+                  "wait_exit",
+                  "return",
+                  "evacuation_failed",
+                  "return_failed",
+                  "done"
+                ]
+              },
+              "is_cancelled": {
+                "type": "boolean"
+              },
+              "created_date": {
+                "type": "string",
+                "format": "datetime"
+              },
+              "execution_date": {
+                "type": "string",
+                "format": "datetime"
+              }
+            }
+          },
+          "rbac":{
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "integer"
+              }
+            }
+          },
+          "storage_mib": {
+            "$ref": "#/components/schemas/TotalUsed"
+          },
+          "ram_mib": {
+            "$ref": "#/components/schemas/TotalUsed"
+          },
+          "cpu_number": {
+            "type": "integer"
+          },
+          "vcpu_limit": {
+            "type": "integer",
+            "minimum": -1,
+            "nullable": true
+          },
+          "comment": {
+            "type": "string"
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node_interface": {
+                  "type": "string"
+                },
+                "network_switch": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "overselling": {
+            "maximum": 5,
+            "minimum": 0.5,
+            "type": "number"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "host_limit": {
+            "type": "integer"
+          },
+          "host_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "port": {
+            "type": "integer"
+          },
+          "host_creation_blocked": {
+            "type": "boolean"
+          },
+          "spice_error": {
+            "type": "object",
+            "properties": {},
+            "nullable": true
+          },
+          "hetzner_ipv6_enabled": {
+            "type": "boolean"
+          },
+          "can_be_reconnect":{
+            "type": "boolean"
+          },
+          "gpu_passthrough": {
+            "$ref": "#/components/schemas/GpuInfo"
+          },
+          "vgpu": {
+            "$ref": "#/components/schemas/VgpuProfileInfo"
+          },
+          "dss_version": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "gpu_passthrough",
+          "vgpu"
+        ]
+      }
+    }
+  }
+}

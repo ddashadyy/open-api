@@ -1,0 +1,66 @@
+{
+  "components": {
+    "schemas": {
+      "HostMigrateParams": {
+        "type": "object",
+        "properties": {
+          "plain": {
+            "type": "boolean",
+            "default": true
+          },
+          "node": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "dst_storage": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "dst_bridge": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "dst_bridge"
+              ]
+            }
+          },
+          "linked_clones_cold_migration": {
+            "type": "boolean",
+            "default": true
+          },
+          "ignore_live_migration_check": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "node"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

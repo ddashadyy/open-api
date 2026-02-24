@@ -1,0 +1,53 @@
+{
+  "paths": {
+    "/host/{host_id}/bill_option/image_gib": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "set_image_gib_limit",
+        "summary": "Setting a size limit for images",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Limit of total images size in gigabytes per host",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostBillOptionImageGib"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Limit of total images size changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image_gib": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostBillOptionImageGib"
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "paths": {
+    "/host/{host_id}/vnc_settings": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_vnc_settings",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host vnc settings is successfully received",
+            "content": {
+              "application/json":{
+                "schema":{
+                  "type": "object",
+                  "properties": {
+                    "port": {
+                      "type": "integer"
+                    },
+                    "server": {
+                      "$ref": "#/components/schemas/AnyIp"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "internal_name": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "edit_host_vnc_settings",
+        "summary": "Editing VNC Virtual Machine Settings",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Vnc settings params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VncSettingsParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host vnc settings edited successfully",
+            "content": {
+              "application/json":{
+                "schema":{
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "VncSettingsParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "IppoolCluster": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "interface": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

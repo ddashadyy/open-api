@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/backup/{backup_id}/copy": {
+      "post": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup copy",
+        "operationId": "copy_backup",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "VM backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM backup copy params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageCopyParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM backup copied successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageCopyParams"
+      }
+    }
+  }
+}

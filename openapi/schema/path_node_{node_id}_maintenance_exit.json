@@ -1,0 +1,54 @@
+{
+  "paths": {
+    "/node/{node_id}/maintenance/exit": {
+      "post": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Start task for exiting Maintenance mode",
+        "description": "Start task for returning evacuated entities back on the node and exit maintenance mode on finish. Or start task for enabling stopped VMs and exit maintenance mode upon finish",
+        "operationId": "maintenance_mode_return",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID node",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "return_migrated": {
+                    "type": "boolean",
+                    "description": "If this parameter is set to true, then all evacuated entities will return back",
+                    "default": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Task for returning evacuated entities maintenance mode on node successfully started. Returned id of evacuation and task_id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

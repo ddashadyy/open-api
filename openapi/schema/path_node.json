@@ -1,0 +1,67 @@
+{
+  "paths": {
+    "/node": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "List of cluster nodes",
+        "operationId": "get_node_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of cluster nodes received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Creating a cluster node",
+        "operationId": "create_node",
+        "requestBody": {
+          "description": "Parameters of the created cluster node",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cluster node created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeCreateResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeParams"
+      }
+    }
+  }
+}

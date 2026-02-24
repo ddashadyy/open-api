@@ -1,0 +1,36 @@
+{
+  "components": {
+    "schemas": {
+      "Repo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "immortal": {
+            "type": "boolean"
+          },
+          "os_count": {
+            "type": "integer"
+          },
+          "storage": {
+            "$ref": "#/components/schemas/RepoStorage"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "LangEnum": {
+        "type": "string",
+        "enum": [
+          "ru",
+          "en",
+          "es"
+        ]
+      }
+    }
+  }
+}

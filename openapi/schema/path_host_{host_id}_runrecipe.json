@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/host/{host_id}/runrecipe": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "host_runrecipe",
+        "summary": "Running a recipe in a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host run recipe parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostRunRecipeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host recipe run started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    },
+                    "recipe_task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostRunRecipeParams"
+      }
+    }
+  }
+}

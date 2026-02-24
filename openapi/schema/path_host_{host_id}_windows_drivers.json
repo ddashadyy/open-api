@@ -1,0 +1,57 @@
+{
+  "paths": {
+    "/host/{host_id}/windows_drivers": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "host_windows_drivers",
+        "summary": "Mount/unmount windows virtio/GA drivers iso",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host windows drivers mount params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "mount": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "mount"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Mounting/unmounting windows drivers started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostWindowsDriversParams"
+      }
+    }
+  }
+}

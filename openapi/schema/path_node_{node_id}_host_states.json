@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/node/{node_id}/host/states": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Update VM states",
+        "operationId": "set_states",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID узла",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New VM states",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostStatesParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM states changed",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "HostStatesParams"
+      }
+    }
+  }
+}

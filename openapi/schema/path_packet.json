@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/packet": {
+      "post": {
+        "tags": [
+          "license"
+        ],
+        "summary": "Activate license packet",
+        "operationId": "activate_packet",
+        "requestBody": {
+          "description": "Parameters of the activated license packet",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LicensePacketParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The license packet has been successfully activated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "LicensePacketParams"
+      }
+    }
+  }
+}

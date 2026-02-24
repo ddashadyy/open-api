@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterInOS": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

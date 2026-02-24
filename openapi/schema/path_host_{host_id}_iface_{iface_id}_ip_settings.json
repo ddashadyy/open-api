@@ -1,0 +1,57 @@
+{
+  "paths": {
+    "/host/{host_id}/iface/{iface_id}/ip_settings": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Edit VM network interface IP settings",
+        "operationId": "edit_host_iface_ip_settings",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iface_id",
+            "in": "path",
+            "description": "Host interface ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing VM network interface IP settings",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostIfaceEditIpParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM network interface successfully edited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostIfaceEditIpParams"
+      }
+    }
+  }
+}

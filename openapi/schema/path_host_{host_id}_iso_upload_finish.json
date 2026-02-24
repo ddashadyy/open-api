@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "/host/{host_id}/iso/upload/finish": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "host_iso_upload_finish",
+        "summary": "Finalize previously announced ISO file upload",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ISO upload finish params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "iso_file_size_mib": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ISO upload finalized successfully"
+          }
+        }
+      }
+    }
+  }
+}

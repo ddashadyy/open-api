@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/storage/{storage_id}/node": {
+      "get": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Get node list for the storage",
+        "operationId": "get_storage_node_list",
+        "parameters": [
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node list for the storage is successfully received",
+            "content": {
+              "application/json": {
+                "schema":{
+                  "$ref": "#/components/schemas/StorageNodeList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

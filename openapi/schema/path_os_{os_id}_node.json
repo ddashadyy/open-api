@@ -1,0 +1,44 @@
+{
+  "paths": {
+    "/os/all": {
+      "get": {
+        "tags": [
+          "os"
+        ],
+        "summary": "OS list",
+        "operationId": "get_all_os_list",
+        "responses": {
+          "200": {
+            "description": "OS list received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "last_notify": {
+                      "$ref": "#/components/schemas/LastNotify"
+                    },
+                    "list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Os",
+                        "rbac":{
+                          "type": "object",
+                          "properties": {
+                            "cluster": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

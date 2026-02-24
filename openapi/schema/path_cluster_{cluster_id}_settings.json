@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/settings": {
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "description": "Cluster edit settings",
+        "operationId": "edit_cluster_settings",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Cluster edit settings",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterSettings"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cluster settings edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "ClusterSettings"
+      }
+    }
+  }
+}

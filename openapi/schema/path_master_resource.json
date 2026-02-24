@@ -1,0 +1,56 @@
+{
+    "paths": {
+      "/master/resource": {
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "master_edit_resource",
+          "summary": "Changing master parameters",
+          "requestBody": {
+            "description": "Parameters for changing master",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type":"object",
+                  "properties": {
+                    "cpu_number": {
+                      "type": "integer",
+                      "maxLength": 9
+                    },
+                    "ram_mib": {
+                      "type": "integer",
+                      "maxLength": 9
+                    },
+                    "disk": {
+                      "type": "object",
+                      "properties": {
+                        "size_mib": {
+                          "type": "integer",
+                          "maxLength": 9
+                        }
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Changing master parameters successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SuccessTaskSchema"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}

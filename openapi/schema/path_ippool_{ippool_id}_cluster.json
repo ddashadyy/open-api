@@ -1,0 +1,72 @@
+{
+  "paths": {
+    "/ippool/{ippool_id}/cluster": {
+      "get": {
+        "tags": [
+          "network"
+        ],
+        "description": "List of clusters to which the pool is connected",
+        "operationId": "get_ippool_cluster_list",
+        "parameters": [
+          {
+            "name": "ippool_id",
+            "in": "path",
+            "description": "IP pool ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP pool cluster list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IppoolClusterList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "description": "Connecting the pool to clusters",
+        "operationId": "edit_ippool_cluster",
+        "parameters": [
+          {
+            "name": "ippool_id",
+            "in": "path",
+            "description": "IP pool ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Pool connection parameters for clusters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IppoolClusterParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cluster ip pool connected successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "IppoolClusterParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "MetricsTargetParam":{
+        "type": "string",
+        "enum": [
+          "cpu_load",
+          "df.root.used",
+          "net_rx",
+          "net_tx",
+          "mem_usage",
+          "mem_usage_percent",
+          "iops"
+        ]
+      }
+    }
+  }
+}

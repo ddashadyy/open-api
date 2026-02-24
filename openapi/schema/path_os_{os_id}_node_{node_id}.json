@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/os/{os_id}/node/{node_id}": {
+      "delete": {
+        "tags": [
+          "os"
+        ],
+        "summary": "Delete os from node",
+        "operationId": "os_node_delete",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "OS ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OS successfully deleted from the node",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/vxlan/{vxlan_id}/ipnet": {
+      "post": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "add_vxlan_ipnet",
+        "summary": "Add ipnet to vxlan",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "Vxlan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Vxlan ipnet params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "gateway": {
+                    "$ref": "#/components/schemas/Gateway"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Vxlan edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "VxlanIpnetParams"
+      }
+    }
+  }
+}

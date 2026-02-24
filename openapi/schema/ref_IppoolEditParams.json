@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "IppoolEditParams": {
+        "type": "object",
+        "properties": {
+          "auto_selection_allowed": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

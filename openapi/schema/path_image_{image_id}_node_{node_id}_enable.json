@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/image/{image_id}/node/{node_id}/enable": {
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "Enable image on node",
+        "operationId": "image_node_enable",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "VM image ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host image successfully enabled on the node",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

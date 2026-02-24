@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "HddOversellingParams": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

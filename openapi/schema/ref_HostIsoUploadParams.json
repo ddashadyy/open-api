@@ -1,0 +1,50 @@
+{
+  "components": {
+    "schemas": {
+      "HostIsoUploadParams": {
+        "type": "object",
+        "properties": {
+          "iso_file_name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "reboot": {
+            "type": "boolean",
+            "default": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "os_type": {
+            "$ref": "#/components/schemas/IsoOsType"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "admin_role": {
+            "type": "boolean"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "repository_id": {
+            "type": "integer"
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "iso_file_name",
+          "admin_role",
+          "user_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

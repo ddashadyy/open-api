@@ -1,0 +1,40 @@
+{
+  "components": {
+    "schemas": {
+      "GpuInfo": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "enabled": {
+            "type": "integer"
+          },
+          "used": {
+            "type": "integer"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "available": {
+            "type": "integer"
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "total",
+          "enabled",
+          "used",
+          "host_count",
+          "available",
+          "hosts"
+        ]
+      }
+    }
+  }
+}

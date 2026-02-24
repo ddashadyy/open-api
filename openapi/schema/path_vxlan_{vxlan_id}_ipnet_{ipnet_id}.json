@@ -1,0 +1,103 @@
+{
+  "paths": {
+    "/vxlan/{vxlan_id}/ipnet/{ipnet_id}": {
+      "delete": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "delete_vxlan_ipnet",
+        "summary": "Add ipnet to vxlan",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "Vxlan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ipnet_id",
+            "in": "path",
+            "description": "Ipnet ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ipnet successfully deleted from vxlan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "edit_vxlan_ipnet",
+        "summary": "Edit ipnet in vxlan",
+        "parameters": [
+          {
+            "name": "vxlan_id",
+            "in": "path",
+            "description": "Vxlan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ipnet_id",
+            "in": "path",
+            "description": "Ipnet ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Vxlan params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "gateway": {
+                    "$ref": "#/components/schemas/Gateway"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ipnet successfully edited in vxlan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

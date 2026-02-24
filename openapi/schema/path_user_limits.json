@@ -1,0 +1,24 @@
+{
+  "paths": {
+    "/user_limits": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_user_limits_list",
+        "responses": {
+          "200": {
+            "description": "User limits are successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserLimits"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

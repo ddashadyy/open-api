@@ -1,0 +1,47 @@
+{
+  "components": {
+    "schemas": {
+      "HostDisks": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "size_mib": {
+              "type": "integer"
+            },
+            "bus": {
+              "type": "string",
+              "enum": ["virtio", "scsi", "ide"],
+              "default": "virtio"
+            },
+            "boot_order": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "expand_part": {
+              "type": "string",
+              "nullable": true
+            },
+            "storage": {
+              "type": "integer",
+              "maxLength": 9
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          "required": ["size_mib", "boot_order"],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

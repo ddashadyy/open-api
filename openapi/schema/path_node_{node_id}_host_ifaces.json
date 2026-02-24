@@ -1,0 +1,72 @@
+{
+  "paths": {
+    "/node/{node_id}/host/ifaces": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Get VM ifaces on node",
+        "operationId": "get_host_ifaces",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID узла",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM ifaces",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostIfacesParams"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Update VM ifaces",
+        "operationId": "set_host_ifaces",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID узла",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "New VM ifaces",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostIfacesParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM ifaces changed",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "HostIfacesParams"
+      }
+    }
+  }
+}

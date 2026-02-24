@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceChangeParams": {
+        "type": "object",
+        "properties": {
+          "comment": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterShort": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "virtualization_type": {
+            "type": "string",
+            "enum": [
+              "dummy",
+              "kvm",
+              "lxd",
+              "vmmgr5",
+              "vmmgr5_dummy"
+            ]
+          },
+          "ha": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              },
+              "agent_version": {
+                "type": "string"
+              }
+            }
+          },
+          "datacenter_type": {
+            "type": "string",
+            "enum": [
+              "common",
+              "hetzner",
+              "ip_fabric"
+            ]
+          },
+          "balancer_mode": {
+            "$ref": "#/components/schemas/ClusterBalancerMode"
+          },
+          "balancer_config": {
+            "$ref": "#/components/schemas/BalancerConfig"
+          }
+        }
+      }
+    }
+  }
+}

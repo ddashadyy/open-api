@@ -1,0 +1,72 @@
+{
+    "paths": {
+      "/master": {
+        "get": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "get_master_info",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/MasterInfo"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "create_master",
+          "summary": "Convert VM to master",
+          "requestBody": {
+            "description": "Convert VM to master parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type":"object",
+                  "properties": {
+                    "parent_host_id": {
+                      "type": "integer"
+                    },
+                    "skip_assert": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  },
+                  "required": [
+                    "parent_host_id"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Convert VM to master successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}

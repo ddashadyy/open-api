@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "/task/ha/sync": {
+      "post": {
+        "tags": [
+          "task"
+        ],
+        "operationId": "ha_sync",
+        "summary": "Sync ha task",
+        "requestBody": {
+          "description": "Task parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskHaSyncParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Task synced successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tasks": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "TaskHaSyncParams"
+      }
+    }
+  }
+}

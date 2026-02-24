@@ -1,0 +1,32 @@
+{
+  "components": {
+    "schemas": {
+      "StorageAttachParams": {
+        "type": "object",
+        "properties": {
+          "virt_pool": {
+            "$ref": "#/components/schemas/VirtPoolParams"
+          },
+          "is_main": {
+            "type": "boolean"
+          },
+          "hdd_overselling": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 100
+          },
+          "ignore_checks": {
+            "type": "boolean"
+          },
+          "ha_params": {
+            "$ref": "#/components/schemas/HaStorageParams"
+          }
+        },
+        "required": [
+          "virt_pool"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

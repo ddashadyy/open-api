@@ -1,0 +1,38 @@
+{
+  "components": {
+    "schemas": {
+      "LinkDiskParams": {
+        "type": "object",
+        "properties": {
+          "is_main": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "bus": {
+            "type": "string",
+            "enum": [
+              "virtio",
+              "scsi",
+              "ide"
+            ]
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "bus"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "is_main"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

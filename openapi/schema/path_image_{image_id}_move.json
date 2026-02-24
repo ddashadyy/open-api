@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/image/{image_id}/move": {
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "VM image move",
+        "operationId": "move_image",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "VM image ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM image move params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageMoveParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM image moved successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageMoveParams"
+      }
+    }
+  }
+}

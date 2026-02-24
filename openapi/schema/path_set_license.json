@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/set_license": {
+      "post": {
+        "tags": [
+          "vmmanager"
+        ],
+        "summary": "Saving license data",
+        "operationId": "edit_license",
+        "requestBody": {
+          "description": "Лицензия",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/License"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "License info edit successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "LicenseEditParams"
+      }
+    }
+  }
+}

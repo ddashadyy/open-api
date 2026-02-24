@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "EditIpPtrParams": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "maxLength": 255,
+            "format": "idn-domain"
+          }
+        },
+        "required": [
+          "domain"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

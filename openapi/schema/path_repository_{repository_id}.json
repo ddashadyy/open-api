@@ -1,0 +1,117 @@
+{
+  "paths": {
+    "/repository/{repository_id}": {
+      "get": {
+        "tags": [
+          "repository"
+        ],
+        "operationId": "get_repository",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "ID репозитория",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Repository info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "repository"
+        ],
+        "operationId": "edit_repository",
+        "summary": "Editing the repository",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "ID repository",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Repository edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepositoryEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Repository edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "RepositoryEditParams"
+      },
+      "delete": {
+        "tags": [
+          "repository"
+        ],
+        "summary": "Removing a repository",
+        "description": "Removing a repository",
+        "operationId": "delete_repository",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "ID of the repository to be removed",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The repository was successfully deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

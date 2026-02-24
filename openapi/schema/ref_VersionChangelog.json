@@ -1,0 +1,31 @@
+{
+  "components": {
+    "schemas": {
+      "VersionChangelog": {
+        "type": "object",
+        "properties": {
+          "changes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChangelogChange"
+            }
+          },
+          "date": {
+            "type": "string",
+            "format": "date",
+            "example": "2025-09-30"
+          },
+          "version": {
+            "type": "string",
+            "example": "2025.09.1"
+          }
+        },
+        "required": [
+          "changes",
+          "date",
+          "version"
+        ]
+      }
+    }
+  }
+}

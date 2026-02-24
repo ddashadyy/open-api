@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/host/{host_id}/suspend": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Suspend a virtual machine",
+        "operationId": "host_suspend",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host was suspended successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

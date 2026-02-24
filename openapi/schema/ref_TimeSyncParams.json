@@ -1,0 +1,29 @@
+{
+    "components": {
+      "schemas": {
+        "TimeSyncParams": {
+          "type": "object",
+          "properties": {
+            "sync_type": {
+              "type": "string",
+              "enum": [
+                "default",
+                "custom",
+                "platform"
+              ]
+            },
+            "servers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "maxLength": 255
+              }
+            }
+          },
+          "required": [
+            "sync_type"
+          ]
+        }
+      }
+    }
+}

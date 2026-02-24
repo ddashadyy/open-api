@@ -1,0 +1,36 @@
+{
+    "paths": {
+      "/platform/move/check": {
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "move_check",
+          "summary": "move check",
+          "requestBody": {
+            "description": "Checking platform move parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                    "$ref": "#/components/schemas/PlatformMoveParams"
+                  }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Checking platform move parameters successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SuccessTaskSchema"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

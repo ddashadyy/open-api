@@ -1,0 +1,54 @@
+{
+  "paths": {
+    "/host/metadata": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Create empty VM from metadata",
+        "operationId": "create_host_from_metadata",
+        "requestBody": {
+          "description": "Metadata for creating empty VM",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostMetadataParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    },
+                    "recipe_task_list": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    },
+                    "recipe_task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostMetadataParams"
+      }
+    }
+  }
+}

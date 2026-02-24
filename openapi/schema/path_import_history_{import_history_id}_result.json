@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/import_history/{import_history_id}/result": {
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "summary": "Set result to import history",
+        "operationId": "set_import_history_result",
+        "parameters": [
+          {
+            "name": "import_history_id",
+            "in": "path",
+            "description": "Import history ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Import history result params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportHistoryResultParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Import history entity updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImportHistoryResultParams"
+      }
+    }
+  }
+}

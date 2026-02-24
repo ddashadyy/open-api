@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/node_short": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Reduced list of cluster nodes",
+        "operationId": "get_node_list_short",
+        "responses": {
+          "200": {
+            "description": "Reduced list of cluster nodes received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeListShort"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

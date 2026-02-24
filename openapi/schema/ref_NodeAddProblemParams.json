@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "NodeAddProblemParams": {
+        "type": "object",
+        "properties": {
+          "problems": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "problems"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

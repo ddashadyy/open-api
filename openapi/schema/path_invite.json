@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/invite": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "User invitation",
+        "operationId": "invite_account",
+        "requestBody": {
+          "description": "Invited user parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InviteParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Invitation sent",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "InviteParams"
+      }
+    }
+  }
+}

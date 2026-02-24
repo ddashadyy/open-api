@@ -1,0 +1,107 @@
+{
+  "paths": {
+    "/image/{image_id}": {
+      "get": {
+        "tags": [
+          "image"
+        ],
+        "operationId": "get_image",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "Image ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host image info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImageByIdProps"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "Editing a VM image",
+        "operationId": "edit_image",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "ID of the edited VM image",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Image editing options",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageChangeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM image edited successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageChangeParams"
+      },
+      "delete": {
+        "tags": [
+          "image"
+        ],
+        "summary": "Deleting a VM image",
+        "operationId": "delete_image",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "ID of the deleted VM image",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM image successfully deleted",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

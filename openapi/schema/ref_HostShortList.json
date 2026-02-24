@@ -1,0 +1,23 @@
+{
+  "components": {
+    "schemas": {
+      "HostShortList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HostShort"
+            }
+          },
+          "size": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

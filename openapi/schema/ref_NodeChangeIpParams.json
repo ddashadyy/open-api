@@ -1,0 +1,29 @@
+{
+  "components": {
+    "schemas": {
+      "NodeChangeIpParams": {
+        "title": "Change node IP",
+        "required": [
+          "ip",
+          "ssh_port"
+        ],
+        "type": "object",
+        "properties": {
+          "ip": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "vnc_addr": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "ssh_port": {
+            "type": "number",
+            "maxLength": 9
+          }
+        },
+        "description": "Change node IP validation schema"
+      }
+    }
+  }
+}

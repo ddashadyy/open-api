@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "TotalUsed": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "used": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

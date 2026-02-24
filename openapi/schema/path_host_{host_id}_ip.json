@@ -1,0 +1,59 @@
+{
+  "paths": {
+    "/host/{host_id}/ip": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "add_ip_to_host",
+        "summary": "Adding an IP to a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters of added IP addresses",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddIpParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Add host ip started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    },
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "AddIpParams"
+      }
+    }
+  }
+}

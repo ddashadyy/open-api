@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "Gateway": {
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "ipv4",
+            "nullable": true
+          },
+          {
+            "type": "string",
+            "format": "ipv6"
+          }
+        ]
+      }
+    }
+  }
+}

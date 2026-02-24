@@ -1,0 +1,106 @@
+{
+  "paths": {
+    "/host/{host_id}/ptr/{ptr_name}": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "edit_host_ptr",
+        "summary": "Editing a PTR-record of a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ptr_name",
+            "in": "path",
+            "description": "PTR name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters to edit PTR record",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditPtrParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host PTR edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "EditPtrParams"
+      },
+      "delete": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "delete_host_ptr",
+        "summary": "Deleting the PTR-record of the virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ptr_name",
+            "in": "path",
+            "description": "PTR name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deleted the PTR-record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

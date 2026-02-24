@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/maintenance/{maintenance_id}": {
+      "get": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Get maintenance info",
+        "operationId": "maintenance_info",
+        "parameters": [
+          {
+            "name": "maintenance_id",
+            "in": "path",
+            "description": "Maintenance ID, which info is needed to be retrieved",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved information about maintenance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeMaintenanceInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

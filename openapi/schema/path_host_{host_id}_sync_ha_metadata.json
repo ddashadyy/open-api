@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/host/{host_id}/sync_ha_metadata": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "sync_ha_metadata",
+        "summary": "Synс host HA metadata",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

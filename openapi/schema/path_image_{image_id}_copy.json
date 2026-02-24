@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/image/{image_id}/copy": {
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "VM image copy",
+        "operationId": "copy_image",
+        "parameters": [
+          {
+            "name": "image_id",
+            "in": "path",
+            "description": "VM image ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM image copy params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageCopyParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM image copied successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageCopyParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "components": {
+    "schemas": {
+      "ImageParams": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "type": "string"
+          },
+          "account": {
+            "type": "number"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "for_all": {
+            "type": "boolean"
+          },
+          "storage": {
+            "type": "number"
+          },
+          "cleared": {
+            "type": "boolean",
+            "default": true
+          },
+          "path_to_answers": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "components": {
+    "schemas": {
+      "Vxlan": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "email": {
+                "type": "string",
+                "format": "email"
+              }
+            }
+          },
+          "tag": {
+            "type": "integer",
+            "nullable": true
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "vxlan_mode": {
+                  "type": "string",
+                  "enum": [
+                    "disabled",
+                    "full_mesh",
+                    "route_reflector"
+                  ]
+                },
+                "vxlan_settings": {
+                  "type": "string",
+                  "nullable": true
+                },
+                "vxlan_host_count": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "ipnets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string"
+                },
+                "vxlan_host_count": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "ippool": {
+            "type": "integer"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "suspended"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

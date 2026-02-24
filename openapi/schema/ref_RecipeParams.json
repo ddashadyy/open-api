@@ -1,0 +1,78 @@
+{
+  "components": {
+    "schemas": {
+      "RecipeParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 150
+          },
+          "script_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "script": {
+            "type": "string"
+          },
+          "for_all": {
+            "type": "boolean"
+          },
+          "user_visible": {
+            "type": "boolean",
+            "default": true
+          },
+          "account": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "email_content": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lang": {
+                  "$ref": "#/components/schemas/LangEnum"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "shell",
+              "ansible",
+              "power_shell"
+            ],
+            "default": "shell"
+          },
+          "params": {
+            "$ref": "#/components/schemas/RecipeParamsParams"
+          }
+        },
+        "required": [
+          "name",
+          "script"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

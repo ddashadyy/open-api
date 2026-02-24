@@ -1,0 +1,29 @@
+{
+  "components": {
+    "schemas": {
+      "ChangelogResponse": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "changelog": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VersionChangelog"
+            }
+          },
+          "version": {
+            "type": "string",
+            "example": "2025.09.1"
+          }
+        },
+        "required": [
+          "changelog",
+          "last_notify",
+          "version"
+        ]
+      }
+    }
+  }
+}

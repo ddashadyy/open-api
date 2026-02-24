@@ -1,0 +1,91 @@
+{
+  "paths": {
+    "/os/{os_id}": {
+      "post": {
+        "tags": [
+          "os"
+        ],
+        "summary": "OS editing",
+        "description": "OS editing",
+        "operationId": "edit_os",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "Editing OS ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "OS edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OSEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OS edit started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "tasks": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "OSEditParams"
+      },
+      "delete": {
+        "tags": [
+          "os"
+        ],
+        "summary": "Removing the OS",
+        "description": "Removing the OS",
+        "operationId": "delete_os",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "OS ID to remove",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OS successfully removed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

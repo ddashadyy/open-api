@@ -1,0 +1,109 @@
+{
+  "paths": {
+    "/storage/{storage_id}": {
+      "get": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Storage",
+        "operationId": "get_storage",
+        "parameters": [
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Storage"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Editing a storage",
+        "operationId": "edit_storage",
+        "parameters": [
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Storage parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Storage edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "StorageEditParams"
+      },
+      "delete": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Deleting a storage",
+        "description": "Deleting a storage",
+        "operationId": "delete_storage",
+        "parameters": [
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "The storage ID to remove",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

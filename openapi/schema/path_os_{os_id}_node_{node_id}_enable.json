@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/os/{os_id}/node/{node_id}/enable": {
+      "post": {
+        "tags": [
+          "os"
+        ],
+        "summary": "Enable os on node",
+        "operationId": "os_node_enable",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "OS ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OS successfully enabled on the node",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

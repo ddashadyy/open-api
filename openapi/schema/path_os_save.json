@@ -1,0 +1,32 @@
+{
+  "paths": {
+    "/os/save": {
+      "post": {
+        "tags": [
+          "os"
+        ],
+        "summary": "Save repository OS images to database",
+        "description": "Save repository OS images to database",
+        "operationId": "os_save",
+        "requestBody": {
+          "description": "OS save params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OsSaveParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OS saved successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "OsSaveParams"
+      }
+    }
+  }
+}

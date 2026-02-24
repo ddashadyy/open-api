@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/migrate_ipmgr": {
+      "post": {
+        "tags": [
+          "network"
+        ],
+        "summary": "Migrate networks from ipmgr5",
+        "operationId": "migrate_ipmgr",
+        "requestBody": {
+          "description": "Ipmgr5 migration params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MigrateIpmgrParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Migrate networks from ipmgr5 successfully started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "MigrateIpmgrParams"
+      }
+    }
+  }
+}

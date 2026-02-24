@@ -1,0 +1,59 @@
+{
+  "paths": {
+    "/repository/{repository_id}/iso/upload/announce": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "repository_iso_upload_announce",
+        "summary": "Announce ISO file upload",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "Repository ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "ISO upload params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepositoryIsoUploadParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ISO upload announced successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "os_id": {
+                      "type": "integer"
+                    },
+                    "node": {
+                      "type": "integer"
+                    },
+                    "path": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostIsoUploadParams"
+      }
+    }
+  }
+}

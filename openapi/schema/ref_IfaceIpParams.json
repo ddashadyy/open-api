@@ -1,0 +1,27 @@
+{
+  "components": {
+    "schemas": {
+      "IfaceIpParams": {
+        "type": "object",
+        "properties": {
+          "v4": {
+            "type": "string",
+            "nullable": true
+          },
+          "v6": {
+            "type": "string",
+            "nullable": true
+          },
+          "gateway_v4": {
+            "type": "string",
+            "nullable": true
+          },
+          "gateway_v6": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}

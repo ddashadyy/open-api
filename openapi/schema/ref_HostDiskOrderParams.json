@@ -1,0 +1,30 @@
+{
+  "components": {
+    "schemas": {
+      "HostDiskOrderParams": {
+        "type": "object",
+        "properties": {
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "boot_order": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "boot_order"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

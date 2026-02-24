@@ -1,0 +1,44 @@
+{
+  "paths": {
+    "/node/{node_id}/hosts": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Getting a list of VMs from the node",
+        "operationId": "hosts_list",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of VMs from the node was successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

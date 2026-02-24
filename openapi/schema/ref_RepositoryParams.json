@@ -1,0 +1,24 @@
+{
+  "components": {
+    "schemas": {
+      "RepositoryParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 255
+          }
+        },
+        "required": [
+          "name",
+          "url"
+        ]
+      }
+    }
+  }
+}

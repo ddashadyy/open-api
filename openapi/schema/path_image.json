@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/image": {
+      "get": {
+        "tags": [
+          "image"
+        ],
+        "summary": "List of VM images",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get_image_list",
+        "responses": {
+          "200": {
+            "description": "List of VM images received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostImageList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

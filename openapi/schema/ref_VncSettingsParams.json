@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "VncSettingsParams": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string",
+            "maxLength": 8
+          }
+        },
+        "required": [
+          "password"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

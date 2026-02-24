@@ -1,0 +1,92 @@
+{
+  "components": {
+    "schemas": {
+      "NodeForMigrate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ram_mib": {
+            "$ref": "#/components/schemas/ResourceUnused"
+          },
+          "storage": {
+            "$ref": "#/components/schemas/StorageForMigrate"
+          },
+          "storages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StorageForMigrate"
+            }
+          },
+          "priority": {
+            "type": "number"
+          },
+          "state": {
+            "type": "string"
+          },
+          "suitable": {
+            "type": "boolean"
+          },
+          "suitable_for_live_migration": {
+            "type": "boolean"
+          },
+          "inconsistency_reason": {
+            "type": "string",
+            "enum": [
+              "CPU",
+              "RAM",
+              "HDD",
+              "IPv4",
+              "IPv6",
+              "BRIDGES",
+              "NETWORK",
+              "EXISTENCE",
+              "FILTER",
+              "LIBVIRT_VERSION_INCONSISTENCY",
+              "LIBVIRT",
+              "LXD",
+              "BAD_NODE_STATE",
+              "HOST_LIMIT_EXCEEDED",
+              "STORAGE_DISABLED_OR_MISSED",
+              "STORAGE_IS_NOT_ACTIVE",
+              "BAD_HA_STATE",
+              "OS_INCONSISTENCY",
+              "MASTER_RAM_OVERSELLING",
+              "MONITORING_NOT_STARTED",
+              "MAINTENANCE_MODE",
+              "SNAPSHOTS",
+              "DPG",
+              "HOST_CREATION_BLOCKED",
+              "UNKNOWN"
+            ]
+          },
+          "inconsistency_live_migration_reason": {
+            "type": "string",
+            "enum": [
+              "QEMU_SRC_VERSION_OLD",
+              "QEMU_DST_VERSION_OLD",
+              "QEMU_VERSION_INCONSISTENCY",
+              "ALMA_VERSION_INCONSISTENCY",
+              "ASTRA_KERNEL_VERSION_INCONSISTENCY",
+              "MIGRATION_NOT_SUITABLE",
+              "UNKNOWN"
+            ]
+          },
+          "host_creation_blocked": {
+            "type": "boolean"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "host_limit": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

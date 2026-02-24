@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/spice": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "set_host_spice_enabled",
+        "summary": "Set SPICE Virtual Machine enabled/disabled",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "SPICE enabled/disabled",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpiceEnabledParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host SPICE enabled state is edited successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "SpiceEnabledParams"
+      }
+    }
+  }
+}

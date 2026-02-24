@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "HostRelocateParams": {
+        "type": "object",
+        "properties": {
+          "node": {
+            "type": "number",
+            "maxLength": 9,
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "components": {
+    "schemas": {
+      "IsoOsType": {
+        "type": "string",
+        "enum": [
+          "linux",
+          "freebsd",
+          "windows",
+          "other_os"
+        ],
+        "default": "other_os"
+      }
+    }
+  }
+}

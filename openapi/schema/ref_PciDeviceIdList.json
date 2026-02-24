@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceIdList": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PciDeviceId"
+            }
+          }
+        },
+        "required": [
+          "list"
+        ]
+      }
+    }
+  }
+}

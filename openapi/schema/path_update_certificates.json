@@ -1,0 +1,22 @@
+{
+  "paths": {
+    "/update_certificates": {
+      "post": {
+        "tags": [
+          "vmmanager"
+        ],
+        "summary": "Updating certificates on a platform and nodes",
+        "description": "Updating libvirt certificates on a platform and nodes",
+        "operationId": "update_vm_certificates",
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "Certificates update started successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

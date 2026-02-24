@@ -1,0 +1,34 @@
+{
+  "paths": {
+    "/old_metrics/sendreport": {
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Send metrics report",
+        "operationId": "old_send_metrics_report",
+        "responses": {
+          "200": {
+            "description": "Send metrics start successfully",
+            "content": {}
+          }
+        }
+      }
+    },
+    "/metrics/sendreport": {
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Send metrics report",
+        "operationId": "send_metrics_report",
+        "responses": {
+          "200": {
+            "description": "Send metrics start successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

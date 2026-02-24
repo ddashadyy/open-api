@@ -1,0 +1,39 @@
+{
+  "components": {
+    "schemas": {
+      "OSEditParams": {
+        "type": "object",
+        "properties": {
+          "adminonly": {
+            "type": "boolean"
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "product_key": {
+            "type": "string",
+            "maxLength": 30,
+            "nullable": true
+          },
+          "kms_ip": {
+            "type": "string",
+            "nullable": true
+          },
+          "kms_port": {
+            "type": "string",
+            "maxLength": 9,
+            "nullable": true
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

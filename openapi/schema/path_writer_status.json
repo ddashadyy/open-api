@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "/writer_status": {
+      "post": {
+        "tags": [
+          "vmmanager"
+        ],
+        "summary": "Get writer status",
+        "operationId": "get_writer_status",
+        "responses": {
+          "200": {
+            "description": "Writer status is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

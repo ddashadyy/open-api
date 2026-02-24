@@ -1,0 +1,71 @@
+{
+  "components": {
+    "schemas": {
+      "DatacenterParams": {
+        "type": "object",
+        "properties": {
+          "gateway": {
+            "type": "string"
+          },
+          "mac": {
+            "type": "string"
+          },
+          "bgp_community": {
+            "type": "string"
+          },
+          "bgp_as": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "bgp_sessions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string"
+                },
+                "bgp_as": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "comment": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "bgp_community_v6": {
+            "type": "string"
+          },
+          "bgp_as_v6": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "bgp_sessions_v6": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string"
+                },
+                "bgp_as": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "comment": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

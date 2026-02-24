@@ -1,0 +1,44 @@
+{
+  "paths": {
+    "/node/{node_id}/metrics/url": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "get_node_metrics_url",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Cluster node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "target",
+            "in": "query",
+            "description": "Metric target param",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MetricsTargetParam"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Url node metrics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricsUrl"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

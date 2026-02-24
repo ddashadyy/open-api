@@ -1,0 +1,179 @@
+{
+  "components": {
+    "schemas": {
+      "AddIpParams": {
+        "type": "object",
+        "properties": {
+          "host_interface": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "ip_addr": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "ip_pool": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "ip_network": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "without_allocation": {
+                "type": "boolean"
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              {
+                "required": [
+                  "name",
+                  "ip_pool",
+                  "ip_network"
+                ],
+                "type": "object"
+              }
+            ],
+            "additionalProperties": false
+          },
+          "ipv6_pool": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "ipv6_prefix": {
+            "type": "integer",
+            "minimum": 32,
+            "maximum": 125
+          },
+          "ipv6_enabled": {
+            "type": "boolean"
+          },
+          "ipv4_pool": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "maxLength": 9
+            }
+          },
+          "ipv4_number": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cluster_interface": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "host_interface": {
+                  "type": "integer",
+                  "nullable": true
+                },
+                "ipv4_number": {
+                  "type": "number",
+                  "maxLength": 9
+                },
+                "ipv4_pool": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "maxLength": 9
+                  }
+                },
+                "ip_name": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "ip_network": {
+                  "type": "integer",
+                  "maxLength": 9
+                },
+                "ipv6_pool": {
+                  "type": "integer",
+                  "maxLength": 9
+                },
+                "ipv6_prefix": {
+                  "type": "integer",
+                  "minimum": 32,
+                  "maximum": 125
+                },
+                "dhcp": {
+                  "type": "boolean"
+                },
+                "no_ip": {
+                  "type": "boolean"
+                },
+                "without_allocation": {
+                  "type": "boolean",
+                  "default": false
+                }
+              },
+              "oneOf": [
+                {
+                  "required": [
+                    "cluster_interface",
+                    "ipv4_number"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "required": [
+                    "cluster_interface",
+                    "ip_name"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "required": [
+                    "cluster_interface",
+                    "ipv6_pool",
+                    "ipv6_prefix"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "required": [
+                    "cluster_interface",
+                    "dhcp"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "required": [
+                    "cluster_interface",
+                    "no_ip"
+                  ],
+                  "type": "object"
+                }
+              ],
+              "additionalProperties": false
+            }
+          },
+          "vxlan": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddIpParamsVxlan"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

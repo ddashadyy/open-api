@@ -1,0 +1,26 @@
+{
+  "components": {
+    "schemas": {
+      "ImportHistoryEditParams": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "created",
+              "collecting_vm5_info",
+              "backup_creating",
+              "importing_to_vm6",
+              "complete",
+              "failed"
+            ]
+          }
+        },
+        "required": [
+          "state"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

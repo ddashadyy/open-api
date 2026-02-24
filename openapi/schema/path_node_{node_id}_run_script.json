@@ -1,0 +1,53 @@
+{
+  "paths": {
+    "/node/{node_id}/run_script": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Running a script on a node",
+        "operationId": "run_script",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID узла",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Executable script parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeRunScriptParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The script has been successfully launched",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeRunScriptParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "paths": {
+    "/backup/{backup_id}/state": {
+      "post": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup change state",
+        "operationId": "change_backup_state",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "Disk backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM backup changed state",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "active",
+                      "crashed",
+                      "creating",
+                      "deleting",
+                      "in_use",
+                      "migrating",
+                      "copying"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk backup state changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "components": {
+    "schemas": {
+      "Schedule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "backup_mode": {
+            "type": "string",
+            "default": "host_main",
+            "enum": [
+              "host_main",
+              "host_all",
+              "disk"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly"
+            ]
+          },
+          "limit_count": {
+            "type": "integer"
+          },
+          "limit_size_mib": {
+            "type": "integer"
+          },
+          "start_time": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "integer"
+              },
+              "week_day": {
+                "type": "integer"
+              },
+              "hour": {
+                "type": "integer"
+              },
+              "minute": {
+                "type": "integer"
+              }
+            }
+          },
+          "backup_locations": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "presets": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "next_run": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

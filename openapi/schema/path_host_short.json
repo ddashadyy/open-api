@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/host_short": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Host short list with node information",
+        "operationId": "get_host_short_list",
+        "responses": {
+          "200": {
+            "description": "Host short list received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostShortList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

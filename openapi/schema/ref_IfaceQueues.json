@@ -1,0 +1,10 @@
+{
+    "components": {
+      "schemas": {
+        "IfaceQueues": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }

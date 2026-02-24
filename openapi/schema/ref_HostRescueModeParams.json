@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "HostRescueModeParams": {
+        "type": "object",
+        "properties": {
+          "rescue_mode": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "rescue_mode"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

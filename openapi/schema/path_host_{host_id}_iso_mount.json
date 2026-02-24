@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/iso/mount": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Connecting ISO to VM",
+        "operationId": "iso_mount",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host ISO mount params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostIsoMountParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ISO mount started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostIsoMountParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "components": {
+    "schemas": {
+      "BalancerConfig": {
+        "type": "object",
+        "properties":{
+          "period_minutes":{
+            "type":"integer",
+            "format":"int32",
+            "minimum":1
+          },
+          "high_threshold_cpu":{
+            "type":"integer",
+            "format":"int32",
+            "minimum":0,
+            "maximum":100
+          },
+          "high_threshold_mem":{
+            "type":"integer",
+            "format":"int32",
+            "minimum":0,
+            "maximum":100
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

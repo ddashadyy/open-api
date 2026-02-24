@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "UserLimits": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          }
+        }
+      }
+    }
+  }
+}

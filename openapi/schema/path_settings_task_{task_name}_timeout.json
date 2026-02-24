@@ -1,0 +1,89 @@
+{
+  "paths": {
+    "/settings/task/{task_name}/timeout": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_settings_task_timeout",
+        "parameters": [
+          {
+            "name": "task_name",
+            "in": "path",
+            "description": "Task name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task timeout is successfully received",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "description": "Set timeout for task",
+        "operationId": "edit_settings_task_timeout",
+        "parameters": [
+          {
+            "name": "task_name",
+            "in": "path",
+            "description": "Task name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Set timeout params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SetTimeoutParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Timeout params edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SetTimeoutParams"
+      },
+      "delete": {
+        "tags": [
+          "settings"
+        ],
+        "description": "Delete timeout for task",
+        "operationId": "delete_settings_task_timeout",
+        "parameters": [
+          {
+            "name": "task_name",
+            "in": "path",
+            "description": "Task name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Timeout params deleted successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

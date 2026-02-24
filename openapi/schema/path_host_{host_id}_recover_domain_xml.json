@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/recover_domain_xml": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "recover_host_domain_xml",
+        "summary": "Recovering domain XML of virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Host recover domain XML params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmptySchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Domain XML recover started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessTaskSchema"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostRecoverDomainXMLParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "components": {
+    "schemas": {
+      "Os": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClusterInOS"
+            }
+          },
+          "repository": {
+            "type": "string"
+          },
+          "repository_id": {
+            "type": "integer"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "state": {
+            "type": "string"
+          },
+          "adminonly": {
+            "type": "boolean"
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeInImage"
+            }
+          },
+          "os_group": {
+            "type": "string"
+          },
+          "kms_supported": {
+            "type": "boolean"
+          },
+          "kms_ip": {
+            "type": "string"
+          },
+          "kms_port": {
+            "type": "string"
+          },
+          "is_lxd_image": {
+            "type": "boolean"
+          },
+          "product_key": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "hdd_mib_required": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "min_ram_mib": {
+                "type": "number",
+                "maxLength": 9
+          }
+        }
+      }
+    }
+  }
+}

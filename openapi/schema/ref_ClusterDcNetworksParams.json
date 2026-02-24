@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterDcNetworksParams": {
+        "type": "object",
+        "properties": {
+          "dc_networks": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          }
+        },
+        "required": [
+          "dc_networks"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "paths": {
+    "/platform/backup/schedule/{schedule_id}": {
+      "post": {
+        "tags": [
+          "platform_backup"
+        ],
+        "summary": "Platform backup schedule edit",
+        "operationId": "edit_platform_backup_schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "Platform backup schedule ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Platform backup schedule params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlatformBackupScheduleEdit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Platform backup schedule edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "platform_backup"
+        ],
+        "summary": "Platform backup schedule delete",
+        "operationId": "delete_platform_backup_schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "Platform backup schedule ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Platform backup schedule deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

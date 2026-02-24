@@ -1,0 +1,35 @@
+{
+  "components": {
+    "schemas": {
+      "StorageInCluster": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "is_main": {
+            "type": "boolean"
+          },
+          "virt_pool": {
+            "$ref": "#/components/schemas/VirtPoolParams"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

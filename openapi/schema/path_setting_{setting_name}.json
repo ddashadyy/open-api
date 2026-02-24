@@ -1,0 +1,65 @@
+{
+  "paths": {
+    "/setting/{setting_name}": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "operationId": "get_setting",
+        "parameters": [
+          {
+            "name": "setting_name",
+            "in": "path",
+            "description": "Setting name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Setting is successfully received",
+            "content": {}
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Edit VM setting",
+        "operationId": "edit_setting",
+        "parameters": [
+          {
+            "name": "setting_name",
+            "in": "path",
+            "description": "Setting name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Setting edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SettingEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM setting edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "SettingEditParams"
+      }
+    }
+  }
+}

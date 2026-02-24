@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/import/cluster": {
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "summary": "Import cluster",
+        "operationId": "import_cluster",
+        "requestBody": {
+          "description": "Import cluster params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportClusterParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cluster imported successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImportClusterParams"
+      }
+    }
+  }
+}

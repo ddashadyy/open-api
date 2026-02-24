@@ -1,0 +1,62 @@
+{
+  "paths": {
+    "/filter/recipe": {
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Get recipe filter reasons",
+        "parameters": [
+          {
+            "name": "hosts",
+            "in": "query",
+            "description": "Hosts ID list",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\d+(,\\d+)*"
+            }
+          },
+          {
+            "name": "recipes",
+            "in": "query",
+            "description": "Recipes ID list",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "\\d+(,\\d+)*"
+            }
+          },
+          {
+            "name": "host_params",
+            "in": "query",
+            "description": "Create host params",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get_script_filter",
+        "responses": {
+          "200": {
+            "description": "Filtered script list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "$ref": "#/components/schemas/RecipeFilterResult"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "FilterScriptList"
+      }
+    }
+  }
+}

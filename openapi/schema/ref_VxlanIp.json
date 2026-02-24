@@ -1,0 +1,54 @@
+{
+  "components": {
+    "schemas": {
+      "VxlanIp": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ip_addr": {
+            "type": "string"
+          },
+          "gateway": {
+            "type": "string",
+            "nullable": true
+          },
+          "ipnet": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string",
+            "maxLength": 255,
+            "format": "domain"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "crashed",
+              "prepare to allocate",
+              "deleting",
+              "reserved",
+              "free"
+            ]
+          },
+          "comment": {
+            "type": "string"
+          },
+          "host": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

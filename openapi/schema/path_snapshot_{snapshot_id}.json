@@ -1,0 +1,160 @@
+{
+  "paths": {
+    "/snapshot/{snapshot_id}": {
+      "delete": {
+        "tags": [
+          "snapshot"
+        ],
+        "summary": "VM snapshot deletion (no VM5)",
+        "operationId": "delete_host_snapshot2",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "description": "Snapshot ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM snapshots task registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "post": {
+        "tags": [
+          "snapshot"
+        ],
+        "summary": "VM snapshot edition",
+        "operationId": "edit_snapshot",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "description": "Snapshot ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM snapshot edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[\\w_-]{1,100}$"
+                  },
+                  "description": {
+                    "type": "string",
+                    "maxLength": 255
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM snapshot was edited"
+          }
+        }
+      },
+
+      "get" : {
+        "tags": [
+          "snapshot"
+        ],
+        "operationId": "get_snapshot",
+        "parameters": [
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "description": "snapshot ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Snapshot",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "ext_name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "with_ram": {
+                      "type": "boolean"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "ok",
+                        "fail",
+                        "creation",
+                        "unknown"
+                      ]
+                    },
+                    "data": {
+                      "type": "object"
+                    },
+                    "vm5_data": {
+                      "type": "object"
+                    },
+                    "host": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "parent": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

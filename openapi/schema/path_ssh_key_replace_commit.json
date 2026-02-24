@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/ssh_key_replace_commit": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "ssh_key_replace_commit",
+        "summary": "Commit SSH keys replacement",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

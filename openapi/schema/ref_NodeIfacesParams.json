@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "NodeIfacesParams": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NodeIfacesParamsItem"
+            }
+          }
+        },
+        "required": [
+          "list"
+        ]
+      }
+    }
+  }
+}

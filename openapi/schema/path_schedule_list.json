@@ -1,0 +1,24 @@
+{
+  "paths": {
+    "/schedule_list": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_internal_schedule_list",
+        "responses": {
+          "200": {
+            "description": "Internal schedule list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InternalSchedulesList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

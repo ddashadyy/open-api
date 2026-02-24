@@ -1,0 +1,90 @@
+{
+  "paths": {
+    "/host/{host_id}/backup": {
+      "post": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup creation",
+        "operationId": "create_backup",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Backed up VM ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM backup params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackupParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM backup created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    },
+                    "relocate_task": {
+                      "type": "integer",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "BackupParams"
+      },
+      "get": {
+        "tags": [
+          "backup"
+        ],
+        "operationId": "backup_list_by_host",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Backed up VM ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "VM backup list have gotten successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BackupList"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "BackupList"
+      }
+    }
+  }
+}

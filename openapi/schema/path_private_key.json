@@ -1,0 +1,20 @@
+{
+  "paths": {
+    "/private_key": {
+      "get": {
+        "deprecated": true,
+        "tags": [
+          "vmmanager",
+          "form"
+        ],
+        "operationId": "get_private_key",
+        "responses": {
+          "200": {
+            "description": "Private key is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/recipe/save": {
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "operationId": "recipe_save",
+        "summary": "Saving a recipe",
+        "requestBody": {
+          "description": "Recipe save params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecipeSaveParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Recipe saved successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "RecipeSaveParams"
+      }
+    }
+  }
+}

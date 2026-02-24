@@ -1,0 +1,105 @@
+{
+  "paths": {
+    "/node_script/{node_script_id}": {
+      "get": {
+        "tags": [
+          "node_script",
+          "node"
+        ],
+        "summary": "Cluster node script",
+        "operationId": "get_node_script",
+        "parameters": [
+          {
+            "name": "node_script_id",
+            "in": "path",
+            "description": "ID of the edited script",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The script for the cluster node was successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeScriptElem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "node_script",
+          "node"
+        ],
+        "summary": "Editing the script for the cluster node",
+        "operationId": "edit_node_script",
+        "parameters": [
+          {
+            "name": "node_script_id",
+            "in": "path",
+            "description": "ID of the edited script",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Script parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeScriptEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node script edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "NodeScriptEditParams"
+      },
+      "delete": {
+        "tags": [
+          "node_script",
+          "node"
+        ],
+        "summary": "Removing the script for a cluster node",
+        "operationId": "delete_node_script",
+        "parameters": [
+          {
+            "name": "node_script_id",
+            "in": "path",
+            "description": "ID of the edited script",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The script for the cluster node has been successfully deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

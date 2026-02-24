@@ -1,0 +1,56 @@
+{
+  "components": {
+    "schemas": {
+      "AccountSync": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "id",
+                "email",
+                "roles",
+                "state"
+              ],
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "roles": {
+                  "description": "User roles array",
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "example": "@user"
+                  }
+                },
+                "state": {
+                  "type": "string",
+                  "description": "User state",
+                  "example": "active"
+                },
+                "auth_source": {
+                  "type": "string",
+                  "description": "The source for authentication",
+                  "example": "local"
+                }
+              }
+            }
+          },
+          "delete": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "components": {
+    "schemas": {
+      "TaskHaSyncParams": {
+        "type": "object",
+        "properties": {
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "events": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "relocate_id": {
+                        "type": "integer"
+                      },
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "created",
+                          "running",
+                          "complete",
+                          "aborted",
+                          "failed"
+                        ]
+                      },
+                      "params": {
+                        "type": "object",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "relocate_id",
+                      "status",
+                      "params"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "events"
+              ]
+            }
+          }
+        },
+        "required": [
+          "hosts"
+        ]
+      }
+    }
+  }
+}

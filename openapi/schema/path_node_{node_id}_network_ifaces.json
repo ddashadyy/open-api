@@ -1,0 +1,49 @@
+{
+  "paths": {
+    "/node/{node_id}/network/ifaces": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Update information about node interfaces",
+        "operationId": "ifaces_update",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node interfaces modify params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeIfacesParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node interfaces modified successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeIfacesParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "components": {
+    "schemas": {
+      "ImageChangeParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "account": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "comment": {
+            "type": "string"
+          },
+          "for_all": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

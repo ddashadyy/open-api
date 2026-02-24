@@ -1,0 +1,67 @@
+{
+  "paths": {
+    "/import_history": {
+      "get": {
+        "tags": [
+          "import"
+        ],
+        "summary": "List of import history entities",
+        "operationId": "get_import_history",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of import history entities received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportHistoryList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "summary": "Create import history entity",
+        "operationId": "create_import_history_entity",
+        "requestBody": {
+          "description": "Import history entity params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportHistoryParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Import history entity created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImportHistoryParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "components": {
+    "schemas": {
+      "VirtPoolParams": {
+        "type": "object",
+        "properties": {
+          "vm_storage_path": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "volume_group": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "external_storage_id": {
+            "type": "integer"
+          },
+          "external_storage_connection_id": {
+            "type": "integer"
+          },
+          "external_storage_type": {
+            "type": "string"
+          },
+          "zfs_pool_name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "nas_storage_path": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "rbd_pool_name": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "rbd_user": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "placement_groups": {
+            "type": "integer",
+            "nullable": true
+          },
+          "network_disk_path": {
+            "type": "string",
+            "maxLength": 255
+          }
+        }
+      }
+    }
+  }
+}

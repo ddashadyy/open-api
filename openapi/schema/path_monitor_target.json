@@ -1,0 +1,59 @@
+{
+  "paths": {
+    "/monitor_target": {
+      "get": {
+        "tags": [
+          "monitor"
+        ],
+        "summary": "Target to monitor",
+        "operationId": "get_monitor_target",
+        "parameters":[
+          {
+            "name": "node_ids",
+            "in": "query",
+            "required": false,
+            "description": "Ids of nodes",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "host_ids",
+            "in": "query",
+            "required": false,
+            "description": "Ids of hosts",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Monitor target successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "host_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/MonitorTarget"
+                      }
+                    },
+                    "node_list": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/MonitorTarget"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

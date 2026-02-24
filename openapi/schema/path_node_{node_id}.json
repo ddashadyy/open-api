@@ -1,0 +1,144 @@
+{
+  "paths": {
+    "/node/{node_id}": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Cluster node content",
+        "description": "Cluster node content",
+        "operationId": "get_node",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Cluster node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node info is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "cluster": {
+                      "type": "integer"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "ip_addr": {
+                      "type": "string"
+                    },
+                    "qemu_version": {
+                      "type": "string"
+                    },
+                    "ssh_user": {
+                      "type": "string"
+                    },
+                    "maintenance_mode": {
+                      "type": "boolean"
+                    },
+                    "dss_version": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Editing a cluster node",
+        "operationId": "edit_node",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Editing node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing a node",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeUpdateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeUpdateParams"
+      },
+      "delete": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Removing a cluster node",
+        "description": "Removing a cluster node",
+        "operationId": "delete_node",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID to delete a cluster node",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node delete started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

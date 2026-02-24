@@ -1,0 +1,48 @@
+{
+  "components": {
+    "schemas": {
+      "PlatformBackupScheduleCreate": {
+        "type": "object",
+        "properties": {
+          "schedule_type": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly",
+              "cron"
+            ]
+          },
+          "cron_expression": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string"
+          },
+          "storage_type": {
+            "type": "string",
+            "enum": [
+              "local",
+              "ssh",
+              "ftp"
+            ]
+          },
+          "connection_params": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name",
+          "schedule_type",
+          "storage_type",
+          "cron_expression",
+          "connection_params"
+        ]
+      }
+    }
+  }
+}

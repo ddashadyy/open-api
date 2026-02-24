@@ -1,0 +1,25 @@
+{
+  "components": {
+    "schemas": {
+      "SnapshotCreationParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[\\w_-]{1,100}$"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "with_ram": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  }
+}

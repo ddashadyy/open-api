@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/node/{node_id}/problem": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Node add problem",
+        "operationId": "add_problem",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node add problem params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeAddProblemParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node problem added successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "NodeAddProblemParams"
+      }
+    }
+  }
+}

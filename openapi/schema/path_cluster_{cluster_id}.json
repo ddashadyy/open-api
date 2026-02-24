@@ -1,0 +1,121 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}": {
+      "get": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Cluster",
+        "operationId": "get_cluster",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "view",
+            "in": "query",
+            "description": "Cluster view",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "full"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cluster is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cluster"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Editing a cluster",
+        "operationId": "edit_cluster",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Cluster parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClusterEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Cluster edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTasks"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ClusterEditParams"
+      },
+      "delete": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Deleting a cluster",
+        "description": "Deleting a cluster",
+        "operationId": "delete_cluster",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "The cluster ID to remove",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cluster deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Deleted"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

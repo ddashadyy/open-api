@@ -1,0 +1,81 @@
+{
+  "paths": {
+    "/node/{node_id}/pci/device/mode": {
+      "post": {
+        "tags": [
+          "node",
+          "pci"
+        ],
+        "summary": "Set mode for PCI devices",
+        "operationId": "set_pci_device_mode",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "List of PCI devices",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "force": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "setup_iommu_args": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "mode": {
+                    "$ref": "#/components/schemas/PciDeviceMode"
+                  },
+                  "list": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/PciDeviceId"
+                    }
+                  }
+                },
+                "required": [
+                  "mode",
+                  "list"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Set mode for PCI devices started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    }
+                  },
+                  "nullable": true
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "PciDeviceModeSet"
+      }
+    }
+  }
+}

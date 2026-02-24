@@ -1,0 +1,26 @@
+{
+  "components": {
+    "schemas": {
+      "HaStorageParamsCeph": {
+        "type": "object",
+        "properties": {
+          "fs_name": {
+            "type": "string"
+          },
+          "directory": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fs_name",
+          "directory",
+          "username"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

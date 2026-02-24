@@ -1,0 +1,21 @@
+{
+  "components": {
+    "schemas": {
+      "OsIsoList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OsIso"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

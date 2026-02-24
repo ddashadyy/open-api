@@ -1,0 +1,34 @@
+{
+  "components": {
+    "schemas": {
+      "PlatformMoveParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 255,
+            "default": "platform-master"
+          },
+          "cluster":{
+            "type":"integer"
+          },
+          "node": {
+            "type": "integer"
+          },
+          "cpu_number": {
+            "type": "integer"
+          },
+          "ram_mib": {
+            "type": "integer"
+          },
+          "disks": {
+            "$ref": "#/components/schemas/HostDisks"
+          },
+          "custom_interfaces": {
+            "$ref": "#/components/schemas/CustomInterfaces"
+          }
+        }
+      }
+    }
+  }
+}

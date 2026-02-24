@@ -1,0 +1,31 @@
+{
+  "components": {
+    "schemas": {
+      "ChangelogChange": {
+        "type": "object",
+        "properties": {
+          "msg": {
+            "type": "string",
+            "description": "Change description",
+            "example": "Fixed an error that caused ISO images to not upload to NAS repository with NFS version lower than 4.2."
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "fix",
+              "improve",
+              "feat",
+              "change"
+            ],
+            "description": "Change type",
+            "example": "fix"
+          }
+        },
+        "required": [
+          "msg",
+          "type"
+        ]
+      }
+    }
+  }
+}

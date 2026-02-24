@@ -1,0 +1,54 @@
+{
+  "paths": {
+    "/node/{node_id}/maintenance/start": {
+      "post": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Start task for entering maintenance mode",
+        "description": "Start maintenance mode task",
+        "operationId": "start_maintenance_mode",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID node",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Enter maintenance task params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cancel_running_tasks": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Task for entering maintenance mode on node successfully started. Returned id of evacuation and task_id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

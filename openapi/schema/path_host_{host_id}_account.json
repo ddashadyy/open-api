@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/account": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "change_account",
+        "summary": "Change of owner of a virtual machine",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Owner change options",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostAccountParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host account changed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostAccountParams"
+      }
+    }
+  }
+}

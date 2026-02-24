@@ -1,0 +1,78 @@
+{
+  "paths": {
+    "/disk/{disk_id}": {
+      "post": {
+        "tags": [
+          "disk"
+        ],
+        "operationId": "edit_disk",
+        "summary": "Edit the disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Disk edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiskEditParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk edit successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "DiskEditParams"
+      },
+      "delete": {
+        "tags": [
+          "disk"
+        ],
+        "summary": "Remove disk",
+        "operationId": "remove_disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Disk is successfully removed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "components": {
+    "schemas": {
+      "NodeMaintenanceInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "node_id": {
+            "type": "integer"
+          },
+          "need_evacuation": {
+            "type": "boolean"
+          },
+          "is_cancelled": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "evacuation",
+              "wait_exit",
+              "return",
+              "evacuation_failed",
+              "return_failed",
+              "done"
+            ]
+          },
+          "ignore_images_and_backups": {
+            "type": "boolean"
+          },
+          "host": {
+            "type": "object",
+            "properties": {
+              "total_count": {
+                "type": "integer"
+              },
+              "remain_count": {
+                "type": "integer"
+              },
+              "migrated_count": {
+                "type": "integer"
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MaintenanceEntity"
+                }
+              }
+            }
+          },
+          "disk": {
+            "type": "object",
+            "properties": {
+              "total_count": {
+                "type": "integer"
+              },
+              "remain_count": {
+                "type": "integer"
+              },
+              "migrated_count": {
+                "type": "integer"
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MaintenanceEntity"
+                }
+              }
+            }
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "total_count": {
+                "type": "integer"
+              },
+              "remain_count": {
+                "type": "integer"
+              },
+              "migrated_count": {
+                "type": "integer"
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MaintenanceEntity"
+                }
+              }
+            }
+          },
+          "backup": {
+            "type": "object",
+            "properties": {
+              "total_count": {
+                "type": "integer"
+              },
+              "remain_count": {
+                "type": "integer"
+              },
+              "migrated_count": {
+                "type": "integer"
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MaintenanceEntity"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

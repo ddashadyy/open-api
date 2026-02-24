@@ -1,0 +1,87 @@
+{
+  "paths": {
+    "/schedule/{schedule_id}": {
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Edit schedule",
+        "operationId": "edit_schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "ID schedule",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Schedule params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduleEditParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Schedule edited successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ScheduleEditParams"
+      },
+      "delete": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Delete schedule",
+        "operationId": "delete_schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "ID schedule",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Schedule deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

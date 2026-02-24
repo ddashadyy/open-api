@@ -1,0 +1,53 @@
+{
+  "paths": {
+    "/repository/{repository_id}/iso": {
+      "post": {
+        "tags": [
+          "repository"
+        ],
+        "summary": "Download ISO to repository",
+        "operationId": "iso_download",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "Repository ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Repository ISO download params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RepositoryIsoDownloadParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "ISO download started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "RepositoryIsoDownloadParams"
+      }
+    }
+  }
+}

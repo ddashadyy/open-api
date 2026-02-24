@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/range/{range_id}/ip": {
+      "get": {
+        "tags": [
+          "network"
+        ],
+        "operationId": "get_range_ip_list",
+        "parameters": [
+          {
+            "name": "range_id",
+            "in": "path",
+            "description": "Range ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Range ip is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "ResourceUnused": {
+        "type": "object",
+        "properties": {
+          "unused": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

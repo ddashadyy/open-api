@@ -1,0 +1,24 @@
+{
+  "components": {
+    "schemas": {
+      "IpAutomationType": {
+        "required": [
+          "ip_automation_type"
+        ],
+        "type": "object",
+        "properties": {
+          "ip_automation_type": {
+            "type": "string",
+            "enum": [
+              "none",
+              "redhat_based",
+              "debian_based",
+              "freebsd_based",
+              "windows_based"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PciDevice"
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "last_notify",
+          "list",
+          "size"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/schedule/{schedule_id}/run": {
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "summary": "Run schedule",
+        "operationId": "run_schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "ID schedule",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Schedule started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

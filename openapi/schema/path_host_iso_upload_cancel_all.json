@@ -1,0 +1,54 @@
+{
+  "paths": {
+    "/host/iso/upload/cancel/all": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "hosts_iso_upload_cancel_all",
+        "summary": "Clean DB from the list of in-progress ISO file uploads (called only when uploader service restarts)",
+        "parameters": [
+        ],
+        "requestBody": {
+          "description": "Any params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "List of found-n-cleaned ISO uploads",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "list": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "node": {
+                            "type": "integer"
+                          },
+                          "path": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

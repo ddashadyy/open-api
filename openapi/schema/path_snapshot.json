@@ -1,0 +1,46 @@
+{
+  "paths": {
+    "/snapshot": {
+      "get": {
+        "tags": [
+          "snapshot"
+        ],
+        "operationId": "get_full_snapshot_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Snapshot list for all hosts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "last_notify": {
+                      "$ref": "#/components/schemas/LastNotify"
+                    },
+                    "list": {
+                      "type": "array",
+                      "items": {
+                          "$ref": "#/components/schemas/Snapshot"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

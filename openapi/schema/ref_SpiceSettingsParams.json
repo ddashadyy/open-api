@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "SpiceSettingsParams": {
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 255
+          }
+        },
+        "required": [
+          "password"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

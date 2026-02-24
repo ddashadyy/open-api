@@ -1,0 +1,215 @@
+{
+  "components": {
+    "schemas": {
+      "HostMetadataParams": {
+        "type": "object",
+        "properties": {
+          "base_resources": {
+            "type": "object",
+            "properties": {
+              "cpu_numer": {
+                "type": "integer"
+              },
+              "ram_mib": {
+                "type": "integer"
+              }
+            }
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            }
+          },
+          "cluster": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            }
+          },
+          "node" :{
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              }
+            }
+          },
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "internal_name": {
+                  "type": "string"
+                },
+                "size_mib": {
+                  "type": "integer"
+                },
+                "boot_order": {
+                  "type": "integer"
+                },
+                "target_dev": {
+                  "type": "string"
+                },
+                "storage": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "domain": {
+            "type": "string"
+          },
+          "interfaces": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "is_vxlan": {
+                  "type": "boolean"
+                },
+                "vxlan_id": {
+                  "type": "integer"
+                },
+                "mac_address": {
+                  "type": "string"
+                },
+                "dhcp": {
+                  "type": "boolean"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "node_interface_name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "ipv4": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "domain": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string",
+                  "format": "ipv4"
+                },
+                "ip_addr": {
+                  "type": "string",
+                  "format": "ipv4"
+                },
+                "interface_id": {
+                  "type": "integer"
+                },
+                "ippool_id": {
+                  "type": "integer"
+                },
+                "network_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "ipv6": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "domain": {
+                  "type": "string"
+                },
+                "gateway": {
+                  "type": "string",
+                  "format": "ipv6"
+                },
+                "ip_addr": {
+                  "type": "string",
+                  "maxLength": 255
+                },
+                "interface_id": {
+                  "type": "integer"
+                },
+                "ippool_id": {
+                  "type": "integer"
+                },
+                "network_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "preset": {
+            "type": "integer"
+          },
+          "tuned_resources": {
+            "type": "object",
+            "properties": {
+              "anti_spoofing": {
+                "type": "boolean"
+              },
+              "cpu_mode": {
+                "$ref": "#/components/schemas/CPUMode"
+              },
+              "cpu_weight": {
+                "type": "integer"
+              },
+              "io_read_iops": {
+                "type": "integer"
+              },
+              "io_read_mbitps": {
+                "type": "integer"
+              },
+              "io_weight": {
+                "type": "integer"
+              },
+              "io_write_iops": {
+                "type": "integer"
+              },
+              "io_write_mbitps": {
+                "type": "integer"
+              },
+              "net_in_mbitps": {
+                "type": "integer"
+              },
+              "net_out_mbitps": {
+                "type": "integer"
+              },
+              "net_weight": {
+                "type": "integer"
+              },
+              "process_number": {
+                "type": "integer"
+              },
+              "tcp_connections_in": {
+                "type": "integer"
+              },
+              "tcp_connections_out": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "IsoStatus": {
+        "type": "string",
+        "enum": [
+          "downloading",
+          "ready",
+          "mounted"
+        ]
+      }
+    }
+  }
+}

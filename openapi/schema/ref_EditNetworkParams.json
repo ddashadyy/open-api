@@ -1,0 +1,28 @@
+{
+  "components": {
+    "schemas": {
+      "EditNetworkParams": {
+        "type": "object",
+        "properties": {
+          "gateway": {
+            "$ref": "#/components/schemas/Gateway"
+          },
+          "need_reserve": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "format": "iprange"
+          },
+          "vlan": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

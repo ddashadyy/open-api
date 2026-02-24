@@ -1,0 +1,50 @@
+{
+	"components": {
+	  "schemas": {
+      "VxlanParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255
+          },
+          "comment": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "account": {
+            "type": "integer"
+          },
+          "ipnets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "format": "iprange"
+                },
+                "gateway": {
+                  "$ref": "#/components/schemas/Gateway"
+                }
+              }
+            }
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "ipnets",
+          "clusters"
+        ],
+        "additionalProperties": false
+      }
+	  }
+	}
+}

@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/range": {
+      "get": {
+        "tags": [
+          "network"
+        ],
+        "operationId": "get_range_list",
+        "responses": {
+          "200": {
+            "description": "Range info is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

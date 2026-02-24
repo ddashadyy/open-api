@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/tag/{tag_id}": {
+      "delete": {
+        "tags": [
+          "tag"
+        ],
+        "operationId": "delete_tag",
+        "parameters": [
+          {
+            "name": "tag_id",
+            "in": "path",
+            "description": "Tag ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A tag deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

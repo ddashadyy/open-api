@@ -1,0 +1,68 @@
+{
+  "components": {
+    "schemas": {
+      "PciDevice": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "vendor_name": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PciDeviceType"
+          },
+          "pci_id": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "iommu_group": {
+            "type": "integer",
+            "nullable": true
+          },
+          "host": {
+            "$ref": "#/components/schemas/IdName"
+          },
+          "used_by": {
+            "type": "string",
+            "enum": [
+              "host",
+              "node",
+              "vgpu"
+            ],
+            "nullable": true
+          },
+          "passthrough_enabled": {
+            "type": "boolean"
+          },
+          "failed": {
+            "type": "boolean"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/PciDeviceMode"
+          }
+        },
+        "required": [
+          "id",
+          "vendor_name",
+          "product_name",
+          "type",
+          "pci_id",
+          "comment",
+          "iommu_group",
+          "host",
+          "used_by",
+          "passthrough_enabled",
+          "failed",
+          "mode"
+        ]
+      }
+    }
+  }
+}

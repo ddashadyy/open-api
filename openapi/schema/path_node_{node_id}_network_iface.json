@@ -1,0 +1,88 @@
+{
+  "paths": {
+    "/node/{node_id}/network/iface": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Create a new interface on the node",
+        "operationId": "iface_create",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node interface creation params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeIfaceCreateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node interface created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeIfaceCreateParams"
+      },
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Get a list of network interfaces on the node",
+        "operationId": "iface_list",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of network interfaces on the node received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeIfaceList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ISPsystem vm API",
+    "description": "ISPsystem vm API",
+    "version": "3.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://example.com/vm/v3"
+    }
+  ]
+}

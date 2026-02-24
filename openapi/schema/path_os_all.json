@@ -1,0 +1,25 @@
+{
+  "paths": {
+    "/os/all": {
+      "get": {
+        "tags": [
+          "os"
+        ],
+        "summary": "OS list",
+        "operationId": "get_all_os_list",
+        "responses": {
+          "200": {
+            "description": "OS list received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OsList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

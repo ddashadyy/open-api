@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/host/{host_id}/iso/mount/local": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "host_iso_mount_local",
+        "summary": "Mount uploaded local ISO",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ISO local mount task successfully started",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostIsoMountLocalParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/pci/device/{device_id}": {
+      "post": {
+        "tags": [
+          "pci"
+        ],
+        "summary": "Change params of PCI device",
+        "operationId": "edit_pci_device",
+        "parameters": [
+          {
+            "name": "device_id",
+            "in": "path",
+            "description": "PCI device ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "PCI device change params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PciDeviceChangeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "PCI device params changed successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "PciDeviceChangeParams"
+      }
+    }
+  }
+}

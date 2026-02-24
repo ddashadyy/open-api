@@ -1,0 +1,48 @@
+{
+  "components": {
+    "schemas": {
+      "NodeListShort": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "cluster": {
+                  "type": "object",
+                  "properties": {
+                    "virtualization_type": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "rbac":{
+                  "type": "object",
+                  "properties": {
+                    "cluster": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "ip": {
+                  "type": "string"
+                },
+                "libvirt_error": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

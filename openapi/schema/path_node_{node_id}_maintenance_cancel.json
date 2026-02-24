@@ -1,0 +1,37 @@
+{
+  "paths": {
+    "/node/{node_id}/maintenance/cancel": {
+      "post": {
+        "tags": [
+          "maintenance"
+        ],
+        "summary": "Cancel task for entering maintenance mode",
+        "description": "Cancel maintenance mode task. If some entities were evacuated, they will return back if return_migrated is true",
+        "operationId": "cancel_maintenance_mode",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "ID node",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task for entering in maintenance mode on node successfully cancelled. Returned id of evacuation and task_id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

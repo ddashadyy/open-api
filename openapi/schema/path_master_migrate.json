@@ -1,0 +1,64 @@
+{
+    "paths": {
+      "/master/migrate": {
+        "get": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "master_migration_form",
+          "responses": {
+            "200": {
+              "description": "Master migrate form is successfully received",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/NodeForMigrateList"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "master"
+          ],
+          "operationId": "migrate_master",
+          "summary": "Migrating a master",
+          "requestBody": {
+            "description": "Migration options",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MasterMigrateParams"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Master migration started successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "task": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "x-codegen-request-body-name": "MasterMigrateParams"
+        }
+      }
+    }
+  }
+  

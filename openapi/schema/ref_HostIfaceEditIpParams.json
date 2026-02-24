@@ -1,0 +1,86 @@
+{
+  "components": {
+    "schemas": {
+      "HostIfaceEditIpParams": {
+        "type": "object",
+        "properties": {
+          "bridge_id": {
+            "type": "integer"
+          },
+          "dhcp": {
+            "type": "boolean"
+          },
+          "is_main_network": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "ippool": {
+            "type": "integer"
+          },
+          "ip_count": {
+            "type": "integer"
+          },
+          "ip_name": {
+            "$ref": "#/components/schemas/AnyIp"
+          },
+          "ipv6_subnet": {
+            "type": "integer",
+            "minimum": 32,
+            "maximum": 125
+          },
+          "no_ip": {
+            "type": "boolean"
+          },
+          "vxlan": {
+            "$ref": "#/components/schemas/AddIpParamsVxlan"
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "is_main_network",
+              "ip_name"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "is_main_network",
+              "ip_count"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "is_main_network",
+              "ippool",
+              "ipv6_subnet"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "is_main_network",
+              "dhcp"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "is_main_network",
+              "no_ip"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "vxlan"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

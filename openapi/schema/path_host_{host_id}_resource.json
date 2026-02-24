@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/resource": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "description": "Changing Host parameters",
+        "operationId": "host_edit_resource",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for changing host",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostResourceParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Host resource edit started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostResourceParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/backup_location": {
+      "get": {
+        "tags": [
+          "backup_location"
+        ],
+        "summary": "Backup location list",
+        "operationId": "get_backup_location_list",
+        "responses": {
+          "200": {
+            "description": "Backup location list have gotten successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "backup_location"
+        ],
+        "summary": "Backup location create",
+        "operationId": "create_backup_location",
+        "requestBody": {
+          "description": "Backup location params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Backup location created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "LocationCreate"
+      }
+    }
+  }
+}

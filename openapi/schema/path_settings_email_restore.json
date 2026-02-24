@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "/settings/email_restore": {
+      "post": {
+        "tags": [
+          "settings"
+        ],
+        "description": "Reset email settings",
+        "operationId": "edit_settings_email_restore",
+        "responses": {
+          "200": {
+            "description": "Email restored successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

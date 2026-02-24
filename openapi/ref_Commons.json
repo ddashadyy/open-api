@@ -1,0 +1,31 @@
+{
+  "components": {
+    "schemas": {
+      "CPUMode": {
+        "type": "string",
+        "enum": [
+          "default",
+          "host-model",
+          "host-passthrough",
+          "custom"
+        ],
+        "nullable": true
+      },
+      "SuccessTaskSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "task": {
+            "type": "integer"
+          }
+        }
+      },
+      "EmptySchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  }
+}

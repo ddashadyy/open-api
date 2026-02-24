@@ -1,0 +1,82 @@
+{
+  "paths": {
+    "/ip/{ip_id}": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Editing VM ip-address",
+        "operationId": "edit_ip",
+        "parameters": [
+          {
+            "name": "ip_id",
+            "in": "path",
+            "description": "ID ВМ",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "with_check",
+            "in": "query",
+            "description": "Force DNSBL check in ipmgr",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing ip-address",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditIpParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "IP edit started successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "EditIpParams"
+      },
+      "delete": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Removing an IP address",
+        "description": "Removing an IP address",
+        "operationId": "delete_ip",
+        "parameters": [
+          {
+            "name": "ip_id",
+            "in": "path",
+            "description": "ID ВМ",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "IP delete started successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

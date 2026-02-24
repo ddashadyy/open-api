@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/task/{task_id}/abort": {
+      "post": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Aborting the running task",
+        "operationId": "abort_task",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "description": "Task id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task aborted successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

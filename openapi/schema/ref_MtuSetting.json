@@ -1,0 +1,12 @@
+{
+  "components": {
+    "schemas": {
+      "MtuSetting": {
+        "type": "integer",
+        "minimum": 576,
+        "maximum": 9000,
+        "nullable": false
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "paths": {
+    "/master/{master_id}": {
+      "delete": {
+        "tags": [
+          "master"
+        ],
+        "operationId": "delete_master",
+        "summary": "Delete master (only for dummy installation)",
+        "parameters": [
+          {
+            "name": "master_id",
+            "in": "path",
+            "description": "Mock value for validation of delete method",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete master successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

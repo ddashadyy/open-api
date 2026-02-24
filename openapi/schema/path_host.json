@@ -1,0 +1,86 @@
+{
+  "paths": {
+    "/host": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host list is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HostList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "VM creation",
+        "operationId": "create_host",
+        "requestBody": {
+          "description": "Parameters of the created VM",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    },
+                    "recipe_task_list": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    },
+                    "recipe_task": {
+                      "type": "integer"
+                    },
+                    "spice_task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostParams"
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "components": {
+    "schemas": {
+      "CustomInterfaces": {
+        "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "mac": {
+                "type": "string",
+                "format": "mac",
+                "nullable": true
+              },
+              "model": {
+                "$ref": "#/components/schemas/HostInterfaceModel"
+              },
+              "bridge": {
+                "type": "string",
+                "nullable": true
+              },
+              "bridge_id": {
+                "type": "integer"
+              },
+              "dpg_id": {
+                "type": "integer"
+              },
+              "dhcp": {
+                "type": "boolean"
+              },
+              "is_main_network": {
+                "type": "boolean"
+              },
+              "ippool": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "ip_count": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "ip_name": {
+                "type": "string",
+                "maxLength": 255
+              },
+              "ip_network": {
+                "type": "integer",
+                "maxLength": 9
+              },
+              "ipv6_prefix": {
+                "type": "integer",
+                "minimum": 32,
+                "maximum": 125
+              },
+              "no_ip": {
+                "type": "boolean"
+              },
+              "without_allocation": {
+                "type": "boolean",
+                "default": false
+              },
+              "queues": {
+                "$ref": "#/components/schemas/IfaceQueues"
+              }
+            },
+            "anyOf": [
+              {
+                "required": [
+                  "ip_name"
+                ],
+                "type": "object"
+              },
+              {
+                "required": [
+                  "ip_count"
+                ],
+                "type": "object"
+              },
+              {
+                "required": [
+                  "ippool",
+                  "ipv6_prefix"
+                ],
+                "type": "object"
+              },
+              {
+                "required": [
+                  "dhcp"
+                ],
+                "type": "object"
+              },
+              {
+                "required": [
+                  "no_ip"
+                ],
+                "type": "object"
+              },
+              {
+                "required": [
+                  "vxlan"
+                ],
+                "type": "object"
+              }
+            ],
+            "additionalProperties": false
+        }
+      }
+    }
+  }
+}

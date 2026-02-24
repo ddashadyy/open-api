@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "NodeRunScriptParams": {
+        "type": "object",
+        "properties": {
+          "script": {
+            "type": "integer",
+            "maxLength": 9
+          }
+        },
+        "required": [
+          "script"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/image/create": {
+      "post": {
+        "tags": [
+          "image"
+        ],
+        "summary": "Creating a VM image",
+        "operationId": "create_image",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "VM ID from which the image is created",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters of the created VM image",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImageParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM image created successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageParams"
+      }
+    }
+  }
+}

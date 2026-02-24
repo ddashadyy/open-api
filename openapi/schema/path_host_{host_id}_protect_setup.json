@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/host/{host_id}/protect_setup": {
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "VM protect setup editing",
+        "operationId": "protect_setup",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "ID of the VM being protect setup editing",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing VM protect settings",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "is_protected": {
+                    "type": "boolean"
+                  },
+                  "extended_protection": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM protect settings successfully edited"
+          }
+        }
+      }
+    }
+  }
+}

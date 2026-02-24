@@ -1,0 +1,62 @@
+{
+  "paths": {
+    "/repository/{repository_id}/iso/status": {
+      "get": {
+        "tags": [
+          "repository"
+        ],
+        "operationId": "repository_iso_status",
+        "summary": "Status of the ability for current user to upload ISO of given size to the target host",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "Repository ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iso_size_mib",
+            "in": "query",
+            "description": "Size of ISO file in MiB",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ISO can be uploaded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "repository_id": {
+                      "type": "integer"
+                    },
+                    "user_id": {
+                      "type": "integer"
+                    },
+                    "admin_role": {
+                      "type": "boolean"
+                    },
+                    "iso_status": {
+                      "type": "string",
+                      "enum": [
+                        "available"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

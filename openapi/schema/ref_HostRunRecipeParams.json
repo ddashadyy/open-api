@@ -1,0 +1,47 @@
+{
+  "components": {
+    "schemas": {
+      "HostRunRecipeParams": {
+        "type": "object",
+        "properties": {
+          "recipe": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "body": {
+            "type": "string"
+          },
+          "recipe_params": {
+            "$ref": "#/components/schemas/HostRunRecipeParamsParams"
+          },
+          "send_email": {
+            "type": "boolean",
+            "default": false
+          },
+          "ignore_recipe_filters": {
+            "type": "boolean",
+            "default": false
+          },
+          "recipients": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lang": {
+                  "$ref": "#/components/schemas/LangEnum"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                }
+              },
+              "required": [
+                "lang"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

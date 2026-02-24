@@ -1,0 +1,95 @@
+{
+  "components": {
+    "schemas": {
+      "StorageList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "comment": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "ceph",
+                    "file",
+                    "lvm",
+                    "zfs",
+                    "network_lvm",
+                    "netfs",
+                    "sheepdog",
+                    "iscsi",
+                    "gluster"
+                  ]
+                },
+                "storage_params": {
+                  "$ref": "#/components/schemas/StorageParamsAdditional"
+                },
+                "is_network": {
+                  "type": "boolean"
+                },
+                "clusters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "virt_pool": {
+                        "$ref": "#/components/schemas/VirtPoolParams"
+                      },
+                      "virtualization_type": {
+                        "type": "string",
+                        "enum": [
+                          "dummy",
+                          "kvm",
+                          "lxd",
+                          "vmmgr5",
+                          "vmmgr5_dummy"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "immortal": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

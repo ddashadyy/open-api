@@ -1,0 +1,29 @@
+{
+  "components": {
+    "schemas": {
+      "NodeMaintenanceModeInitParams": {
+        "type": "object",
+        "properties": {
+          "need_evacuation": {
+            "type": "boolean",
+            "default": true
+          },
+          "ignore_filters": {
+            "type": "boolean",
+            "default": false
+          },
+          "ignore_images_and_backups": {
+            "type": "boolean",
+            "default": false
+          },
+          "node_except": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

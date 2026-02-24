@@ -1,0 +1,9 @@
+{
+  "components": {
+    "schemas": {
+      "LastNotify": {
+        "type": "integer"
+      }
+    }
+  }
+}

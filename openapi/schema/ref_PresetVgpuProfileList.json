@@ -1,0 +1,40 @@
+{
+  "components": {
+    "schemas": {
+      "PresetVgpuProfileList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "preset": {
+                  "$ref": "#/components/schemas/IdName"
+                },
+                "vgpu_profile": {
+                  "$ref": "#/components/schemas/IdName"
+                }
+              },
+              "required": [
+                "preset",
+                "vgpu_profile"
+              ]
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "last_notify",
+          "list",
+          "size"
+        ]
+      }
+    }
+  }
+}

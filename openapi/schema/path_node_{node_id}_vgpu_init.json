@@ -1,0 +1,31 @@
+{
+  "paths": {
+    "/node/{node_id}/vgpu/init": {
+      "post": {
+        "tags": [
+          "node",
+          "pci"
+        ],
+        "summary": "Start vGPU initialization task on vGPU-mode PCI devices",
+        "operationId": "node_vgpu_init",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Task started successfully",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

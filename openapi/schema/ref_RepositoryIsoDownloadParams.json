@@ -1,0 +1,36 @@
+{
+  "components": {
+    "schemas": {
+      "RepositoryIsoDownloadParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "maxLength": 255
+          },
+          "os_type": {
+            "$ref": "#/components/schemas/IsoOsType"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 255
+            }
+          },
+          "comment": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

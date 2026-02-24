@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/storage/{storage_id}/check": {
+      "post": {
+        "tags": [
+          "cluster"
+        ],
+        "summary": "Check storage on cluster",
+        "operationId": "check_cluster_storage",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "storage_id",
+            "in": "path",
+            "description": "Storage ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Storage checked successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "components": {
+    "schemas": {
+      "OsIsoSaveParams": {
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "number",
+            "maxLength": 9
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "repository_id",
+          "images"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

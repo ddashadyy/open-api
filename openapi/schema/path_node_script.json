@@ -1,0 +1,63 @@
+{
+  "paths": {
+    "/node_script": {
+      "get": {
+        "tags": [
+          "node_script",
+          "node"
+        ],
+        "summary": "List of scripts",
+        "operationId": "get_node_script_list",
+        "responses": {
+          "200": {
+            "description": "List of scripts received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeScriptList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "node_script",
+          "node"
+        ],
+        "summary": "Scripting a cluster node",
+        "operationId": "create_node_script",
+        "requestBody": {
+          "description": "Script parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NodeScriptParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The script was created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "NodeScriptCreateParams"
+      }
+    }
+  }
+}

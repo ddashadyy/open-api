@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "PciDeviceMode": {
+        "type": "string",
+        "enum": [
+          "off",
+          "passthrough",
+          "vgpu"
+        ]
+      }
+    }
+  }
+}

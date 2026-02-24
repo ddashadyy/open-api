@@ -1,0 +1,58 @@
+{
+  "paths": {
+    "/disk/{disk_id}/from_image": {
+      "post": {
+        "tags": [
+          "disk"
+        ],
+        "operationId": "restore_disk_from_image",
+        "summary": "Used to restore disk from custom image that was uploaded on node",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Disk restore from image params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiskRestoreFromImage"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk restore started successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "Disk ID"
+                    },
+                    "task": {
+                      "type": "integer",
+                      "description": "Disk restore task id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "DiskRestoreFromImage"
+      }
+    }
+  }
+}

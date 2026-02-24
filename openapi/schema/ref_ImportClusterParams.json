@@ -1,0 +1,365 @@
+{
+  "components": {
+    "schemas": {
+      "ImportClusterParams": {
+        "type": "object",
+        "properties": {
+          "import_history": {
+            "type": "integer",
+            "description": "Import history entry id"
+          },
+          "platform_backup": {
+            "type": "integer",
+            "nullable": true
+          },
+          "cluster_name": {
+            "type": "string"
+          },
+          "imported_from": {
+            "type": "object",
+            "properties": {
+              "ip": {
+                "type": "string",
+                "format": "ipv4"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "vmmgr5",
+                  "vmmgr5_dummy"
+                ]
+              },
+              "ssh_port": {
+                "type": "integer",
+                "default": 22
+              },
+              "user": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ip",
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          "vm5_data_file": {
+            "type": "string"
+          },
+          "vm5_data": {
+            "type": "object",
+            "properties": {
+              "os_storage_path": {
+                "type": "string",
+                "default": "/os"
+              },
+              "image_storage_path": {
+                "type": "string",
+                "default": "/image"
+              },
+              "ram_overselling": {
+                "type": "number",
+                "default": 1,
+                "minimum": 0
+              },
+              "cpu_overselling": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 100,
+                "default": -1
+              },
+              "dns_servers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "timezone": {
+                "type": "string",
+                "default": "UTC"
+              },
+              "user": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "level": {
+                      "type": "string",
+                      "enum": [
+                        "user",
+                        "admin"
+                      ]
+                    },
+                    "enabled": {
+                      "type": "boolean",
+                      "default": true
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "level"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "event": {
+                "type": "object",
+                "properties": {
+                },
+                "additionalProperties": true
+              },
+              "network": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {},
+                  "additionalProperties": true
+                }
+              },
+              "storage": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "pool_type": {
+                      "type": "string"
+                    },
+                    "tgt_path": {
+                      "type": "string",
+                      "nullable": true
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "pool_type"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "settings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "node": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "ip": {
+                      "type": "string",
+                      "format": "ipv4"
+                    },
+                    "ssh_port": {
+                      "type": "integer",
+                      "default": 22
+                    },
+                    "password": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "status": {
+                      "type": "integer",
+                      "enum": [
+                        0,
+                        1,
+                        2
+                      ]
+                    },
+                    "fake": {
+                      "type": "boolean"
+                    },
+                    "physical_cpucore": {
+                      "type": "integer",
+                      "nullable": true
+                    },
+                    "allocation_rule": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "priority": {
+                            "type": "integer"
+                          },
+                          "rule_type": {
+                            "type": "integer",
+                            "enum": [0, 1]
+                          },
+                          "rule_oper": {
+                            "type": "integer",
+                            "enum": [0, 1, 2, 3]
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "action": {
+                            "type": "integer",
+                            "enum": [0, 1, 2]
+                          },
+                          "stop": {
+                            "type": "boolean",
+                            "default": false
+                          }
+                        },
+                        "required": [
+                          "priority",
+                          "rule_type",
+                          "rule_oper",
+                          "value",
+                          "action"
+                        ],
+                        "additionalProperties": true
+                      }
+                    },
+                    "host": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "cpu": {
+                            "type": "integer"
+                          },
+                          "ram": {
+                            "type": "integer"
+                          },
+                          "fake": {
+                            "type": "boolean"
+                          },
+                          "interface": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "vm_id": {
+                                  "type": "integer"
+                                },
+                                "net_id": {
+                                  "type": "integer"
+                                },
+                                "mac": {
+                                  "type": "string"
+                                },
+                                "nic_model": {
+                                  "type": "string",
+                                  "enum": [
+                                    "i82551",
+                                    "i82557b",
+                                    "i82559er",
+                                    "ne2k_pci",
+                                    "pcnet",
+                                    "rtl8139",
+                                    "e1000",
+                                    "virtio"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "net_id",
+                                "mac",
+                                "nic_model"
+                              ],
+                              "additionalProperties": true
+                            }
+                          },
+                          "firewall_rules": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "action": {
+                                  "type": "string"
+                                },
+                                "direction": {
+                                  "type": "string"
+                                },
+                                "protocols": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                "portstart": {
+                                  "type": "integer"
+                                },
+                                "portend": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "cpu",
+                          "ram"
+                        ],
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "ip",
+                    "host"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": [
+              "user",
+              "storage",
+              "node"
+            ]
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "import_history",
+              "imported_from",
+              "vm5_data_file"
+            ],
+            "type": "object"
+          },
+          {
+            "required": [
+              "import_history",
+              "imported_from",
+              "vm5_data"
+            ],
+            "type": "object"
+          }
+        ],
+        "additionalProperties": true
+      }
+    }
+  }
+}

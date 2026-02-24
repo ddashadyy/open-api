@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/node/{node_id}/spice_repair": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "node_spice_repair",
+        "summary": "Repair SPICE on Node",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SPICE repair task successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

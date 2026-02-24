@@ -1,0 +1,24 @@
+{
+  "paths": {
+    "/changelog": {
+      "get": {
+        "tags": [
+          "vmmanager"
+        ],
+        "operationId": "get_changelog",
+        "responses": {
+          "200": {
+            "description": "Changelog is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChangelogResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

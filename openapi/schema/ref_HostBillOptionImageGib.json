@@ -1,0 +1,18 @@
+{
+  "components": {
+    "schemas": {
+      "HostBillOptionImageGib": {
+        "type": "object",
+        "properties": {
+          "image_gib": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "image_gib"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

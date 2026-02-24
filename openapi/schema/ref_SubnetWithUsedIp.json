@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "SubnetWithUsedIp": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "subnet": {
+            "type": "string"
+          },
+          "used_ip": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

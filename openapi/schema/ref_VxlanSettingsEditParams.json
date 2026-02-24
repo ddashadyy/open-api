@@ -1,0 +1,88 @@
+{
+  "components": {
+    "schemas": {
+      "VxlanSettingsEditParams": {
+        "type": "object",
+        "properties": {
+          "bgp_community": {
+            "type": "string",
+            "maxLength": 255,
+            "nullable": true
+          },
+          "bgp_as": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295,
+            "nullable": true
+          },
+          "bgp_sessions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string",
+                  "format": "ipv4"
+                },
+                "bgp_as": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "comment": {
+                  "type": "string",
+                  "maxLength": 255,
+                  "nullable": true
+                }
+              },
+              "required": [
+                "ip",
+                "bgp_as"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "bgp_community_v6": {
+            "type": "string",
+            "maxLength": 255,
+            "nullable": true
+          },
+          "bgp_as_v6": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295,
+            "nullable": true
+          },
+          "bgp_sessions_v6": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ip": {
+                  "type": "string",
+                  "format": "ipv6"
+                },
+                "bgp_as": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4294967295
+                },
+                "comment": {
+                  "type": "string",
+                  "maxLength": 255,
+                  "nullable": true
+                }
+              },
+              "required": [
+                "ip",
+                "bgp_as"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

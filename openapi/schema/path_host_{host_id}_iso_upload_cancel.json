@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/host/{host_id}/iso/upload/cancel": {
+      "post": {
+        "tags": [
+          "internal"
+        ],
+        "operationId": "host_iso_upload_cancel",
+        "summary": "Cancel previously announced ISO file upload",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ISO upload cancelled successfully"
+          }
+        }
+      }
+    }
+  }
+}

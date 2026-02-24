@@ -1,0 +1,170 @@
+{
+    "paths": {
+      "/host/{host_id}/snapshot": {
+        "delete": {
+          "tags": [
+            "snapshot"
+          ],
+          "summary": "VM snapshots deleting for VM importing from VMmanager 5",
+          "operationId": "delete_vm5_host_snapshots",
+          "parameters": [
+            {
+              "name": "host_id",
+              "in": "path",
+              "description": "VM ID",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "VM snapshots deleted successfully",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "task": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "snapshot"
+          ],
+          "summary": "VM snapshots creation",
+          "operationId": "create_host_snapshot",
+          "parameters": [
+            {
+              "name": "host_id",
+              "in": "path",
+              "description": "VM ID",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "VM snapshot creation params",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SnapshotCreationParams"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "VM snapshot creation task registered",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/IdAndTask"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "snapshot"
+          ],
+          "operationId": "get_snapshot_list",
+          "parameters": [
+            {
+              "name": "host_id",
+              "in": "path",
+              "description": "VM ID",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "where",
+              "in": "query",
+              "description": "Where filter",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Snapshot list for a host",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "last_notify": {
+                        "$ref": "#/components/schemas/LastNotify"
+                      },
+                      "list": {
+                        "type": "array",
+                        "items": {
+                           "$ref": "#/components/schemas/Snapshot"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "/host/{host_id}/snapshots": {
+        "delete": {
+          "tags": [
+            "snapshot"
+          ],
+          "summary": "VM snapshots deletion (no VM5)",
+          "operationId": "delete_host_snapshots2",
+          "parameters": [
+            {
+              "name": "host_id",
+              "in": "path",
+              "description": "VM ID",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "VM snapshots task registered",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "task": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+}

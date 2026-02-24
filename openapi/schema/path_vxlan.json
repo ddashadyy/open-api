@@ -1,0 +1,66 @@
+{
+  "paths": {
+    "/vxlan": {
+      "get": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "get_vxlan_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of vlans successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VxlanList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "vxlan"
+        ],
+        "operationId": "create_vxlan",
+        "summary": "Create vxlan",
+        "requestBody": {
+          "description": "vxlan params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VxlanParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Vxlan added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "VxlanParams"
+      }
+    }
+  }
+}

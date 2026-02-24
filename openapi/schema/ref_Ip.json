@@ -1,0 +1,55 @@
+{
+  "components": {
+    "schemas": {
+      "Ip": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ip_addr": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "gateway": {
+            "type": "string"
+          },
+          "mask": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "family": {
+            "type": "integer"
+          },
+          "ippool": {
+            "type": "integer"
+          },
+          "network": {
+            "type": "integer"
+          },
+          "host": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "interface": {
+                "type": "integer"
+              }
+            }
+          },
+          "cluster_interface": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

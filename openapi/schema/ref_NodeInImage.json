@@ -1,0 +1,24 @@
+{
+  "components": {
+    "schemas": {
+      "NodeInImage": {
+        "title": "NodeInImageList",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "ip_addr": {
+            "type": "string"
+          },
+          "ssh_port": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

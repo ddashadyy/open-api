@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "HostAccountParams": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": "number",
+            "maxLength": 9
+          }
+        },
+        "required": [
+          "account"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

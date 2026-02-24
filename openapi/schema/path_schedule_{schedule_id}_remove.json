@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/schedule/{schedule_id}/remove": {
+      "post": {
+        "tags": [
+          "schedule"
+        ],
+        "operationId": "remove_schedule_objects",
+        "summary": "Remove objects from schedule",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "Schedule ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduleEditObjectParams"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Schedule hosts updated successfully"
+          }
+        }
+      }
+    }
+  }
+}

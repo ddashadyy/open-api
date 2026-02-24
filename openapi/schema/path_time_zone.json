@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/time_zone": {
+      "get": {
+        "tags": [
+          "form"
+        ],
+        "operationId": "get_time_zone_list",
+        "responses": {
+          "200": {
+            "description": "Time zone is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

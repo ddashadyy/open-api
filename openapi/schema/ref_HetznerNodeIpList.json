@@ -1,0 +1,34 @@
+{
+  "components": {
+    "schemas": {
+      "HetznerNodeIpList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "host": {
+                  "$ref": "#/components/schemas/IdName"
+                },
+                "ip": {
+                  "$ref": "#/components/schemas/IpWithState"
+                },
+                "subnet": {
+                  "$ref": "#/components/schemas/SubnetWithUsedIp"
+                }
+              }
+            }
+          },
+          "size": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

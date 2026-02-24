@@ -1,0 +1,49 @@
+{
+  "paths": {
+    "/user/{user_id}/{action}": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "operationId": "run_user_action",
+        "summary": "Performing a custom operation",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "description": "ID user",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "action",
+            "in": "path",
+            "description": "Action",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "suspend",
+                "resume"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User action ended successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

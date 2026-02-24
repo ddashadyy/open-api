@@ -1,0 +1,20 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterVxlanList": {
+        "type": "object",
+        "properties": {
+          "last_notify": {
+            "$ref": "#/components/schemas/LastNotify"
+          },
+          "list": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClusterVxlan"
+            }
+          }
+        }
+      }
+    }
+  }
+}

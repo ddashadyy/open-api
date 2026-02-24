@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/hetzner_subnet/{hetzner_subnet_id}": {
+      "delete": {
+        "tags": [
+          "network"
+        ],
+        "summary": "Removing a subnet",
+        "description": "Removing a hetzner subnet",
+        "operationId": "delete_hetzner_subnet",
+        "parameters": [
+          {
+            "name": "hetzner_subnet_id",
+            "in": "path",
+            "description": "The subnet to be removed",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Subnet deletion completed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "task": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

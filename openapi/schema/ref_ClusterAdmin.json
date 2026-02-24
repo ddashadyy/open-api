@@ -1,0 +1,195 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterAdmin": {
+        "type": "object",
+        "properties": {
+          "virtualization_type": {
+            "type": "string",
+            "enum": [
+              "dummy",
+              "kvm",
+              "lxd",
+              "vmmgr5",
+              "vmmgr5_dummy"
+            ]
+          },
+          "os_storage_path": {
+            "type": "string",
+            "maxLength": 255,
+            "default": "/share"
+          },
+          "os": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "os_group": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "image_storage_path": {
+            "type": "string",
+            "maxLength": 255,
+            "default": "/images"
+          },
+          "cpu_number": {
+            "$ref": "#/components/schemas/TotalUsed"
+          },
+          "dsw_active": {
+            "type": "boolean"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "account_host_count": {
+            "type": "integer"
+          },
+          "host_per_node_limit": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "ram_mib": {
+            "$ref": "#/components/schemas/TotalUsed"
+          },
+          "storage_mib": {
+            "$ref": "#/components/schemas/TotalUsed"
+          },
+          "time_zone": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "data_center": {
+            "type": "string"
+          },
+          "host_distribution_policy": {
+            "type": "string",
+            "enum": [
+              "spread",
+              "tight"
+            ]
+          },
+          "host_filter": {
+            "$ref": "#/components/schemas/HostFilterList"
+          },
+          "node_count": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "cpu_overselling": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 100,
+            "default": -1
+          },
+          "overselling": {
+            "maximum": 5,
+            "minimum": 0.5,
+            "type": "number"
+          },
+          "backup_locations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IdName"
+            }
+          },
+          "domain_template": {
+            "type": "string"
+          },
+          "datacenter_params": {
+            "$ref": "#/components/schemas/DatacenterParams"
+          },
+          "storages": {
+            "$ref": "#/components/schemas/StorageInClusterList"
+          },
+          "storage": {
+            "$ref": "#/components/schemas/StorageInCluster"
+          },
+          "dns_servers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dc_networks": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "node_network": {
+            "type": "object",
+            "properties": {
+              "timeout": {
+                "type": "integer"
+              },
+              "gateway": {
+                "type": "string"
+              }
+            }
+          },
+          "vxlan_mode": {
+            "type": "string",
+            "enum": [
+              "disabled",
+              "full_mesh",
+              "route_reflector"
+            ]
+          },
+          "vxlan_settings": {
+            "type": "string",
+            "nullable": true
+          },
+          "vxlans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "spice_enabled": {
+            "type": "boolean"
+          },
+          "balancer_mode": {
+            "$ref": "#/components/schemas/ClusterBalancerMode"
+          },
+          "balancer_config": {
+            "$ref": "#/components/schemas/BalancerConfig"
+          },
+          "rbac": {
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "integer"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

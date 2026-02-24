@@ -1,0 +1,19 @@
+{
+  "components": {
+    "schemas": {
+      "LicensePacketParams": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "maxLength": 64
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

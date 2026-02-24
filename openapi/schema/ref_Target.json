@@ -1,0 +1,30 @@
+{
+  "components": {
+    "schemas": {
+      "MonitorTarget":{
+        "type": "object",
+        "properties": {
+          "node_id": {
+            "type": "integer"
+          },
+          "host_id": {
+            "type": "integer",
+            "maxLength": 4,
+            "nullable": true
+          },
+          "internal_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "is_dummy": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "is_dummy"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

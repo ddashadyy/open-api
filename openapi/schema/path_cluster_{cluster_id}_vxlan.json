@@ -1,0 +1,35 @@
+{
+  "paths": {
+    "/cluster/{cluster_id}/vxlan": {
+      "get": {
+        "tags": [
+          "cluster"
+        ],
+        "operationId": "get_cluster_vxlan_list",
+        "parameters": [
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of vxlans on cluster successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClusterVxlanList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

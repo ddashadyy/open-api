@@ -1,0 +1,77 @@
+{
+  "components": {
+    "schemas": {
+      "Recipe": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "tags": {
+            "description": "List of tags(deprecated)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "script_filter": {
+            "description": "List of script filter reasons",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "entity": {
+                  "type": "string",
+                  "enum": [
+                    "os_tag",
+                    "hdd_mib",
+                    "ram_mib",
+                    "cluster",
+                    "preset",
+                    "cpu_number"
+                  ],
+                  "example": "hdd_mib",
+                  "description": "Filter entity"
+                },
+                "expression": {
+                  "type": "string",
+                  "description": "Filter expression",
+                  "example": "hdd_mib > 1024"
+                }
+              },
+              "example": {
+                "entity": "os_tag",
+                "expression": "\"centos6\",\"centos7\",\"debian\",\"ubuntu\""
+              }
+            }
+          },
+          "has_email": {
+            "type": "boolean"
+          },
+          "access": {
+            "type": "string"
+          },
+          "params_count": {
+            "type": "integer"
+          },
+          "email_langs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        }
+      }
+    }
+  }
+}

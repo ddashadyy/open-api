@@ -1,0 +1,28 @@
+{
+  "components": {
+    "schemas": {
+      "MigrateIpmgrParams": {
+        "type": "object",
+        "properties": {
+          "dbhost": {
+            "type": "string"
+          },
+          "dbname": {
+            "type": "string"
+          },
+          "dbuser": {
+            "type": "string"
+          },
+          "dbpassword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dbhost",
+          "dbuser",
+          "dbpassword"
+        ]
+      }
+    }
+  }
+}

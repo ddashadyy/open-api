@@ -1,0 +1,17 @@
+{
+  "components": {
+    "schemas": {
+      "GpuNodeInfo": {
+        "type": "object",
+        "properties": {
+          "node": {
+            "$ref": "#/components/schemas/IdName"
+          },
+          "gpu_passthrough": {
+            "$ref": "#/components/schemas/GpuInfo"
+          }
+        }
+      }
+    }
+  }
+}

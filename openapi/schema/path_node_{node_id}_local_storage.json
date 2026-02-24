@@ -1,0 +1,29 @@
+{
+  "paths": {
+    "/node/{node_id}/local_storage": {
+      "get": {
+        "tags": [
+          "node"
+        ],
+        "operationId": "local_storage",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Cluster node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node local storage is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

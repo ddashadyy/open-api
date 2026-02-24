@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "BackupChangeParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 255,
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "host_stop": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  }
+}

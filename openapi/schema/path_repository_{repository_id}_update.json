@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/repository/{repository_id}/update": {
+      "post": {
+        "tags": [
+          "repository"
+        ],
+        "operationId": "update_repository_metadata",
+        "summary": "Updating repository metadata",
+        "parameters": [
+          {
+            "name": "repository_id",
+            "in": "path",
+            "description": "ID repository",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Repository edit params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "Repository metadata updated",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

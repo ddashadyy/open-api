@@ -1,0 +1,141 @@
+{
+  "components": {
+    "schemas": {
+      "NodeIface": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "ip_params": {
+            "$ref": "#/components/schemas/IfaceIpParams"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "eth",
+              "bond",
+              "bridge"
+            ]
+          },
+          "state": {
+            "type": "string"
+          },
+          "used": {
+            "type": "boolean"
+          },
+          "take_slave_ip": {
+            "type": "boolean"
+          },
+          "host_count": {
+            "type": "integer"
+          },
+          "vlan": {
+            "type": "integer",
+            "nullable": true
+          },
+          "mtu": {
+            "$ref": "#/components/schemas/MtuSetting"
+          },
+          "is_default": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_main_network": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "slaves": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "active-backup",
+              "broadcast",
+              "802.3ad",
+              "balance-tlb",
+              "balance-alb",
+              "balance-rr",
+              "balance-xor"
+            ],
+            "nullable": true
+          },
+          "old_values": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "ip_params": {
+                "$ref": "#/components/schemas/IfaceIpParams"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "physical",
+                  "bond",
+                  "bridge"
+                ]
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "enabled",
+                  "disabled",
+                  "new",
+                  "changed",
+                  "deleted",
+                  "unknown"
+                ]
+              },
+              "used": {
+                "type": "boolean"
+              },
+              "host_count": {
+                "type": "integer"
+              },
+              "vlan": {
+                "type": "integer",
+                "nullable": true
+              },
+              "is_default": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "is_main_network": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "slaves": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "active-backup",
+                  "broadcast",
+                  "802.3ad",
+                  "balance-tlb",
+                  "balance-alb",
+                  "balance-rr",
+                  "balance-xor"
+                ],
+                "nullable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

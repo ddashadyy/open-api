@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterSshKey": {
+        "type": "object",
+        "properties": {
+          "ssh_keys": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          }
+        },
+        "required": [
+          "ssh_keys"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

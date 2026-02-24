@@ -1,0 +1,126 @@
+{
+  "components": {
+    "schemas": {
+      "ScheduleParams": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255,
+            "nullable": true
+          },
+          "comment": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly"
+            ]
+          },
+          "limit_count": {
+            "type": "integer",
+            "maxLength": 9,
+            "nullable": true
+          },
+          "limit_size_mib": {
+            "type": "integer",
+            "maxLength": 9,
+            "nullable": true
+          },
+          "start_time": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "minimum": 1,
+                "maximum": 31,
+                "type": "integer",
+                "nullable": true
+              },
+              "week_day": {
+                "minimum": 0,
+                "maximum": 7,
+                "type": "integer",
+                "nullable": true
+              },
+              "hour": {
+                "minimum": 0,
+                "maximum": 23,
+                "type": "integer"
+              },
+              "minute": {
+                "minimum": 0,
+                "maximum": 59,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "hour",
+              "minute"
+            ],
+            "additionalProperties": false
+          },
+          "backup_locations": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "hosts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "backup_mode": {
+            "type": "string",
+            "default": "host_main",
+            "enum": [
+              "host_main",
+              "host_all",
+              "disk"
+            ]
+          },
+          "disks": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          },
+          "presets": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "maxLength": 9
+            }
+          }
+        },
+        "required": [
+          "type",
+          "start_time"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

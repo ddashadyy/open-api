@@ -1,0 +1,48 @@
+{
+  "paths": {
+    "/backup/{backup_id}/relocate": {
+      "post": {
+        "tags": [
+          "backup"
+        ],
+        "summary": "VM backup relocate",
+        "operationId": "relocate_backup",
+        "parameters": [
+          {
+            "name": "backup_id",
+            "in": "path",
+            "description": "VM backup ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "VM backup relocate params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackupRelocateParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM backup relocated successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "ImageRelocateParams"
+      }
+    }
+  }
+}

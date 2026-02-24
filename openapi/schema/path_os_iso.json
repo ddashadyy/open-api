@@ -1,0 +1,36 @@
+{
+  "paths": {
+    "/os/iso": {
+      "get": {
+        "tags": [
+          "os"
+        ],
+        "summary": "ISO list",
+        "operationId": "get_iso_list",
+        "parameters": [
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ISO list received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OsIsoList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

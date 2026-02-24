@@ -1,0 +1,45 @@
+{
+  "paths": {
+    "/host/{host_id}/node/network/iface": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Get a list of network interfaces on the node by host",
+        "operationId": "host_node_iface_list",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Requested host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "where",
+            "in": "query",
+            "description": "Where filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of network interfaces on the node by host received successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NodeIfaceList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

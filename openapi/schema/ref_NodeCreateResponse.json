@@ -1,0 +1,26 @@
+{
+  "components": {
+    "schemas": {
+      "NodeCreateResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "prepare_task": {
+            "type": "integer"
+          },
+          "task": {
+            "type": "integer"
+          },
+          "storages_task": {
+            "type": "integer"
+          },
+          "finish_task": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

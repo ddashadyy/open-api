@@ -1,0 +1,91 @@
+{
+  "components": {
+    "schemas": {
+      "Snapshot": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ext_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "with_ram": {
+            "type": "boolean"
+          },
+          "created": {
+            "type": "string"
+          },
+          "rbac":{
+            "type": "object",
+            "properties": {
+              "cluster": {
+                "type": "integer"
+              },
+              "host": {
+                "type": "integer"
+              },
+              "owner": {
+                "type": "integer"
+              }
+            }
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "fail",
+              "creation",
+              "unknown"
+            ]
+          },
+          "parent": {
+            "type": "integer"
+          },
+          "is_curr": {
+            "type": "boolean"
+          },
+          "host": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "node": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "cluster": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "virtualization_type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

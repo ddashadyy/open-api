@@ -1,0 +1,46 @@
+{
+  "components": {
+    "schemas": {
+      "LocationSSHCreate": {
+        "type": "object",
+        "properties": {
+          "ip": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "ipv4"
+              },
+              {
+                "type": "string",
+                "format": "ipv6"
+              }
+            ]
+          },
+          "port": {
+            "type": "integer",
+            "maxLength": 9
+          },
+          "login": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "password": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "path": {
+            "type": "string",
+            "maxLength": 255
+          }
+        },
+        "required": [
+          "ip",
+          "port",
+          "login",
+          "path"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

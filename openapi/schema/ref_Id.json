@@ -1,0 +1,14 @@
+{
+  "components": {
+    "schemas": {
+      "Id": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

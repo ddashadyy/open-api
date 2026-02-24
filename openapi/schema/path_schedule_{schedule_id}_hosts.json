@@ -1,0 +1,40 @@
+{
+  "paths": {
+    "/schedule/{schedule_id}/hosts": {
+      "get": {
+        "tags": [
+          "schedule"
+        ],
+        "operationId": "get_schedule_affected_hosts",
+        "parameters": [
+          {
+            "name": "schedule_id",
+            "in": "path",
+            "description": "Schedule ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Schedule affected hosts are successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "affected_hosts_count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

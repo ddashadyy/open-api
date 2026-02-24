@@ -1,0 +1,27 @@
+{
+  "components": {
+    "schemas": {
+      "ImportHistoryResultParams": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "failed"
+            ]
+          },
+          "result": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "state",
+          "result"
+        ]
+      }
+    }
+  }
+}

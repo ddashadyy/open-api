@@ -1,0 +1,18 @@
+{
+  "paths": {
+    "/os_tag": {
+      "get": {
+        "tags": [
+          "form"
+        ],
+        "operationId": "get_os_tag_list",
+        "responses": {
+          "200": {
+            "description": "OS tag list is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

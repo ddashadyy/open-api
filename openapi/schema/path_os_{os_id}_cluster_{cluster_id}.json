@@ -1,0 +1,39 @@
+{
+  "paths": {
+    "/os/{os_id}/cluster/{cluster_id}": {
+      "get": {
+        "tags": [
+          "os",
+          "cluster"
+        ],
+        "operationId": "get_os_cluster_list",
+        "parameters": [
+          {
+            "name": "os_id",
+            "in": "path",
+            "description": "OS ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cluster_id",
+            "in": "path",
+            "description": "Cluster ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Node internal list is successfully received",
+            "content": {}
+          }
+        }
+      }
+    }
+  }
+}

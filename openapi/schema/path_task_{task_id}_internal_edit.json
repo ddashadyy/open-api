@@ -1,0 +1,42 @@
+{
+  "paths": {
+    "/task/{task_id}/internal_edit": {
+      "post": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Internal Task Edit",
+        "operationId": "edit_task_internal",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "description": "Task id (identifier at taskmgr side aka consul_id)",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Edit task params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditTaskParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Task edited successfully",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "EditTaskParams"
+      }
+    }
+  }
+}

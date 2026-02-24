@@ -1,0 +1,70 @@
+{
+  "paths": {
+    "/node/{node_id}/network/iface/{iface_type}/{iface_id}/revert": {
+      "post": {
+        "tags": [
+          "node"
+        ],
+        "summary": "Revert the network interface changes on the node",
+        "operationId": "iface_revert",
+        "parameters": [
+          {
+            "name": "node_id",
+            "in": "path",
+            "description": "Requested node ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "iface_type",
+            "in": "path",
+            "description": "Requested iface type",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "bond",
+                "bridge"
+              ]
+            }
+          },
+          {
+            "name": "iface_id",
+            "in": "path",
+            "description": "Requested iface ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Node interface changes reverting params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnyProperties"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Node interface changes reverted successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

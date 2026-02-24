@@ -1,0 +1,173 @@
+{
+  "paths": {
+    "/host/{host_id}": {
+      "get": {
+        "tags": [
+          "host"
+        ],
+        "operationId": "get_host",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "Host ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host is successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "account": {
+                      "type": "integer"
+                    },
+                    "anti_spoofing": {
+                      "type": "boolean"
+                    },
+                    "anti_spoofing_settings": {
+                      "type": "object",
+                      "properties": {
+                        "vlan": {
+                          "type": "boolean"
+                        }
+                      },
+                      "nullable": true
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "internal_name": {
+                      "type": "string"
+                    },
+                    "node": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "cpu_number": {
+                      "type": "integer"
+                    },
+                    "ram_mib": {
+                      "type": "integer"
+                    },
+                    "total_disks_size_mib": {
+                      "type": "integer"
+                    },
+                    "expand_part": {
+                      "type": "string"
+                    },
+                    "net_is_synced": {
+                      "type": "boolean"
+                    },
+                    "ip_automation": {
+                      "type": "string"
+                    },
+                    "snapshot_limit": {
+                      "type": "integer"
+                    },
+                    "snapshots_allowed": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "host"
+        ],
+        "summary": "VM editing",
+        "operationId": "edit_host",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "ID of the VM being edited",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Parameters for editing VM",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HostChangeParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "VM successfully edited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IdTasks"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "HostChangeParams"
+      },
+      "delete": {
+        "tags": [
+          "host"
+        ],
+        "summary": "Deleting a VM",
+        "description": "Deleting a host",
+        "operationId": "delete_host",
+        "parameters": [
+          {
+            "name": "host_id",
+            "in": "path",
+            "description": "The host ID to remove",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "force",
+            "in": "query",
+            "description": "Force deleting a host",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Host deleted successfully",
+            "content": {
+              "application/json": {
+               "schema": {
+                  "$ref": "#/components/schemas/IdTask"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

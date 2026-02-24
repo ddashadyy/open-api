@@ -1,0 +1,22 @@
+{
+  "components": {
+    "schemas": {
+      "ClusterNodeNetwork": {
+        "type": "object",
+        "properties": {
+          "timeout": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 1800
+          },
+          "gateway": {
+            "type": "string",
+            "format": "ipv4",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

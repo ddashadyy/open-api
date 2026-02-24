@@ -1,0 +1,56 @@
+{
+  "paths": {
+    "/storage": {
+      "get": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Storage List",
+        "operationId": "get_storage_list",
+        "responses": {
+          "200": {
+            "description": "Storage list successfully received",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StorageList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "storage"
+        ],
+        "summary": "Storage creation",
+        "operationId": "create_storage",
+        "requestBody": {
+          "description": "Parameters of the created storage",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorageParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The storage has been successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Id"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "StorageParams"
+      }
+    }
+  }
+}

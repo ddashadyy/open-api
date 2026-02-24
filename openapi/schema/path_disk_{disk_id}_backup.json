@@ -1,0 +1,91 @@
+{
+  "paths": {
+    "/disk/{disk_id}/backup": {
+      "post": {
+        "tags": [
+          "disk",
+          "backup"
+        ],
+        "summary": "Disk backup creation",
+        "operationId": "create_disk_backup",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Disk backup params",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BackupParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Disk backup created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "task": {
+                      "type": "integer"
+                    },
+                    "relocate_task": {
+                      "type": "integer",
+                      "nullable": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "BackupParams"
+      },
+      "get": {
+        "tags": [
+          "disk",
+          "backup"
+        ],
+        "operationId": "backup_list_by_disk",
+        "parameters": [
+          {
+            "name": "disk_id",
+            "in": "path",
+            "description": "Disk id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Disk backup list have gotten successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiskBackupList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
