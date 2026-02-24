@@ -39,6 +39,26 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request - invalid disk ID or parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Disk edit failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
           }
         },
         "x-codegen-request-body-name": "DiskEditParams"
