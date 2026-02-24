@@ -1,0 +1,30 @@
+{
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "integer",
+                "example": 5012
+              },
+              "msg": {
+                "type": "string",
+                "example": "Disk id unknown"
+              },
+              "value": {
+                "type": "string",
+                "example": "999999999",
+                "description": "The invalid value that caused the error"
+              }
+            },
+            "required": ["code", "msg"]
+          }
+        }
+      }
+    }
+  }
+}
