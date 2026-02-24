@@ -6,7 +6,7 @@
           "disk",
           "backup"
         ],
-        "summary": "Disk backup creation",
+        "summary": "Disk backup deletion",
         "operationId": "delete_disk_backup",
         "parameters": [
           {
