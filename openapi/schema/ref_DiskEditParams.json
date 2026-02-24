@@ -39,6 +39,19 @@
           }
         },
         "additionalProperties": false
+      },
+      "Error": {
+        "type": "object",
+        "properties": { 
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "integer", "example": 5320 },
+              "msg":  { "type": "string",  "example": "New disk size incorrect" }
+            },
+            "required": ["code", "msg"]
+          }
+        }
       }
     }
   }
