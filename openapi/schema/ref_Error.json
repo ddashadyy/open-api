@@ -16,8 +16,10 @@
                 "example": "Disk id unknown"
               },
               "value": {
-                "type": "string",
-                "example": "999999999",
+                "oneOf": [
+                  { "type": "string" },
+                  { "type": "object" }
+                ],
                 "description": "The invalid value that caused the error"
               }
             },
