@@ -2,9 +2,7 @@
   "paths": {
     "/disk/{disk_id}": {
       "post": {
-        "tags": [
-          "disk"
-        ],
+        "tags": ["disk"],
         "operationId": "edit_disk",
         "summary": "Edit the disk",
         "parameters": [
@@ -64,9 +62,7 @@
         "x-codegen-request-body-name": "DiskEditParams"
       },
       "delete": {
-        "tags": [
-          "disk"
-        ],
+        "tags": ["disk"],
         "summary": "Remove disk",
         "operationId": "remove_disk",
         "parameters": [
@@ -87,6 +83,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IdAndTask"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
