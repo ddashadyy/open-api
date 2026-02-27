@@ -24,7 +24,8 @@
             "nullable": true
           },
           "target_dev": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "size_mib": {
             "type": "integer"
@@ -64,6 +65,7 @@
           },
           "tags": {
             "type": "array",
+            "nullable": true,
             "items": {
               "type": "integer"
             }
@@ -143,6 +145,10 @@
                 ]
               }
             }
+          },
+          "backup_count": {
+            "type": "integer",
+            "nullable": true
           }
         },
         "additionalProperties": false

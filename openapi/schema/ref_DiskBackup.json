@@ -46,10 +46,12 @@
                 "type": "integer"
               },
               "host": {
-                "type": "integer"
+                "type": "integer",
+                "nullable": true
               },
               "owner": {
-                "type": "integer"
+                "type": "integer",
+                "nullable": true
               }
             }
           },
@@ -87,7 +89,8 @@
             "type": "string"
           },
           "available_until": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "comment": {
             "type": "string"
